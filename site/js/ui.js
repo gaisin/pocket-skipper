@@ -19,7 +19,7 @@ export function h(tag, attrs = {}, ...children) {
 export function header(title, backHref) {
   return h('header', { class: 'view-head' },
     backHref ? h('a', { class: 'back', href: backHref }, '‹ Назад') : null,
-    h('h1', {}, title));
+    title ? h('h1', {}, title) : null);
 }
 
 export function sourceFooter(record) {
