@@ -123,7 +123,7 @@ button, input { font: inherit; color: inherit; }
 .table { width: 100%; border-collapse: collapse; background: var(--paper); font-size: .92rem; }
 .table th, .table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
 .table th { font: 600 .7rem var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
-.table td:first-child { font-family: var(--mono); font-weight: 600; white-space: nowrap; }
+.table td:first-child { font-family: var(--mono); font-weight: 600; overflow-wrap: normal; word-break: keep-all; }
 .script { margin: 0; padding-left: 22px; display: grid; gap: 4px; font-family: var(--mono); font-size: .88rem; }
 .phonetic { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 4px 12px; font-size: .9rem; }
 .phonetic b { font-family: var(--mono); color: var(--sea); }

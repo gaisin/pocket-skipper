@@ -4,9 +4,256 @@
       "id": "vhf-channels",
       "title": "Основные каналы",
       "kind": "channels",
-      "rows": [{ "ch": "16", "use": "Бедствие, срочность, безопасность и вызов" }],
-      "sources": [{ "type": "iyt", "module": 7, "page": 93 }],
-      "verified": false
+      "rows": [
+        { "ch": "16", "use": "Бедствие, срочность, безопасность и первый вызов. Договорились - сразу уйти на рабочий канал; обычный вызов - не дольше 60 с" },
+        { "ch": "70", "use": "Только цифровой избирательный вызов (DSC), в том числе сигнал бедствия. Голосом не работать" },
+        { "ch": "06", "use": "Основной канал судно-судно, есть в любой морской станции" },
+        { "ch": "08, 72, 77, 10, 13, 09, 73, 69, 15, 17", "use": "Другие каналы судно-судно, по порядку предпочтения" },
+        { "ch": "13", "use": "Переговоры между судами о безопасности плавания" },
+        { "ch": "12, 14, 11, 09, 68, 71", "use": "Судно - порт: вход в порт, лоцман" },
+        { "ch": "26, 27, 25, 24, 23, 28 и др.", "use": "Судно - береговая радиостанция: погода, предупреждения, телефонная связь" }
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 5, "page": 100 },
+        { "type": "iyt", "module": 7, "section": 6, "page": 106 },
+        { "type": "iyt", "module": 7, "section": 6, "page": 107 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-channels-fethiye",
+      "title": "Марины Фетхие и Гёчека",
+      "kind": "channels",
+      "rows": [
+        { "ch": "73", "use": "Ece Saray Marina, Фетхие: вышка и приёмная круглосуточно, швартовщики встречают на лодке" },
+        { "ch": "73", "use": "D-Marin Göcek: вызвать при подходе к марине" },
+        { "ch": "72", "use": "Club Marina, Гёчек: круглосуточно" }
+      ],
+      "sources": [
+        { "type": "web", "title": "Ece Saray Marina - Services", "url": "https://ecesaray.com.tr/marina/en/services/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "D-Marin Göcek", "url": "https://www.d-marin.com/en/marinas/gocek/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Club Marina Göcek", "url": "https://www.clubmarina.com.tr/", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-mayday",
+      "title": "MAYDAY - бедствие",
+      "kind": "call",
+      "when": "Непосредственная серьёзная опасность судну или людям: пожар, затопление, человек за бортом. Решает шкипер. Если есть DSC - сначала красная кнопка, затем голосом на канале 16, мощность HI.",
+      "lines": [
+        "MAYDAY MAYDAY MAYDAY",
+        "This is {boat} {boat} {boat}, call sign {callsign}, MMSI {mmsi}",
+        "MAYDAY {boat}, call sign {callsign}, MMSI {mmsi}",
+        "Position {position}",
+        "{nature}",
+        "I require {help}",
+        "I have {persons} persons on board",
+        "Over"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 8, "page": 113 },
+        { "type": "iyt", "module": 7, "section": 6, "page": 103 },
+        { "type": "web", "title": "USCG NAVCEN - DSC Distress (IMO MSC.1/Circ.1658)", "url": "https://www.navcen.uscg.gov/dsc-distress", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Mayday and pan pan calls", "url": "https://www.rya.org.uk/water-safety/communication/mayday-and-pan-pan-calls/", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-mayday-received",
+      "title": "Услышали MAYDAY",
+      "kind": "call",
+      "when": "Запишите название судна, координаты и что случилось. Около 10 с послушайте эфир - обычно отвечает береговая станция. Если никто не ответил - подтвердите, идите на помощь и сообщите, когда будете на месте.",
+      "lines": [
+        "MAYDAY",
+        "‹судно в бедствии› ‹судно в бедствии› ‹судно в бедствии›",
+        "This is {boat} {boat} {boat}",
+        "Received MAYDAY"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 8, "page": 113 },
+        { "type": "iyt", "module": 7, "section": 8, "page": 114 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-mayday-relay",
+      "title": "MAYDAY RELAY - ретрансляция",
+      "kind": "call",
+      "when": "Вы подтвердили чужой MAYDAY, но больше никто не ответил - передайте его дальше, чтобы услышала береговая станция. Так же сообщают об увиденном сигнале бедствия (красный фальшфейер, оранжевый дым): своё место, что, когда и где видели.",
+      "lines": [
+        "MAYDAY RELAY MAYDAY RELAY MAYDAY RELAY",
+        "This is {boat} {boat} {boat}",
+        "The following distress message was received from ‹судно в бедствии› at ‹время› hours",
+        "Message begins: ‹сообщение›",
+        "Message ends",
+        "Over"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 8, "page": 115 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-panpan",
+      "title": "PAN-PAN - срочность",
+      "kind": "call",
+      "when": "Серьёзно, но без непосредственной угрозы жизни: поломка, повреждение корпуса, больной на борту. Красную кнопку не нажимать - DSC-вызов срочности из меню, затем голосом на канале 16. Нужен врач - PAN-PAN MEDICO.",
+      "lines": [
+        "PAN-PAN PAN-PAN PAN-PAN",
+        "All stations all stations all stations",
+        "This is {boat} {boat} {boat}, call sign {callsign}, MMSI {mmsi}",
+        "Position {position}",
+        "{nature}",
+        "I require {help}",
+        "Over"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 8, "page": 116 },
+        { "type": "web", "title": "RYA - Mayday and pan pan calls", "url": "https://www.rya.org.uk/water-safety/communication/mayday-and-pan-pan-calls/", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-securite",
+      "title": "SÉCURITÉ - безопасность",
+      "kind": "call",
+      "when": "Предупреждение о навигационной опасности или опасной погоде (чаще передаёт береговая станция). Вызов - на канале 16, само сообщение можно дать на рабочем канале, назвав его. Услышали - дослушайте до конца.",
+      "lines": [
+        "SÉCURITÉ SÉCURITÉ SÉCURITÉ",
+        "All stations all stations all stations",
+        "This is {boat} {boat} {boat}",
+        "‹предупреждение или рабочий канал›"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 8, "page": 116 },
+        { "type": "iyt", "module": 7, "section": 8, "page": 117 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-cancel",
+      "title": "Отмена ложного бедствия",
+      "kind": "call",
+      "when": "Случайно ушёл DSC-сигнал бедствия. Радио не выключать: отменить сигнал через меню DSC, затем голосом на канале 16. За немедленную отмену обычно не наказывают. Случайно включили аварийный буй (EPIRB) - тоже сразу сообщить береговой станции.",
+      "lines": [
+        "All stations all stations all stations",
+        "This is {boat}, call sign {callsign}, MMSI {mmsi}, position {position}",
+        "Cancel my distress alert of ‹дата, время UTC›",
+        "Master {boat}, call sign {callsign}, MMSI {mmsi}, ‹дата, время UTC›"
+      ],
+      "sources": [
+        { "type": "web", "title": "USCG NAVCEN - Instructions for cancelling a false distress alert (IMO A.814(19))", "url": "https://www.navcen.uscg.gov/instructions-for-canceling-false-distress-alert", "accessed": "2026-09-17" },
+        { "type": "web", "title": "USCG NAVCEN - DSC Distress", "url": "https://www.navcen.uscg.gov/dsc-distress", "accessed": "2026-09-17" },
+        { "type": "iyt", "module": 7, "section": 8, "page": 119 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-marina",
+      "title": "Вызов марины",
+      "kind": "call",
+      "when": "Подход к марине: вызов сразу на её канале (Ece Saray и D-Marin Göcek - 73, Club Marina - 72). При хорошей связи марину называют 1 раз, себя - 2 раза. Просьбу - коротко.",
+      "lines": [
+        "‹марина›",
+        "This is {boat} {boat}",
+        "Request a berth for tonight, ‹длина› metres, draft ‹осадка› metres",
+        "Over"
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 7, "page": 108 },
+        { "type": "iyt", "module": 7, "section": 7, "page": 111 },
+        { "type": "web", "title": "D-Marin Göcek", "url": "https://www.d-marin.com/en/marinas/gocek/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Ece Saray Marina - Services", "url": "https://ecesaray.com.tr/marina/en/services/", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-prowords",
+      "title": "Процедурные слова",
+      "kind": "channels",
+      "rows": [
+        { "ch": "THIS IS", "use": "Передаёт станция, названная следом" },
+        { "ch": "OVER", "use": "Я закончил, жду ответа" },
+        { "ch": "OUT", "use": "Связь закончена. «OVER AND OUT» не говорят" },
+        { "ch": "RECEIVED", "use": "Принято (вместо ROGER)" },
+        { "ch": "SAY AGAIN", "use": "Повторите" },
+        { "ch": "I SAY AGAIN", "use": "Повторяю" },
+        { "ch": "I SPELL", "use": "Передаю по буквам фонетическим алфавитом" },
+        { "ch": "CORRECTION", "use": "Ошибся, дальше - I SAY AGAIN и верный текст" },
+        { "ch": "READ BACK", "use": "Сейчас повторю принятое для проверки" },
+        { "ch": "CORRECT / WRONG", "use": "Повторено верно / неверно" },
+        { "ch": "RADIO CHECK", "use": "Как меня слышно? Проверка - не дольше 10 с" },
+        { "ch": "STATION CALLING", "use": "Не разобрал, кто меня вызывает" },
+        { "ch": "WAIT … MINUTES", "use": "Не могу сейчас, ждите столько-то минут" },
+        { "ch": "NOTHING HEARD", "use": "Вызванная станция не ответила" },
+        { "ch": "NEGATIVE", "use": "Нет" },
+        { "ch": "ALL AFTER / ALL BEFORE", "use": "Всё после / до указанного слова" },
+        { "ch": "IN FIGURES / IN LETTERS", "use": "Записать цифрами / словами" },
+        { "ch": "SEELONCE MAYDAY", "use": "Молчание на канале, идёт обмен о бедствии (объявляет координатор)" },
+        { "ch": "SEELONCE DISTRESS", "use": "То же, объявляет другая станция" },
+        { "ch": "PRUDONCE", "use": "Молчание смягчено: только важные переговоры" },
+        { "ch": "SEELONCE FEENEE", "use": "Молчание отменено, бедствие закончено" },
+        { "ch": "MEDICO", "use": "После PAN-PAN: нужна медицинская помощь или совет" }
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 7, "page": 108 },
+        { "type": "iyt", "module": 7, "section": 7, "page": 109 },
+        { "type": "iyt", "module": 7, "section": 6, "page": 107 },
+        { "type": "iyt", "module": 7, "section": 8, "page": 114 },
+        { "type": "iyt", "module": 7, "section": 8, "page": 115 },
+        { "type": "iyt", "module": 7, "section": 8, "page": 116 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-phonetic",
+      "title": "Фонетический алфавит",
+      "kind": "phonetic",
+      "letters": [
+        ["A", "ALFA"], ["B", "BRAVO"], ["C", "CHARLIE"], ["D", "DELTA"], ["E", "ECHO"],
+        ["F", "FOXTROT"], ["G", "GOLF"], ["H", "HOTEL"], ["I", "INDIA"], ["J", "JULIET"],
+        ["K", "KILO"], ["L", "LIMA"], ["M", "MIKE"], ["N", "NOVEMBER"], ["O", "OSCAR"],
+        ["P", "PAPA"], ["Q", "QUEBEC"], ["R", "ROMEO"], ["S", "SIERRA"], ["T", "TANGO"],
+        ["U", "UNIFORM"], ["V", "VICTOR"], ["W", "WHISKEY"], ["X", "X-RAY"], ["Y", "YANKEE"],
+        ["Z", "ZULU"],
+        ["0-8", "по-английски"], ["9", "NINER"]
+      ],
+      "sources": [
+        { "type": "iyt", "module": 7, "section": 7, "page": 109 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-dsc",
+      "title": "Бедствие кнопкой DSC",
+      "kind": "steps",
+      "steps": [
+        { "text": "Поднять крышку и держать красную кнопку DISTRESS, пока звук и индикатор не станут непрерывными.", "note": "больше 3 с" },
+        { "text": "Радио передаёт цифровой сигнал на канале 70: MMSI и координаты. Повторяет, пока другая станция не подтвердит.", "note": "координаты - только если GPS встроен или подключён" },
+        { "text": "Взять трубку, канал 16, и сразу передать голосом MAYDAY по шаблону, назвав MMSI." },
+        { "text": "Береговая охрана в зоне УКВ подтверждает сигнал цифровым ответом. Дальше - переговоры на канале 16.", "note": "канал 70 голосом не использовать" },
+        { "text": "Ушло случайно - радио не выключать, отменить через меню DSC и сообщить голосом (см. «Отмена ложного бедствия»)." }
+      ],
+      "sources": [
+        { "type": "web", "title": "USCG NAVCEN - DSC Distress (IMO MSC.1/Circ.1658)", "url": "https://www.navcen.uscg.gov/dsc-distress", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Calling for help", "url": "https://www.rya.org.uk/water-safety/communication/calling-for-help/", "accessed": "2026-09-17" },
+        { "type": "iyt", "module": 7, "section": 6, "page": 107 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "vhf-numbers",
+      "title": "Экстренные телефоны в Турции",
+      "kind": "channels",
+      "rows": [
+        { "ch": "112", "use": "Единый номер: скорая, полиция, жандармерия, пожарные, береговая охрана (Sahil Güvenlik), AFAD" },
+        { "ch": "158", "use": "Прежний номер береговой охраны, объединён в 112 - звоните 112" }
+      ],
+      "sources": [
+        { "type": "web", "title": "МВД Турции - 112 Acil Çağrı Merkezleri Projesi", "url": "https://www.icisleri.gov.tr/illeridaresi/112-acil-agri-merkezleri-projesi", "accessed": "2026-09-17" }
+      ],
+      "verified": true
     }
   ]
 }
