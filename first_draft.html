@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Карманный шкипер</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Onest:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+:root{
+  --ground:#EAF0F2; --paper:#FFFFFF; --ink:#0E2A3B; --muted:#4F6773; --line:#C9D6DC;
+  --sea:#1B5E86; --sea-soft:#DCEAF2; --port:#C8322B; --stbd:#1F8A4C; --buoy:#D9A416;
+  --phone:#0E2A3B; --screen:#F7FAFB; --ok-bg:#DDF0E4; --bad-bg:#F6DEDC;
+  --display:"Oswald","Arial Narrow",sans-serif; --body:"Onest",system-ui,-apple-system,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0B1A23; --paper:#12242F; --ink:#E4EEF2; --muted:#93A9B4; --line:#24404F;
+    --sea:#6FB4DD; --sea-soft:#17344A; --port:#EE6A62; --stbd:#4CC47E; --buoy:#E8BB3C;
+    --phone:#02080C; --screen:#10212B; --ok-bg:#153A26; --bad-bg:#40201F;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0B1A23; --paper:#12242F; --ink:#E4EEF2; --muted:#93A9B4; --line:#24404F;
+  --sea:#6FB4DD; --sea-soft:#17344A; --port:#EE6A62; --stbd:#4CC47E; --buoy:#E8BB3C;
+  --phone:#02080C; --screen:#10212B; --ok-bg:#153A26; --bad-bg:#40201F;
+}
+*{box-sizing:border-box}
+body{background:var(--ground);color:var(--ink);font:15px/1.55 var(--body);}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px;padding-block:32px 64px}
+h1,h2,h3{font-family:var(--display);font-weight:600;text-wrap:balance;letter-spacing:.01em;margin:0}
+h1{font-size:clamp(2rem,5vw,3rem);line-height:1.05;text-transform:uppercase}
+h2{font-size:1.6rem;text-transform:uppercase;margin-bottom:12px}
+h3{font-size:1.15rem}
+p{margin:0;max-width:66ch}
+.eyebrow{font:600 .72rem/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--sea)}
+header{display:grid;gap:12px;padding-bottom:28px;border-bottom:2px solid var(--ink)}
+header p{color:var(--muted)}
+.coord{font-family:var(--mono);font-size:.78rem;color:var(--muted)}
+section{padding-top:40px;display:grid;gap:16px}
+
+/* options */
+.opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.opt{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:20px;display:grid;gap:10px;align-content:start}
+.opt.rec{border:2px solid var(--sea)}
+.opt .tag{justify-self:start;font:600 .7rem/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:3px;background:var(--sea-soft);color:var(--sea)}
+.opt ul{margin:0;padding-left:18px;display:grid;gap:4px}
+.pm{display:grid;grid-template-columns:auto 1fr;gap:4px 8px;font-size:.9rem}
+.pm b{font-family:var(--mono);font-weight:600}
+.plus{color:var(--stbd)} .minus{color:var(--port)}
+
+/* phones */
+.phones{display:flex;flex-wrap:wrap;gap:28px;justify-content:flex-start}
+.demo{display:grid;gap:10px;width:300px;max-width:100%}
+.demo figcaption{font-size:.88rem;color:var(--muted)}
+.phone{background:var(--phone);border-radius:34px;padding:10px;box-shadow:0 18px 40px -20px rgba(14,42,59,.55)}
+.screen{background:var(--screen);border-radius:26px;height:560px;overflow:hidden;display:flex;flex-direction:column}
+.bar{display:flex;justify-content:space-between;align-items:center;padding:14px 18px 8px;font:600 .72rem var(--mono);color:var(--muted)}
+.content{flex:1;overflow-y:auto;padding:4px 16px 12px;display:flex;flex-direction:column;gap:12px}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);background:var(--paper)}
+.tabs span{text-align:center;padding:9px 0 14px;font-size:.66rem;color:var(--muted)}
+.tabs span.on{color:var(--sea);font-weight:600}
+.tabs i{display:block;width:18px;height:3px;margin:0 auto 6px;border-radius:2px;background:currentColor;opacity:.5}
+.tabs span.on i{opacity:1}
+.progress{height:6px;border-radius:3px;background:var(--line);overflow:hidden}
+.progress div{height:100%;width:40%;background:var(--sea)}
+.meta{display:flex;justify-content:space-between;font:.72rem var(--mono);color:var(--muted)}
+
+/* quiz */
+.night{background:#07131B;border-radius:10px;height:130px;display:grid;place-items:center}
+.q{font-weight:600;line-height:1.35}
+.answers{display:grid;gap:8px}
+.answers button{font:inherit;font-size:.9rem;text-align:left;padding:10px 12px;border-radius:8px;border:1px solid var(--line);background:var(--paper);color:var(--ink);cursor:pointer}
+.answers button:focus-visible,.ctrl button:focus-visible{outline:2px solid var(--sea);outline-offset:2px}
+.answers button.ok{background:var(--ok-bg);border-color:var(--stbd)}
+.answers button.bad{background:var(--bad-bg);border-color:var(--port)}
+.explain{font-size:.84rem;color:var(--muted);border-left:3px solid var(--sea);padding-left:10px}
+
+/* MOB */
+.alarm{background:var(--port);color:#fff;border-radius:10px;padding:12px 14px}
+.alarm h3{font-size:1.3rem;text-transform:uppercase}
+.alarm p{font-size:.8rem;opacity:.9}
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:6px;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:9px 10px;font-size:.86rem;cursor:pointer}
+.steps li::before{content:counter(s);font:600 .8rem var(--mono);width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:var(--sea-soft);color:var(--sea)}
+.steps li.done{opacity:.5;text-decoration:line-through}
+.steps li.done::before{content:"✓";background:var(--stbd);color:#fff}
+.steps small{display:block;color:var(--muted);text-decoration:none}
+
+/* tack */
+.svgbox{background:var(--sea-soft);border-radius:10px}
+.svgbox svg{display:block;width:100%;height:auto}
+#boat{transition:transform .9s ease-in-out}
+#sail{transition:transform .9s ease-in-out}
+@media (prefers-reduced-motion: reduce){#boat,#sail{transition:none}}
+.cmd{font-family:var(--display);font-size:1.25rem;text-transform:uppercase;line-height:1.15}
+.who{font:.72rem var(--mono);color:var(--muted)}
+.ctrl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.ctrl button{font:600 .85rem var(--body);padding:11px;border-radius:8px;border:1px solid var(--sea);background:transparent;color:var(--sea);cursor:pointer}
+.ctrl button.primary{background:var(--sea);color:var(--screen)}
+
+/* sources */
+.src{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--paper)}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:6px}
+.src th,.src td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.src th{font:600 .7rem var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.src td:first-child{font-weight:600;min-width:180px}
+.src code{font-family:var(--mono);font-size:.8rem;color:var(--sea)}
+.note{background:var(--paper);border:1px solid var(--line);border-left:4px solid var(--buoy);border-radius:4px;padding:14px 16px;font-size:.92rem}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Черновик концепции · до начала разработки</span>
+    <h1>Карманный шкипер</h1>
+    <p>Три варианта мобильного тренажёра для шкипера с правами IYT, который не выходил в море 4 года и имеет три недели на подготовку.
+    Ниже - живые макеты экранов (по ним можно нажимать) и список источников.</p>
+    <span class="coord">T−21 день · 10-15 минут в день · телефон</span>
+  </header>
+
+  <section>
+    <h2>Варианты</h2>
+    <div class="opts">
+      <article class="opt rec">
+        <span class="tag">Рекомендую</span>
+        <h3>A. Офлайн-приложение (PWA)</h3>
+        <p>Один сайт, который ставится на главный экран телефона и работает без интернета.
+        Четыре вкладки: «Сегодня», «Тесты», «Ситуации», «Манёвры».</p>
+        <div class="pm">
+          <b class="plus">+</b><span>Работает в море без связи - там шпаргалка нужнее всего</span>
+          <b class="plus">+</b><span>Прогресс хранится в телефоне</span>
+          <b class="minus">−</b><span>Нужен бесплатный хостинг: GitHub Pages или Cloudflare Pages</span>
+        </div>
+      </article>
+      <article class="opt">
+        <span class="tag">Проще всего</span>
+        <h3>B. Страница-артефакт на claude.ai</h3>
+        <p>То же содержание, но опубликовано как приватная страница claude.ai.
+        Публикуется за минуту, обновляется по ссылке.</p>
+        <div class="pm">
+          <b class="plus">+</b><span>Никакой инфраструктуры и деплоя</span>
+          <b class="minus">−</b><span>Нужен интернет - в море может не открыться</span>
+          <b class="minus">−</b><span>Нельзя поставить как полноценное офлайн-приложение</span>
+        </div>
+      </article>
+      <article class="opt">
+        <span class="tag">Максимум запоминания</span>
+        <h3>C. Интервальные повторения</h3>
+        <p>Карточки по системе Лейтнера: каждый день 10 минут, ошибки возвращаются чаще, выученное - реже.
+        Это можно встроить режимом в A.</p>
+        <div class="pm">
+          <b class="plus">+</b><span>Лучше всего удерживает огни, знаки и правила расхождения</span>
+          <b class="minus">−</b><span>Плохо подходит для манёвров - их лучше смотреть на схемах</span>
+        </div>
+      </article>
+    </div>
+    <p class="coord">Моё предложение: A как основа + режим C во вкладке «Сегодня». B - как быстрый предпросмотр, пока делаем A.</p>
+  </section>
+
+  <section>
+    <h2>Как это будет выглядеть</h2>
+    <div class="phones">
+
+      <figure class="demo" style="margin:0">
+        <div class="phone"><div class="screen">
+          <div class="bar"><span>Тесты · Огни</span><span>4 / 10</span></div>
+          <div class="content">
+            <div class="progress"><div></div></div>
+            <div class="night" aria-label="Ночь: зелёный огонь над белым">
+              <svg width="60" height="100" viewBox="0 0 60 100">
+                <line x1="30" y1="10" x2="30" y2="95" stroke="#2A3F4C" stroke-width="2"/>
+                <circle cx="30" cy="30" r="9" fill="#3BE37A"/><circle cx="30" cy="30" r="16" fill="#3BE37A" opacity=".18"/>
+                <circle cx="30" cy="62" r="9" fill="#F4F7F8"/><circle cx="30" cy="62" r="16" fill="#F4F7F8" opacity=".15"/>
+              </svg>
+            </div>
+            <p class="q">Ночью видишь два круговых огня: зелёный над белым. Что это за судно?</p>
+            <div class="answers" id="quiz">
+              <button id="qa1" data-ok="0">Судно, лишённое возможности управляться</button>
+              <button id="qa2" data-ok="0">Лоцманское судно при исполнении</button>
+              <button id="qa3" data-ok="1">Траулер за ловом</button>
+              <button id="qa4" data-ok="0">Судно, ограниченное в возможности маневрировать</button>
+            </div>
+            <p class="explain" id="qexp" hidden>МППСС-72, правило 26: «зелёный над белым - тралит». Лоцман - белый над красным, лишённое управления - два красных.</p>
+          </div>
+          <div class="tabs"><span><i></i>Сегодня</span><span class="on"><i></i>Тесты</span><span><i></i>Ситуации</span><span><i></i>Манёвры</span></div>
+        </div></div>
+        <figcaption><b>Тесты.</b> Вопрос с картинкой, мгновенный разбор и ссылка на правило. Нажми на ответ.</figcaption>
+      </figure>
+
+      <figure class="demo" style="margin:0">
+        <div class="phone"><div class="screen">
+          <div class="bar"><span>Ситуации</span><span>аварийные</span></div>
+          <div class="content">
+            <div class="alarm"><h3>Человек за бортом</h3><p>Действуй по порядку. Отмечай выполненные шаги касанием.</p></div>
+            <ol class="steps" id="mob">
+              <li>Крикнуть «Человек за бортом!» и указать сторону</li>
+              <li>Бросить круг / подкову, буй с огнём<small>Сразу, пока человек рядом</small></li>
+              <li>Назначить наблюдателя<small>Не сводит глаз и всё время показывает рукой</small></li>
+              <li>Нажать MOB на плоттере / GPS</li>
+              <li>Начать манёвр возврата<small>Quick stop под парусом или под мотором</small></li>
+              <li>Mayday по УКВ, кнопка DSC<small>Если потеряли из виду или нужна помощь</small></li>
+              <li>Подход с подветра, мотор в нейтраль у человека<small>Винт - главная опасность</small></li>
+            </ol>
+          </div>
+          <div class="tabs"><span><i></i>Сегодня</span><span><i></i>Тесты</span><span class="on"><i></i>Ситуации</span><span><i></i>Манёвры</span></div>
+        </div></div>
+        <figcaption><b>Ситуации.</b> Короткие чек-листы: MOB, пожар, посадка на мель, намотка на винт, шквал, отказ двигателя.</figcaption>
+      </figure>
+
+      <figure class="demo" style="margin:0">
+        <div class="phone"><div class="screen">
+          <div class="bar"><span>Манёвры · Оверштаг</span><span id="tstep">1 / 4</span></div>
+          <div class="content">
+            <div class="svgbox">
+              <svg viewBox="0 0 260 200" role="img" aria-label="Схема поворота оверштаг">
+                <g stroke="var(--sea)" stroke-width="2" fill="var(--sea)">
+                  <line x1="130" y1="8" x2="130" y2="44"/>
+                  <path d="M124 38 L130 50 L136 38 Z"/>
+                </g>
+                <text x="140" y="24" font-family="JetBrains Mono,monospace" font-size="10" fill="var(--muted)">ВЕТЕР</text>
+                <path d="M60 180 Q130 60 200 180" fill="none" stroke="var(--muted)" stroke-dasharray="4 5" stroke-width="1.5"/>
+                <g id="boat" style="transform-origin:130px 125px;transform:rotate(-45deg)">
+                  <path d="M130 90 C146 108 146 140 140 160 L120 160 C114 140 114 108 130 90 Z" fill="var(--paper)" stroke="var(--ink)" stroke-width="2"/>
+                  <circle cx="130" cy="118" r="3" fill="var(--ink)"/>
+                  <g id="sail" style="transform-origin:130px 118px;transform:rotate(18deg)">
+                    <line x1="130" y1="118" x2="130" y2="160" stroke="var(--buoy)" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+                </g>
+              </svg>
+            </div>
+            <div>
+              <div class="who" id="twho">Шкипер</div>
+              <div class="cmd" id="tcmd">«Приготовиться к повороту оверштаг!»</div>
+            </div>
+            <p class="explain" id="ttxt">Идём бейдевинд левым галсом. Экипаж занимает места у шкотов, проверяет, что новый шкот свободен, а голова - вне зоны гика.</p>
+            <div class="ctrl">
+              <button id="tprev">Назад</button>
+              <button id="tnext" class="primary">Дальше</button>
+            </div>
+          </div>
+          <div class="tabs"><span><i></i>Сегодня</span><span><i></i>Тесты</span><span><i></i>Ситуации</span><span class="on"><i></i>Манёвры</span></div>
+        </div></div>
+        <figcaption><b>Манёвры.</b> Пошаговая схема с командами. Также будут: фордевинд, швартовка кормой, отход от причала, стоянка на якоре, рифление.</figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Откуда брать информацию</h2>
+    <p>Принцип: каждый факт в приложении получает ссылку на первоисточник. Правила и огни - только из официальных текстов, практика - из признанных учебников. Перед наполнением я проверю каждую ссылку поиском и покажу тебе список.</p>
+    <div class="tbl">
+      <table class="src">
+        <thead><tr><th>Источник</th><th>Что берём</th><th>Где</th></tr></thead>
+        <tbody>
+          <tr><td>МППСС-72 (COLREGs)</td><td>Правила расхождения, огни и знаки, звуковые сигналы, ограниченная видимость</td><td>ИМО, <code>imo.org</code>; официальный русский текст</td></tr>
+          <tr><td>Система буев МАМС (IALA)</td><td>Латеральные и кардинальные знаки, регион A / B</td><td><code>iala.int</code></td></tr>
+          <tr><td>Программа IYT</td><td>Какие темы входят в твой уровень - это каркас всего приложения</td><td><code>iyt.net</code>, учебник IYT твоего курса (если сохранился - лучше всего)</td></tr>
+          <tr><td>RYA Day Skipper / Yachtmaster</td><td>Манёвры, швартовка, MOB, якорная стоянка, чек-листы</td><td>Учебники RYA, <code>rya.org.uk</code></td></tr>
+          <tr><td>ГМССБ / процедуры УКВ</td><td>Mayday, Pan-Pan, Sécurité, DSC</td><td>Регламент радиосвязи МСЭ, руководства IYT / RYA по VHF</td></tr>
+          <tr><td>Шкала Бофорта, метеосводки</td><td>Сила ветра, признаки ухудшения погоды</td><td>ВМО, <code>wmo.int</code></td></tr>
+          <tr><td>Русская терминология</td><td>Названия команд и манёвров</td><td>Классическая «Школа яхтенного рулевого» и русские переводы RYA</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note"><b>Важно:</b> приложение - для освежения памяти, а не замена официальному тексту правил и местным правилам района плавания. Все тексты в этом макете - черновые, я их ещё не сверял с источниками.</p>
+  </section>
+</div>
+
+<script>
+(function(){
+  const quiz=document.getElementById('quiz');
+  quiz.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b) return;
+    quiz.querySelectorAll('button').forEach(x=>{x.classList.remove('ok','bad'); if(x.dataset.ok==='1') x.classList.add('ok');});
+    if(b.dataset.ok!=='1') b.classList.add('bad');
+    document.getElementById('qexp').hidden=false;
+  });
+  document.getElementById('mob').addEventListener('click',e=>{
+    const li=e.target.closest('li'); if(li) li.classList.toggle('done');
+  });
+  const steps=[
+    {rot:-45,sail:18,who:'Шкипер',cmd:'«Приготовиться к повороту оверштаг!»',txt:'Идём бейдевинд левым галсом. Экипаж занимает места у шкотов, проверяет, что новый шкот свободен, а голова - вне зоны гика.'},
+    {rot:-45,sail:18,who:'Экипаж',cmd:'«Готов!»',txt:'Рулевой осматривается: нет ли судов на новом курсе. Без ответа «Готов» поворот не начинаем.'},
+    {rot:0,sail:0,who:'Шкипер',cmd:'«Поворот!»',txt:'Рулевой плавно приводится к ветру. Нос проходит линию ветра, паруса заполаскивают. Стаксель-шкот отдают, когда стаксель начинает обстенивать.'},
+    {rot:45,sail:-18,who:'Экипаж',cmd:'Выбрать шкот на новом галсе',txt:'Лодка легла на правый галс. Выбираем стаксель-шкот, рулевой выравнивает курс, грот садится на новую сторону.'}
+  ];
+  let i=0;
+  const boat=document.getElementById('boat'), sail=document.getElementById('sail');
+  function render(){
+    const s=steps[i];
+    boat.style.transform=`rotate(${s.rot}deg)`;
+    sail.style.transform=`rotate(${s.sail}deg)`;
+    document.getElementById('twho').textContent=s.who;
+    document.getElementById('tcmd').textContent=s.cmd;
+    document.getElementById('ttxt').textContent=s.txt;
+    document.getElementById('tstep').textContent=`${i+1} / ${steps.length}`;
+    document.getElementById('tnext').textContent=i===steps.length-1?'Сначала':'Дальше';
+  }
+  document.getElementById('tnext').onclick=()=>{i=(i+1)%steps.length;render();};
+  document.getElementById('tprev').onclick=()=>{i=Math.max(0,i-1);render();};
+})();
+</script>
+</body>
+</html>
