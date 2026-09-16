@@ -72,7 +72,7 @@ function checkElement(el, err, stepsCount = undefined) {
   if (el.type === 'quay' && ![el.x, el.y, el.w, el.h].every(num)) err('quay: нужны x, y, w, h');
   if (['boat-moored', 'buoy', 'anchor', 'person', 'label'].includes(el.type) && !(num(el.x) && num(el.y))) err(`${el.type}: нужны x, y`);
   if (el.steps !== undefined) {
-    if (!Array.isArray(el.steps) || !el.steps.every((s) => Number.isInteger(s) && s >= 0 && s < stepsCount)) {
+    if (!Array.isArray(el.steps) || el.steps.length === 0 || !el.steps.every((s) => Number.isInteger(s) && s >= 0 && s < stepsCount)) {
       err(`элемент ${el.type}: steps должны быть номерами шагов 0..${stepsCount - 1}`);
     }
   }

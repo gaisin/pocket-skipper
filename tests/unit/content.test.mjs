@@ -113,6 +113,12 @@ test('элемент сцены может указать видимые шаг�
   assert.deepEqual(validateContent(c), []);
 });
 
+test('элемент сцены со списком шагов требует непустой массив', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].scene.elements[0].steps = [];
+  assert.match(validateContent(c).join('\n'), /steps должны быть номерами шагов/);
+});
+
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
 });
