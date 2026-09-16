@@ -1,11 +1,13 @@
 import { placeholder } from './views/placeholder.js';
+import { todayView, sessionView } from './views/today.js';
+import { testsIndexView, topicView, examView } from './views/tests.js';
 
 export const routes = [
-  [/^#\/today$/, placeholder('Сегодня')],
-  [/^#\/today\/session$/, placeholder('Повторение', '#/today')],
-  [/^#\/tests$/, placeholder('Тесты')],
-  [/^#\/tests\/topic\/([\w-]+)$/, placeholder('Тема', '#/tests')],
-  [/^#\/tests\/exam$/, placeholder('Пробный экзамен', '#/tests')],
+  [/^#\/today$/, todayView],
+  [/^#\/today\/session$/, sessionView],
+  [/^#\/tests$/, testsIndexView],
+  [/^#\/tests\/topic\/([\w-]+)$/, topicView],
+  [/^#\/tests\/exam$/, examView],
   [/^#\/situations$/, placeholder('Ситуации')],
   [/^#\/situations\/([\w-]+)$/, placeholder('Ситуация', '#/situations')],
   [/^#\/maneuvers$/, placeholder('Манёвры')],
