@@ -3,6 +3,7 @@ import { todayView, sessionView } from './views/today.js';
 import { testsIndexView, topicView, examView } from './views/tests.js';
 import { situationsIndexView, situationView } from './views/situations.js';
 import { checklistView } from './views/checklists.js';
+import { maneuversIndexView, maneuverView } from './views/maneuvers.js';
 
 export const routes = [
   [/^#\/today$/, todayView],
@@ -12,8 +13,8 @@ export const routes = [
   [/^#\/tests\/exam$/, examView],
   [/^#\/situations$/, situationsIndexView],
   [/^#\/situations\/([\w-]+)$/, situationView],
-  [/^#\/maneuvers$/, placeholder('Манёвры')],
-  [/^#\/maneuvers\/([\w-]+)$/, placeholder('Манёвр', '#/maneuvers')],
+  [/^#\/maneuvers$/, maneuversIndexView],
+  [/^#\/maneuvers\/([\w-]+)$/, maneuverView],
   [/^#\/more$/, placeholder('Ещё')],
   [/^#\/more\/vhf$/, placeholder('УКВ-радио', '#/more')],
   [/^#\/more\/checklist\/([\w-]+)$/, checklistView],
