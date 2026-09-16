@@ -1,0 +1,12 @@
+{
+  "name": "pocket-skipper",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"tests/unit/*.test.mjs\"",
+    "check": "node scripts/check-content.mjs",
+    "assets": "node scripts/update-sw-assets.mjs",
+    "serve": "python3 -m http.server 4173 --bind 127.0.0.1 --directory site",
+    "e2e": "playwright test"
+  }
+}
