@@ -1,0 +1,14 @@
+{
+  "checklists": [
+    {
+      "id": "acceptance",
+      "title": "Приёмка яхты",
+      "intro": "Проверить до подписания акта приёмки.",
+      "groups": [
+        { "title": "Документы", "items": [{ "id": "papers", "text": "Судовые документы и страховка на борту" }] }
+      ],
+      "sources": [{ "type": "iyt", "module": 14, "section": 2, "page": 196 }],
+      "verified": false
+    }
+  ]
+}

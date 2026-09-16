@@ -1,0 +1,12 @@
+{
+  "sections": [
+    {
+      "id": "vhf-channels",
+      "title": "Основные каналы",
+      "kind": "channels",
+      "rows": [{ "ch": "16", "use": "Бедствие, срочность, безопасность и вызов" }],
+      "sources": [{ "type": "iyt", "module": 7, "page": 93 }],
+      "verified": false
+    }
+  ]
+}

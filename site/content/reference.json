@@ -1,0 +1,12 @@
+{
+  "sections": [
+    {
+      "id": "ref-cardinal",
+      "title": "Кардинальные знаки",
+      "kind": "marks",
+      "rows": [{ "label": "Северный", "value": "Обходить с севера. Топовая фигура - два конуса вершинами вверх.", "mark": "north" }],
+      "sources": [{ "type": "iala", "topic": "cardinal" }],
+      "verified": false
+    }
+  ]
+}
