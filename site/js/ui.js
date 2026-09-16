@@ -42,6 +42,6 @@ export function notFound() {
 export function table(headings, rows) {
   return h('div', { class: 'table-wrap' },
     h('table', { class: 'table' },
-      h('thead', {}, h('tr', {}, headings.map((t) => h('th', {}, t)))),
+      headings.some(Boolean) ? h('thead', {}, h('tr', {}, headings.map((t) => h('th', {}, t)))) : null,
       h('tbody', {}, rows.map((cells) => h('tr', {}, cells.map((c) => h('td', {}, c)))))));
 }
