@@ -3,11 +3,19 @@ import { h } from './ui.js';
 export function registerServiceWorker(banner) {
   if (!('serviceWorker' in navigator)) return;
   const hadController = Boolean(navigator.serviceWorker.controller);
+  let userRequested = false;
 
   function offer(worker) {
     banner.replaceChildren(
       'Доступна новая версия. ',
-      h('button', { type: 'button', class: 'button primary small', onclick: () => worker.postMessage('skip-waiting') }, 'Обновить'));
+      h('button', {
+        type: 'button',
+        class: 'button primary small',
+        onclick: () => {
+          userRequested = true;
+          worker.postMessage('skip-waiting');
+        },
+      }, 'Обновить'));
     banner.hidden = false;
   }
 
@@ -27,7 +35,7 @@ export function registerServiceWorker(banner) {
 
   let reloading = false;
   navigator.serviceWorker.addEventListener('controllerchange', () => {
-    if (!hadController || reloading) return;
+    if (!userRequested || reloading) return;
     reloading = true;
     location.reload();
   });

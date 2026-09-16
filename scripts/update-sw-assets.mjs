@@ -27,6 +27,7 @@ async function main() {
   const site = new URL('../site/', import.meta.url);
   const swUrl = new URL('sw.js', site);
   const source = await readFile(swUrl, 'utf8');
+  readSwAssets(source); // validate markers exist before splicing, so a broken sw.js fails loudly
   const assets = ['./', ...(await listSiteAssets(site))];
   const block = `${START}\nconst ASSETS = ${JSON.stringify(assets, null, 2)};\n${END}`;
   const next = source.slice(0, source.indexOf(START)) + block + source.slice(source.indexOf(END) + END.length);

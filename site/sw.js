@@ -67,7 +67,15 @@ const ASSETS = [
 // ASSETS:end
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)));
+  // GitHub Pages sends Cache-Control: max-age=600, so a plain addAll(ASSETS) can pull
+  // stale files from the HTTP cache into a freshly-named cache. Bust it with a version
+  // query and { cache: 'reload' }; the fetch handler's ignoreSearch match still serves
+  // these entries for the plain (query-less) requests pages actually make.
+  event.waitUntil(
+    caches.open(CACHE).then((cache) => cache.addAll(
+      ASSETS.map((url) => new Request(`${url}${url.includes('?') ? '&' : '?'}v=${VERSION}`, { cache: 'reload' })),
+    )),
+  );
 });
 
 self.addEventListener('activate', (event) => {
