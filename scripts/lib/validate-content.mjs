@@ -47,11 +47,13 @@ function checkImage(img, err) {
   if (img.kind === 'lights') checkLights(img, err);
   if (img.kind === 'marks' && !MARK_KINDS.includes(img.mark)) err(`неизвестный знак ${img.mark}`);
   if (img.kind === 'encounter') {
+    if (img.wind !== undefined && !num(img.wind)) err('encounter: wind должен быть числом');
     if (!list(img.vessels)) err('encounter: нет vessels');
     for (const v of img.vessels ?? []) {
       if (!text(v.name) || !['sail', 'power'].includes(v.type) || !num(v.x) || !num(v.y) || !num(v.rot)) {
         err('encounter: у судна нужны name, type sail|power, x, y, rot');
       }
+      if (v.boom !== undefined && !num(v.boom)) err('encounter: boom должен быть числом');
     }
   }
 }
@@ -71,6 +73,9 @@ function checkElement(el, err, stepsCount = undefined) {
   if (el.type === 'label' && !text(el.text)) err('label: нет text');
   if (el.type === 'quay' && ![el.x, el.y, el.w, el.h].every(num)) err('quay: нужны x, y, w, h');
   if (['boat-moored', 'buoy', 'anchor', 'person', 'label'].includes(el.type) && !(num(el.x) && num(el.y))) err(`${el.type}: нужны x, y`);
+  if (el.type === 'boat-moored' && ((el.rot !== undefined && !num(el.rot)) || (el.scale !== undefined && !num(el.scale)))) {
+    err('boat-moored: rot и scale должны быть числами');
+  }
   if (el.steps !== undefined) {
     if (!Array.isArray(el.steps) || el.steps.length === 0 || !el.steps.every((s) => Number.isInteger(s) && s >= 0 && s < stepsCount)) {
       err(`элемент ${el.type}: steps должны быть номерами шагов 0..${stepsCount - 1}`);
@@ -98,6 +103,7 @@ const checkers = {
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
     if (!text(r.scene?.label)) err('scene: нет label');
     if (!Array.isArray(r.scene?.elements)) err('scene: нет elements');
+    if (r.scene?.wind !== undefined && !num(r.scene.wind)) err('scene: wind должен быть числом');
     const stepsCount = Array.isArray(r.steps) ? r.steps.length : 0;
     for (const el of r.scene?.elements ?? []) checkElement(el, err, stepsCount);
     if (!list(r.steps)) err('нет steps');
@@ -105,6 +111,7 @@ const checkers = {
       if (!text(s.who) || !text(s.text)) err('шаг: нужны who и text');
       if (s.command !== undefined && typeof s.command !== 'string') err('шаг: command должен быть строкой');
       if (!(num(s.pose?.x) && num(s.pose?.y) && num(s.pose?.rot))) err('шаг: pose с x, y, rot');
+      if (s.pose?.boom !== undefined && !num(s.pose.boom)) err('шаг: pose.boom должен быть числом');
     }
   },
   checklists(r, err) {

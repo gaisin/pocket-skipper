@@ -119,6 +119,32 @@ test('элемент сцены со списком шагов требует н
   assert.match(validateContent(c).join('\n'), /steps должны быть номерами шагов/);
 });
 
+test('числовые поля диаграмм (rot, scale, boom, wind) проверяются, когда заданы', () => {
+  const bad = '0" onload="x';
+  const c = minimal();
+  c.maneuvers.maneuvers[0].scene.wind = bad;
+  c.maneuvers.maneuvers[0].scene.elements.push({ type: 'boat-moored', x: 10, y: 10, rot: bad, scale: bad });
+  c.maneuvers.maneuvers[0].steps[0].pose.boom = bad;
+  c.questions.questions[0].image = {
+    kind: 'encounter', label: 'Расхождение', wind: bad,
+    vessels: [{ name: 'А', type: 'sail', x: 10, y: 10, rot: 0, boom: bad }],
+  };
+  const text = validateContent(c).join('\n');
+  assert.match(text, /boat-moored: rot и scale должны быть числами/);
+  assert.match(text, /шаг: pose\.boom должен быть числом/);
+  assert.match(text, /encounter: boom должен быть числом/);
+  assert.match(text, /scene: wind должен быть числом/);
+  assert.match(text, /encounter: wind должен быть числом/);
+
+  const ok = minimal();
+  ok.maneuvers.maneuvers[0].scene.elements.push({ type: 'boat-moored', x: 10, y: 10, rot: 15, scale: 0.8 });
+  ok.questions.questions[0].image = {
+    kind: 'encounter', label: 'Расхождение', wind: 45,
+    vessels: [{ name: 'А', type: 'sail', x: 10, y: 10, rot: 0, boom: 10 }],
+  };
+  assert.deepEqual(validateContent(ok), []);
+});
+
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
 });
