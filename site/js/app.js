@@ -3,6 +3,7 @@ import { createStore } from './storage.js';
 import { matchRoute } from './router.js';
 import { routes } from './routes.js';
 import { h, notFound } from './ui.js';
+import { registerServiceWorker } from './pwa.js';
 
 const main = document.getElementById('view');
 const notice = document.getElementById('notice');
@@ -54,3 +55,5 @@ start().catch((err) => {
     h('p', { class: 'lead' }, 'Проверьте интернет и нажмите любую вкладку, чтобы попробовать снова.')));
   window.addEventListener('hashchange', () => location.reload(), { once: true });
 });
+
+registerServiceWorker(document.getElementById('banner'));
