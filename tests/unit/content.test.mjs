@@ -82,6 +82,16 @@ test('неизвестный элемент схемы и опасный path н
   assert.match(text, /path: недопустимые символы/);
 });
 
+test('подписи колонок раздела УКВ: две непустые строки', () => {
+  const c = minimal();
+  c.vhf.sections[0].columns = ['Слово', 'Значение'];
+  assert.deepEqual(validateContent(c), []);
+  for (const bad of [['Слово'], ['Слово', ' '], ['Слово', 'Значение', 'Ещё'], 'Слово', ['Слово', 1]]) {
+    c.vhf.sections[0].columns = bad;
+    assert.match(validateContent(c).join('\n'), /v-1: columns: нужны две подписи/);
+  }
+});
+
 test('неизвестный вид знака и неверный verified не проходят', () => {
   const c = minimal();
   c.reference.sections[0].rows[0].mark = 'north-east';

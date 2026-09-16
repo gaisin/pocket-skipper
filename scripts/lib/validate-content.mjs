@@ -137,6 +137,9 @@ const checkers = {
       steps: () => list(r.steps) && r.steps.every((x) => text(x.text)),
     }[r.kind]();
     if (!ok) err(`данные вида ${r.kind} неполные`);
+    if (r.columns !== undefined && !(Array.isArray(r.columns) && r.columns.length === 2 && r.columns.every(text))) {
+      err('columns: нужны две подписи');
+    }
   },
   reference(r, err) {
     if (!text(r.title)) err('нет title');

@@ -4,7 +4,7 @@ import { fillTemplate, callValues } from '../template.js';
 function body(section, values) {
   switch (section.kind) {
     case 'channels':
-      return table(['Канал', 'Назначение'], section.rows.map((r) => [r.ch, r.use]));
+      return table(section.columns ?? ['Канал', 'Назначение'], section.rows.map((r) => [r.ch, r.use]));
     case 'call':
       return [
         h('p', { class: 'lead' }, section.when),

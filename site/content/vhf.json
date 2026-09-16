@@ -63,7 +63,7 @@
       "id": "vhf-mayday-received",
       "title": "Услышали MAYDAY",
       "kind": "call",
-      "when": "Запишите название судна, координаты и что случилось. Около 10 с послушайте эфир - обычно отвечает береговая станция. Если никто не ответил - подтвердите, идите на помощь и сообщите, когда будете на месте.",
+      "when": "Голосовой MAYDAY: запишите название судна, координаты и что случилось; около 10 с послушайте эфир - обычно отвечает береговая станция. Если никто не ответил - подтвердите, идите на помощь и сообщите, когда будете на месте. Пришёл DSC-сигнал бедствия: 5 минут слушайте канал 16; ретранслировать его по DSC (канал 70) запрещено.",
       "lines": [
         "MAYDAY",
         "‹судно в бедствии› ‹судно в бедствии› ‹судно в бедствии›",
@@ -72,7 +72,8 @@
       ],
       "sources": [
         { "type": "iyt", "module": 7, "section": 8, "page": 113 },
-        { "type": "iyt", "module": 7, "section": 8, "page": 114 }
+        { "type": "iyt", "module": 7, "section": 8, "page": 114 },
+        { "type": "web", "title": "IMO MSC.1/Circ.1657 - Procedure for responding to DSC distress alerts by ships", "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/Documents%20relevant%20to%20GMDSS/MSC.1-Circ.1657.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -80,7 +81,7 @@
       "id": "vhf-mayday-relay",
       "title": "MAYDAY RELAY - ретрансляция",
       "kind": "call",
-      "when": "Вы подтвердили чужой MAYDAY, но больше никто не ответил - передайте его дальше, чтобы услышала береговая станция. Так же сообщают об увиденном сигнале бедствия (красный фальшфейер, оранжевый дым): своё место, что, когда и где видели.",
+      "when": "Вы подтвердили чужой MAYDAY, но больше никто не ответил - передайте его дальше голосом, чтобы услышала береговая станция. DSC-ретрансляцию на канале 70 не отправлять. Так же сообщают об увиденном сигнале бедствия (красный фальшфейер, оранжевый дым): своё место, что, когда и где видели.",
       "lines": [
         "MAYDAY RELAY MAYDAY RELAY MAYDAY RELAY",
         "This is {boat} {boat} {boat}",
@@ -90,7 +91,8 @@
         "Over"
       ],
       "sources": [
-        { "type": "iyt", "module": 7, "section": 8, "page": 115 }
+        { "type": "iyt", "module": 7, "section": 8, "page": 115 },
+        { "type": "web", "title": "IMO MSC.1/Circ.1657 - Procedure for responding to DSC distress alerts by ships", "url": "https://wwwcdn.imo.org/localresources/en/OurWork/Safety/Documents/Documents%20relevant%20to%20GMDSS/MSC.1-Circ.1657.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -135,16 +137,14 @@
       "id": "vhf-cancel",
       "title": "Отмена ложного бедствия",
       "kind": "call",
-      "when": "Случайно ушёл DSC-сигнал бедствия. Радио не выключать: отменить сигнал через меню DSC, затем голосом на канале 16. За немедленную отмену обычно не наказывают. Случайно включили аварийный буй (EPIRB) - тоже сразу сообщить береговой станции.",
+      "when": "Случайно ушёл DSC-сигнал бедствия. Следуйте подсказкам на экране рации; если их нет - выключите её и через 10 с включите. Умеет отменять сама - запустите отмену сигнала в меню DSC. Затем канал 16 и голосом. За сообщение об ошибке обычно не наказывают. Случайно сработал аварийный буй (EPIRB) - сначала выключить его, потом сообщить через береговую станцию.",
       "lines": [
-        "All stations all stations all stations",
-        "This is {boat}, call sign {callsign}, MMSI {mmsi}, position {position}",
-        "Cancel my distress alert of ‹дата, время UTC›",
-        "Master {boat}, call sign {callsign}, MMSI {mmsi}, ‹дата, время UTC›"
+        "All stations, all stations, all stations",
+        "This is {boat} {boat} {boat}, call sign {callsign}, MMSI {mmsi}",
+        "Please cancel my distress alert of ‹время UTC›"
       ],
       "sources": [
-        { "type": "web", "title": "USCG NAVCEN - Instructions for cancelling a false distress alert (IMO A.814(19))", "url": "https://www.navcen.uscg.gov/instructions-for-canceling-false-distress-alert", "accessed": "2026-09-17" },
-        { "type": "web", "title": "USCG NAVCEN - DSC Distress", "url": "https://www.navcen.uscg.gov/dsc-distress", "accessed": "2026-09-17" },
+        { "type": "web", "title": "ITU RR, Resolution 349 (Rev.WRC-23) - отмена ложных сигналов бедствия", "url": "https://www.itu.int/dms_pub/itu-r/oth/0C/0A/R0C0A0000110085PDFE.pdf", "accessed": "2026-09-17" },
         { "type": "iyt", "module": 7, "section": 8, "page": 119 }
       ],
       "verified": true
@@ -172,6 +172,7 @@
       "id": "vhf-prowords",
       "title": "Процедурные слова",
       "kind": "channels",
+      "columns": ["Слово", "Значение"],
       "rows": [
         { "ch": "THIS IS", "use": "Передаёт станция, названная следом" },
         { "ch": "OVER", "use": "Я закончил, жду ответа" },
@@ -181,7 +182,7 @@
         { "ch": "I SAY AGAIN", "use": "Повторяю" },
         { "ch": "I SPELL", "use": "Передаю по буквам фонетическим алфавитом" },
         { "ch": "CORRECTION", "use": "Ошибся, дальше - I SAY AGAIN и верный текст" },
-        { "ch": "READ BACK", "use": "Сейчас повторю принятое для проверки" },
+        { "ch": "READ BACK", "use": "Просьба: повторите принятое дословно. Ответ: I READ BACK и повтор текста" },
         { "ch": "CORRECT / WRONG", "use": "Повторено верно / неверно" },
         { "ch": "RADIO CHECK", "use": "Как меня слышно? Проверка - не дольше 10 с" },
         { "ch": "STATION CALLING", "use": "Не разобрал, кто меня вызывает" },
@@ -202,7 +203,8 @@
         { "type": "iyt", "module": 7, "section": 6, "page": 107 },
         { "type": "iyt", "module": 7, "section": 8, "page": 114 },
         { "type": "iyt", "module": 7, "section": 8, "page": 115 },
-        { "type": "iyt", "module": 7, "section": 8, "page": 116 }
+        { "type": "iyt", "module": 7, "section": 8, "page": 116 },
+        { "type": "web", "title": "USCG Radiotelephone Handbook CGTTP 6-01.1B, прил. B", "url": "https://www.cisa.gov/sites/default/files/publications/CGTTP_6-01_1B_Radiotelephone_Handbook.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -212,7 +214,7 @@
       "kind": "phonetic",
       "letters": [
         ["A", "ALFA"], ["B", "BRAVO"], ["C", "CHARLIE"], ["D", "DELTA"], ["E", "ECHO"],
-        ["F", "FOXTROT"], ["G", "GOLF"], ["H", "HOTEL"], ["I", "INDIA"], ["J", "JULIET"],
+        ["F", "FOXTROT"], ["G", "GOLF"], ["H", "HOTEL"], ["I", "INDIA"], ["J", "JULIETT"],
         ["K", "KILO"], ["L", "LIMA"], ["M", "MIKE"], ["N", "NOVEMBER"], ["O", "OSCAR"],
         ["P", "PAPA"], ["Q", "QUEBEC"], ["R", "ROMEO"], ["S", "SIERRA"], ["T", "TANGO"],
         ["U", "UNIFORM"], ["V", "VICTOR"], ["W", "WHISKEY"], ["X", "X-RAY"], ["Y", "YANKEE"],
@@ -220,7 +222,8 @@
         ["0-8", "по-английски"], ["9", "NINER"]
       ],
       "sources": [
-        { "type": "iyt", "module": 7, "section": 7, "page": 109 }
+        { "type": "iyt", "module": 7, "section": 7, "page": 109 },
+        { "type": "web", "title": "ITU Radio Regulations 2024, т. 2, прил. 14", "url": "https://search.itu.int/history/HistoryDigitalCollectionDocLibrary/1.49.48.en.102.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -233,12 +236,13 @@
         { "text": "Радио передаёт цифровой сигнал на канале 70: MMSI и координаты. Повторяет, пока другая станция не подтвердит.", "note": "координаты - только если GPS встроен или подключён" },
         { "text": "Взять трубку, канал 16, и сразу передать голосом MAYDAY по шаблону, назвав MMSI." },
         { "text": "Береговая охрана в зоне УКВ подтверждает сигнал цифровым ответом. Дальше - переговоры на канале 16.", "note": "канал 70 голосом не использовать" },
-        { "text": "Ушло случайно - радио не выключать, отменить через меню DSC и сообщить голосом (см. «Отмена ложного бедствия»)." }
+        { "text": "Ушло случайно - отменить по подсказкам на экране или через меню DSC и сообщить голосом (см. «Отмена ложного бедствия»)." }
       ],
       "sources": [
         { "type": "web", "title": "USCG NAVCEN - DSC Distress (IMO MSC.1/Circ.1658)", "url": "https://www.navcen.uscg.gov/dsc-distress", "accessed": "2026-09-17" },
         { "type": "web", "title": "RYA - Calling for help", "url": "https://www.rya.org.uk/water-safety/communication/calling-for-help/", "accessed": "2026-09-17" },
-        { "type": "iyt", "module": 7, "section": 6, "page": 107 }
+        { "type": "iyt", "module": 7, "section": 6, "page": 107 },
+        { "type": "web", "title": "ITU RR, Resolution 349 (Rev.WRC-23) - отмена ложных сигналов бедствия", "url": "https://www.itu.int/dms_pub/itu-r/oth/0C/0A/R0C0A0000110085PDFE.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -246,6 +250,7 @@
       "id": "vhf-numbers",
       "title": "Экстренные телефоны в Турции",
       "kind": "channels",
+      "columns": ["Номер", "Служба"],
       "rows": [
         { "ch": "112", "use": "Единый номер: скорая, полиция, жандармерия, пожарные, береговая охрана (Sahil Güvenlik), AFAD" },
         { "ch": "158", "use": "Прежний номер береговой охраны, объединён в 112 - звоните 112" }
