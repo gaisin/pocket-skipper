@@ -5,6 +5,7 @@ import { examQuestions, EXAM_SIZE } from '../quiz/exam.js';
 import { grade } from '../leitner.js';
 import { todayISO } from '../dates.js';
 import { shuffle } from '../random.js';
+import { plural } from '../plural.js';
 
 export function recordAnswer(ctx, question, correct) {
   ctx.store.update((s) => ({ ...s, cards: grade(s.cards, question.id, correct, todayISO()) }));
@@ -12,10 +13,11 @@ export function recordAnswer(ctx, question, correct) {
 
 export function testsIndexView(ctx) {
   const { topics, questions } = ctx.content.questions;
+  const examSize = Math.min(EXAM_SIZE, questions.length);
   return h('section', { class: 'view' },
     header('Тесты'),
     h('a', { class: 'button primary', href: '#/tests/exam' },
-      `Пробный экзамен: ${Math.min(EXAM_SIZE, questions.length)} вопросов`),
+      `Пробный экзамен: ${examSize} ${plural(examSize, 'вопрос', 'вопроса', 'вопросов')}`),
     h('h2', {}, 'По темам'),
     h('ul', { class: 'list' }, topics.map((t) => h('li', {},
       h('a', { href: `#/tests/topic/${t.id}` },
