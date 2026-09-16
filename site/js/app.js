@@ -28,7 +28,7 @@ async function start() {
   const content = await loadContent();
   const ctx = { content, store, rerender: render };
 
-  function render() {
+  function render({ moveFocus = false } = {}) {
     const hash = location.hash || '#/today';
     const { view, params, tab } = matchRoute(hash, routes);
     for (const link of document.querySelectorAll('.tabbar a')) {
@@ -36,10 +36,13 @@ async function start() {
       else link.removeAttribute('aria-current');
     }
     main.replaceChildren(view ? view(ctx, ...params) : notFound());
+    const heading = main.querySelector('h1')?.textContent.trim();
+    document.title = heading ? `${heading} - Карманный шкипер` : 'Карманный шкипер';
     window.scrollTo(0, 0);
+    if (moveFocus) main.focus({ preventScroll: true });
   }
 
-  window.addEventListener('hashchange', render);
+  window.addEventListener('hashchange', () => render({ moveFocus: true }));
   render();
 }
 
@@ -48,5 +51,6 @@ start().catch((err) => {
   main.replaceChildren(h('section', { class: 'view' },
     h('h1', {}, 'Приложение не запустилось'),
     h('p', {}, err.message),
-    h('p', { class: 'lead' }, 'Откройте приложение при подключении к интернету, чтобы оно загрузилось заново.')));
+    h('p', { class: 'lead' }, 'Проверьте интернет и нажмите любую вкладку, чтобы попробовать снова.')));
+  window.addEventListener('hashchange', () => location.reload(), { once: true });
 });
