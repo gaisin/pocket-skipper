@@ -14,6 +14,7 @@ export function formatSource(src) {
     case 'colregs':
       return src.annex ? `МППСС-72, прил. ${src.annex}` : `МППСС-72, пр. ${src.rule}`;
     case 'iala':
+      if (!Object.hasOwn(IALA_TOPICS, src.topic)) throw new Error(`Неизвестная тема IALA: ${src.topic}`);
       return `IALA, ${IALA_TOPICS[src.topic]}`;
     case 'web':
       return `${src.title}, ${src.accessed}`;

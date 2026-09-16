@@ -97,6 +97,22 @@ test('loadContent грузит все файлы и сообщает об оши
   await assert.rejects(loadContent(async () => ({ ok: false, status: 404 })), /content\/questions\.json: 404/);
 });
 
+test('IALA тема не может быть из прототипа (toString/constructor)', () => {
+  assert.throws(() => formatSource({ type: 'iala', topic: 'toString' }), /Неизвестная тема IALA/);
+  assert.throws(() => formatSource({ type: 'iala', topic: 'constructor' }), /Неизвестная тема IALA/);
+  const c = minimal();
+  c.reference.sections[0].sources = [{ type: 'iala', topic: 'toString' }];
+  assert.match(validateContent(c).join('\n'), /r-1: iala: неизвестная тема toString/);
+});
+
+test('элемент сцены может указать видимые шаги, но они должны быть валидны', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].scene.elements[0].steps = [5];
+  assert.match(validateContent(c).join('\n'), /steps должны быть номерами шагов 0\.\.0/);
+  c.maneuvers.maneuvers[0].scene.elements[0].steps = [0];
+  assert.deepEqual(validateContent(c), []);
+});
+
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
 });

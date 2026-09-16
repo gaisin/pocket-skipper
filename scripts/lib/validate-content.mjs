@@ -29,7 +29,7 @@ function checkSource(s, err) {
       break;
     }
     case 'iala':
-      if (!(s.topic in IALA_TOPICS)) err(`iala: неизвестная тема ${s.topic}`);
+      if (!Object.hasOwn(IALA_TOPICS, s.topic)) err(`iala: неизвестная тема ${s.topic}`);
       break;
     case 'web':
       if (!text(s.title)) err('web: нет title');
@@ -64,13 +64,18 @@ function checkLights(img, err) {
   }
 }
 
-function checkElement(el, err) {
+function checkElement(el, err, stepsCount = undefined) {
   if (!ELEMENT_TYPES.includes(el?.type)) return err(`неизвестный элемент ${el?.type}`);
   if (el.type === 'path' && !(text(el.d) && PATH_D.test(el.d))) err('path: недопустимые символы в d');
   if (el.type === 'line' && !(list(el.points) && el.points.every((p) => num(p[0]) && num(p[1])))) err('line: нужны points');
   if (el.type === 'label' && !text(el.text)) err('label: нет text');
   if (el.type === 'quay' && ![el.x, el.y, el.w, el.h].every(num)) err('quay: нужны x, y, w, h');
   if (['boat-moored', 'buoy', 'anchor', 'person', 'label'].includes(el.type) && !(num(el.x) && num(el.y))) err(`${el.type}: нужны x, y`);
+  if (el.steps !== undefined) {
+    if (!Array.isArray(el.steps) || !el.steps.every((s) => Number.isInteger(s) && s >= 0 && s < stepsCount)) {
+      err(`элемент ${el.type}: steps должны быть номерами шагов 0..${stepsCount - 1}`);
+    }
+  }
 }
 
 const checkers = {
@@ -93,7 +98,8 @@ const checkers = {
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
     if (!text(r.scene?.label)) err('scene: нет label');
     if (!Array.isArray(r.scene?.elements)) err('scene: нет elements');
-    for (const el of r.scene?.elements ?? []) checkElement(el, err);
+    const stepsCount = Array.isArray(r.steps) ? r.steps.length : 0;
+    for (const el of r.scene?.elements ?? []) checkElement(el, err, stepsCount);
     if (!list(r.steps)) err('нет steps');
     for (const s of r.steps ?? []) {
       if (!text(s.who) || !text(s.text)) err('шаг: нужны who и text');
