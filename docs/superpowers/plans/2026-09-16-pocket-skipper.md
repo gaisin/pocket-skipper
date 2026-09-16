@@ -598,7 +598,7 @@ git commit -m "Add progress store, checklist state and radio call templates"
 | situations.json | `{ situations: [...] }` | `title`, `severity` (`emergency` \| `problem`), `summary`, `steps: [{text, note?}]` |
 | maneuvers.json | `{ maneuvers: [...] }` | `title`, `summary`, `scene: {label, wind?, power?, elements: [...]}`, `steps: [{who, command?, text, pose: {x, y, rot, boom?}}]` |
 | checklists.json | `{ checklists: [...] }` | `title`, `intro`, `groups: [{title, items: [{id, text, note?}]}]` (id пунктов уникальны внутри списка) |
-| vhf.json | `{ sections: [...] }` | `title`, `kind` и данные вида: `channels` → `rows: [{ch, use}]`; `call` → `when`, `lines: [string]`; `phonetic` → `letters: [[буква, слово]]`; `steps` → `steps: [{text, note?}]` |
+| vhf.json | `{ sections: [...] }` | `title`, `kind` и данные вида: `channels` → `rows: [{ch, use}]`, `columns?: [подпись1, подпись2]` (по умолчанию «Канал», «Назначение»); `call` → `when`, `lines: [string]`; `phonetic` → `letters: [[буква, слово]]`; `steps` → `steps: [{text, note?}]` |
 | reference.json | `{ sections: [...] }` | `title`, `kind`: `table` → `rows: [{label, value}]`; `lights` → `rows: [{label, value, lights: {label, lights: [...]}}]`; `marks` → `rows: [{label, value, mark}]` |
 | external.json | `{ links: [...] }` | только `id`, `title`, `url` (https), `lang` (`ru` \| `en`), `note`, `accessed`; без `sources`/`verified` |
 
