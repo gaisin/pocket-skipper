@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { formatSource, formatSources } from '../../site/js/sources.js';
 import { CONTENT_FILES, loadContent } from '../../site/js/content.js';
-import { validateContent } from '../../scripts/lib/validate-content.mjs';
+import { validateContent, longestCorrectShare } from '../../scripts/lib/validate-content.mjs';
 
 async function realContent() {
   const entries = await Promise.all(CONTENT_FILES.map(async (name) =>
@@ -153,6 +153,27 @@ test('числовые поля диаграмм (rot, scale, boom, wind) про
     vessels: [{ name: 'А', type: 'sail', x: 10, y: 10, rot: 0, boom: 10 }],
   };
   assert.deepEqual(validateContent(ok), []);
+});
+
+test('доля вопросов, где верный ответ строго самый длинный', () => {
+  const q = (topic, correct, ...others) => ({
+    topic,
+    options: [{ text: correct, correct: true }, ...others.map((text) => ({ text }))],
+  });
+  const stats = longestCorrectShare([
+    q('a', 'длинный ответ', 'коротко', 'тоже'),
+    q('a', 'равно', 'ровно'),
+    q('a', 'кор', 'длиннее'),
+    q('b', 'самый длинный', 'нет'),
+  ]);
+  assert.equal(stats.total, 4);
+  assert.equal(stats.longest, 2);
+  assert.equal(stats.share, 0.5);
+  assert.deepEqual(stats.topics, [
+    { topic: 'b', total: 1, longest: 1, share: 1 },
+    { topic: 'a', total: 3, longest: 1, share: 1 / 3 },
+  ]);
+  assert.deepEqual(longestCorrectShare([]), { total: 0, longest: 0, share: 0, topics: [] });
 });
 
 test('реальное содержание репозитория проходит проверку', async () => {

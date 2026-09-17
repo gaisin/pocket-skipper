@@ -210,3 +210,27 @@ export function contentStats(content) {
   const records = Object.values(RECORD_LISTS).flatMap((pick) => pick(content) ?? []);
   return { total: records.length, unverified: records.filter((r) => r.verified !== true).map((r) => r.id) };
 }
+
+function correctIsLongest(q) {
+  const correct = q.options.find((o) => o.correct === true);
+  if (!correct) return false;
+  return q.options.every((o) => o === correct || o.text.length < correct.text.length);
+}
+
+// Доля вопросов, где верный вариант строго длиннее всех остальных (подсказка «выбери самый длинный»).
+// Темы отсортированы от худшей к лучшей.
+export function longestCorrectShare(questions) {
+  const byTopic = new Map();
+  for (const q of questions) {
+    const t = byTopic.get(q.topic) ?? { topic: q.topic, total: 0, longest: 0 };
+    t.total += 1;
+    if (correctIsLongest(q)) t.longest += 1;
+    byTopic.set(q.topic, t);
+  }
+  const topics = [...byTopic.values()]
+    .map((t) => ({ ...t, share: t.longest / t.total }))
+    .sort((a, b) => b.share - a.share);
+  const total = questions.length;
+  const longest = topics.reduce((sum, t) => sum + t.longest, 0);
+  return { total, longest, share: total ? longest / total : 0, topics };
+}
