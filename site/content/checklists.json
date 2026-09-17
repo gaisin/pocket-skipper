@@ -1,14 +1,234 @@
 {
   "checklists": [
     {
+      "id": "prep",
+      "title": "Подготовка к поездке",
+      "intro": "За три недели до выхода. Отмечайте по мере готовности.",
+      "groups": [
+        {
+          "title": "Документы",
+          "items": [
+            { "id": "passport", "text": "Паспорт" },
+            { "id": "iyt-cert", "text": "Оригинал сертификата IYT Bareboat Skipper", "note": "В Турции яхту под турецким флагом без экипажа дают, только если хотя бы у одного из арендаторов есть подходящее удостоверение; иностранец управляет в пределах прав своего сертификата. Письменно подтвердить у чартерной компании, что IYT принимают." },
+            { "id": "vhf-cert", "text": "Сертификат УКВ-оператора - взять с собой", "note": "Учебник относит его к документам на борту. Нужен ли он компании - уточнить." },
+            { "id": "charter-contract", "text": "Договор чартера", "note": "Разобраться, за что могут удержать залог." },
+            { "id": "insurance", "text": "Страховка", "note": "Уточнить у компании, что покрывает полис яхты." },
+            { "id": "crew-list", "text": "Судовая роль: имена, паспортные данные, контакты родственников", "note": "Данные экипажа вносят в транзитный лог (seyir izin belgesi). Формат и срок - уточнить у чартерной компании." },
+            { "id": "transit-log", "text": "Транзитный лог (seyir izin belgesi): кто оформляет - уточнить у чартерной компании", "note": "Его подписывает владелец, оператор, капитан или агент; лог должен лежать на борту всё плавание." }
+          ]
+        },
+        {
+          "title": "Приложения на телефон",
+          "items": [
+            { "id": "navionics", "text": "Navionics Boating (Garmin) с картами Средиземного моря", "note": "Платная подписка; карты можно скачать для работы без интернета." },
+            { "id": "windy", "text": "Windy.com - прогноз ветра", "note": "Смотреть порывы, а не только средний ветер, и сравнивать модели." },
+            { "id": "navily", "text": "Navily - отзывы о бухтах и маринах", "note": "Есть офлайн-режим и бронирование части марин." },
+            { "id": "deria", "text": "Deria - бронь буёв и рымов в бухтах Гёчека", "note": "Официальное приложение Türkiye Çevre Ajansı, сайт deria.gov.tr." }
+          ]
+        },
+        {
+          "title": "До выхода из дома",
+          "items": [
+            { "id": "offline-charts", "text": "Скачать офлайн-карты района Фетхие-Гёчек в Navionics" },
+            { "id": "forecast", "text": "Посмотреть прогноз ветра на первые дни" },
+            { "id": "app-topics", "text": "Пройти в «Тестах» все темы хотя бы раз" },
+            { "id": "vhf-templates", "text": "Сохранить или распечатать радиошаблоны", "note": "Радиошаблоны: см. Ещё → УКВ-радио." },
+            { "id": "situations", "text": "Перечитать аварийные действия", "note": "См. раздел «Ситуации»." },
+            { "id": "yacht-settings", "text": "Заполнить в «Настройках» яхту, позывной и MMSI, когда станут известны" },
+            { "id": "shore-contact", "text": "Оставить план плавания и контакты человеку на берегу" }
+          ]
+        },
+        {
+          "title": "Турция: местные правила",
+          "items": [
+            { "id": "no-discharge", "text": "Ничего не сливать за борт", "note": "В заливе и бухтах Гёчек-Даламан сточные и льяльные воды и мусор сдают на станцию приёма или судно-сборщик." },
+            { "id": "waste-record", "text": "Узнать у компании, как отмечается откачка фекального танка", "note": "По сообщению Минприроды Турции (2022), пластиковую Mavi Kart больше не выдают: записи ведут в цифровой системе «Denizcilik Atıkları Uygulaması»." },
+            { "id": "deria-booking", "text": "Бухты Гёчека: буй или рым бронировать заранее в Deria", "note": "Система DERİA: 17 бухт, оплата онлайн, на месте помогают швартовщики. Цену смотреть в приложении." },
+            { "id": "seagrass", "text": "В зонах посидонии якорь не бросать", "note": "У о. Гёчек, в бухтах Кыш-Лиманы, Куршунлу, Сарсала, Сыралыбюк, у о-вов Ясыджа и Зейтинли - только буи и рымы." },
+            { "id": "stern-line", "text": "Где буёв нет - якорь только с концом на береговой рым", "note": "Привязываться к деревьям запрещено." },
+            { "id": "stay-limit", "text": "Не дольше 3 суток в одной бухте и 11 суток подряд в районе" },
+            { "id": "speed-limit", "text": "В заливе и бухтах Гёчек-Даламан - не быстрее 6 узлов" },
+            { "id": "garbage", "text": "Мусор - только в контейнеры", "note": "Они стоят в пунктах обслуживания яхт (yat mola noktası) и в бухтах Kille и Sarsala." },
+            { "id": "no-bbq-music", "text": "Мангал на открытой палубе и громкая музыка запрещены" },
+            { "id": "hamam", "text": "Прибрежная часть бухты Хамам закрыта для любых судов" }
+          ]
+        },
+        {
+          "title": "Личные вещи",
+          "items": [
+            { "id": "jacket", "text": "Непромокаемая куртка с капюшоном" },
+            { "id": "warm-layer", "text": "Тёплый слой: флиска или свитер" },
+            { "id": "shoes", "text": "Нескользящая обувь или яхтенные ботинки" },
+            { "id": "gloves", "text": "Яхтенные перчатки", "note": "Для работы с концами." },
+            { "id": "hat", "text": "Головной убор, лучше два", "note": "Шляпы часто сдувает." },
+            { "id": "sunglasses", "text": "Поляризационные очки на шнурке" },
+            { "id": "sunscreen", "text": "Солнцезащитный крем" },
+            { "id": "headlamp", "text": "Налобный фонарь с красным светом" },
+            { "id": "meds", "text": "Аптечка с личными лекарствами - держать под рукой", "note": "Может понадобиться рецепт или справка врача." },
+            { "id": "drybag", "text": "Герметичный мешок для телефона и документов" }
+          ]
+        }
+      ],
+      "sources": [
+        { "type": "iyt", "module": 14, "section": 2, "page": 198 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "web", "title": "Deniz Turizmi Yönetmeliği (действующая редакция), ст. 34, 41, 42", "url": "https://www.mevzuat.gov.tr/MevzuatMetin/21.5.200915212.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Ulaştırma ve Altyapı Bakanlığı - Amatör Denizci Belgesi, частые вопросы", "url": "https://denizcilik.uab.gov.tr/uploads/announcements/amator-denizci-belgesi-egitim-ve-sinavlariyla-ilgi/amator-denizci-belgesi-egitim-ve-sinavlariyla-ilgili-sikca-sorulan-sorular.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Charter checklist", "url": "https://www.rya.org.uk/boating-abroad/charter-checklist/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "App Store - Navionics Boating (Garmin)", "url": "https://apps.apple.com/us/app/navionics-boating/id744920098", "accessed": "2026-09-17" },
+        { "type": "web", "title": "App Store - Windy.com (Windyty)", "url": "https://apps.apple.com/us/app/windy-com/id1161387262", "accessed": "2026-09-17" },
+        { "type": "web", "title": "App Store - Navily", "url": "https://apps.apple.com/us/app/navily/id881103205", "accessed": "2026-09-17" },
+        { "type": "web", "title": "App Store - Deria (Türkiye Çevre Ajansı)", "url": "https://apps.apple.com/us/app/deria/id6752567848", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Anadolu Ajansı - Göcek'te deniz ekosistemi DERİA projesi ile korunacak (18.02.2026)", "url": "https://www.aa.com.tr/tr/yesilhat/dogal-yasam/gocekte-deniz-ekosistemi-deria-projesi-ile-korunacak/1829277", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Çevre ve Şehircilik Bakanlığı - Göcek Körfezi ile Göcek-Dalaman Koyları koruma ve kullanma usul ve esasları", "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Çevre ve Şehircilik Bakanlığı - Denizcilik Atıkları Uygulaması Genelgesi yeniden düzenlendi (10.09.2022)", "url": "https://csb.gov.tr/denizcilik-atiklari-uygulamasi-genelgesi-yeniden-duzenlendi-bakanlik-faaliyetleri-36216", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RNLI - Enjoy the sea trouble-free", "url": "https://rnli.org/safety/choose-your-activity/yacht-sailing-and-motorboating/enjoy-the-sea-trouble-free", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - What to wear sailing", "url": "https://www.rya.org.uk/get-started/sailing/what-to-wear-sailing/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA / Sunsail - What to pack on your sailing holiday", "url": "https://www.rya.org.uk/about-us/our-partners/sunsail/what-to-pack-on-your-sailing-holiday/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Sail Training International - Kit list", "url": "https://sailtraininginternational.org/life-onboard/kit-list/", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
       "id": "acceptance",
       "title": "Приёмка яхты",
-      "intro": "Проверить до подписания акта приёмки.",
+      "intro": "Проверить вместе с представителем чартерной компании до подписания акта.",
       "groups": [
-        { "title": "Документы", "items": [{ "id": "papers", "text": "Судовые документы и страховка на борту" }] }
+        {
+          "title": "Документы и инвентарь",
+          "items": [
+            { "id": "boat-papers", "text": "Судовые документы, страховка и транзитный лог на борту", "note": "Попросить объяснить документы для района плавания." },
+            { "id": "inventory", "text": "Пройти опись инвентаря и отметить недостающее" },
+            { "id": "defects", "text": "Все дефекты - в акт с подписью представителя базы, копию себе", "note": "Иначе за незамеченные повреждения прошлой команды могут удержать залог." },
+            { "id": "charts", "text": "Бумажные карты и лоция района на борту", "note": "Плоттер их не заменяет." },
+            { "id": "manuals", "text": "Инструкции к оборудованию на борту" },
+            { "id": "toolbox", "text": "Открыть ящик с инструментами и проверить содержимое" },
+            { "id": "fuel-water", "text": "Запас топлива и воды, где заливные горловины" }
+          ]
+        },
+        {
+          "title": "Корпус и палуба",
+          "items": [
+            { "id": "seacocks", "text": "Где кингстоны; открыть и закрыть каждый", "note": "На Dufour 430 GL краны четвертьоборотные: ручка вдоль крана - открыт, поперёк - закрыт." },
+            { "id": "hoses", "text": "Шланги на кингстонах целы, хомуты двойные" },
+            { "id": "bungs", "text": "Деревянные пробки у каждого кингстона" },
+            { "id": "bilge", "text": "Льяла сухие, без запаха топлива" },
+            { "id": "bilge-pumps", "text": "Ручная и электрическая помпы работают", "note": "Где ручка ручной помпы и выключатель электрической." },
+            { "id": "keel-bolts", "text": "Осмотреть кильболты", "note": "Трещины вокруг них - след касания грунта." },
+            { "id": "stern-gland", "text": "Сальник вала или уплотнение колонки не течёт" },
+            { "id": "hatches", "text": "Люки и иллюминаторы закрываются" },
+            { "id": "rails", "text": "Леера, релинги и поручни целы" },
+            { "id": "toilets", "text": "Гальюны работают; где клапан фекального танка" }
+          ]
+        },
+        {
+          "title": "Такелаж и паруса",
+          "items": [
+            { "id": "mainsail", "text": "Грот: развернуть, осмотреть шкотовый угол, заднюю шкаторину и ползуны" },
+            { "id": "genoa", "text": "Генуя: барабан вращается легко, нет разрывов у краспиц и шкотового угла, шкоты целы" },
+            { "id": "standing-rigging", "text": "Ванты и штаги без перегибов и лопнувших проволок" },
+            { "id": "mast", "text": "Мачта, гик и их крепления" },
+            { "id": "bolt-cutters", "text": "Где болторез для вант" }
+          ]
+        },
+        {
+          "title": "Двигатель",
+          "items": [
+            { "id": "engine-oil", "text": "Уровень масла в двигателе и редукторе" },
+            { "id": "coolant", "text": "Охлаждающая жидкость долита" },
+            { "id": "belt", "text": "Ремень цел и натянут", "note": "Прогиб - не больше 1 см." },
+            { "id": "exhaust-water", "text": "После запуска из выхлопа идёт забортная вода", "note": "Кингстон охлаждения открыт. Звонкий выхлоп или белый дым - проблема с охлаждением." },
+            { "id": "strainer", "text": "Где фильтр забортной воды и как его открыть" },
+            { "id": "fuel", "text": "Топливо: сколько в баке, нет протечек", "note": "Безопасный запас - около трети бака." },
+            { "id": "spares", "text": "Запасные крыльчатка, ремень, масляный и воздушный фильтры, масло" },
+            { "id": "engine-alarms", "text": "Сигнализация и аварийная остановка двигателя" },
+            { "id": "gears", "text": "Передний и задний ход включаются" },
+            { "id": "prop-shaft", "text": "Вал винта свободен, рядом ничего не лежит" }
+          ]
+        },
+        {
+          "title": "Электрика и приборы",
+          "items": [
+            { "id": "battery-switches", "text": "Где выключатели аккумуляторов", "note": "На Dufour 430 GL отдельные выключатели для батареи двигателя и сервисных батарей." },
+            { "id": "battery-voltage", "text": "Напряжение аккумуляторов выше 13 В при работающем двигателе или от берега" },
+            { "id": "nav-lights", "text": "Все навигационные огни горят" },
+            { "id": "vhf-check", "text": "УКВ: проверка связи с мариной", "note": "Радиошаблоны: см. Ещё → УКВ-радио." },
+            { "id": "yacht-id", "text": "Записать название, позывной и MMSI яхты в «Настройки»" },
+            { "id": "plotter", "text": "Картплоттер работает, карты района актуальны" },
+            { "id": "depth-log", "text": "Эхолот и лаг показывают" },
+            { "id": "compass", "text": "Компас и таблица девиации" }
+          ]
+        },
+        {
+          "title": "Безопасность",
+          "items": [
+            { "id": "life-jackets", "text": "Спасательные жилеты - по одному на каждого, подогнать", "note": "У автоматических проверить баллончик и таблетку." },
+            { "id": "harnesses", "text": "Страховочные пояса и лини на каждого" },
+            { "id": "liferaft", "text": "Спасательный плот: где стоит, как спускается, когда обслуживался", "note": "На Dufour 430 GL рундук плота в транце, доступ через кормовую калитку." },
+            { "id": "extinguishers", "text": "Огнетушители: где стоят, не просрочены", "note": "По руководству Dufour 430 GL: в рундуке кокпита у штурвала и у дивана в салоне; противопожарное одеяло - у плиты." },
+            { "id": "flares", "text": "Сигнальные ракеты на месте, срок годности не истёк" },
+            { "id": "first-aid", "text": "Аптечка: открыть и проверить содержимое" },
+            { "id": "lifebuoy", "text": "Спасательный круг с линем и проблесковым огнём", "note": "Батарейки огня часто разряжены." },
+            { "id": "emergency-tiller", "text": "Аварийный румпель: где лежит и как ставится", "note": "По руководству Dufour 430 GL: хранится в рундуке кокпита, надевается на голову баллера под палубной крышкой; только для малого хода." },
+            { "id": "smoke-detector", "text": "Датчик дыма: нажать тест" },
+            { "id": "torch", "text": "Фонарь и запасные батарейки" },
+            { "id": "horn", "text": "Горн или другой звуковой сигнал" },
+            { "id": "bucket", "text": "Ведро с линем" },
+            { "id": "crew-briefing", "text": "Показать экипажу, где всё это лежит", "note": "Аварийные действия: см. «Ситуации»." }
+          ]
+        },
+        {
+          "title": "Якорь и швартовы",
+          "items": [
+            { "id": "chain-length", "text": "Длина цепи - спросить, если не размечена" },
+            { "id": "bitter-end", "text": "Коренной конец цепи закреплён" },
+            { "id": "windlass", "text": "Брашпиль: пульт работает, рукоятка тормоза на борту", "note": "Брашпилем работать при запущенном двигателе. Спросить, где его предохранитель." },
+            { "id": "bow-roller", "text": "Носовой ролик и крепления без повреждений" },
+            { "id": "mooring-lines", "text": "Швартовы и кранцы по размеру яхты" },
+            { "id": "shore-line", "text": "Длинный конец для крепления к берегу", "note": "В бухтах Гёчека без буёв стоять на якоре можно только с концом на берег." },
+            { "id": "boathook", "text": "Отпорный крюк" }
+          ]
+        },
+        {
+          "title": "Тузик и мотор",
+          "items": [
+            { "id": "dinghy", "text": "Тузик держит давление, корпус цел, есть насос", "note": "Повреждения тоже внести в акт." },
+            { "id": "dinghy-gear", "text": "Вёсла и спасательное оборудование тузика" },
+            { "id": "outboard-start", "text": "Мотор тузика: завести на несколько секунд", "note": "Не заводится у причала - в бухте лучше не станет." },
+            { "id": "outboard-fuel", "text": "Бак мотора и запасная канистра заправлены" },
+            { "id": "outboard-spares", "text": "Запасной срезной штифт винта, шнур аварийной остановки на моторе" }
+          ]
+        },
+        {
+          "title": "Камбуз и газ",
+          "items": [
+            { "id": "gas-valve", "text": "Где запорный кран газа", "note": "Закрывать, когда плита не нужна." },
+            { "id": "gas-leak-test", "text": "Проверить утечку газа по манометру", "note": "Краны плиты закрыты: открыть баллон, закрыть и 3 минуты смотреть на манометр - давление не должно падать." },
+            { "id": "gas-smell", "text": "Запах газа: перекрыть газ, погасить огонь, не трогать выключатели, проветрить" },
+            { "id": "gas-cylinder", "text": "Регулятор исправен, есть полный запасной баллон" },
+            { "id": "stove", "text": "Горелки плиты зажигаются" },
+            { "id": "fresh-water", "text": "Пресная вода: краны и помпа работают, мойка сливается" },
+            { "id": "fridge", "text": "Холодильник включить пораньше и проверить, что охлаждает" }
+          ]
+        }
       ],
-      "sources": [{ "type": "iyt", "module": 14, "section": 2, "page": 196 }],
-      "verified": false
+      "sources": [
+        { "type": "iyt", "module": 9, "section": 1, "page": 149 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 196 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 197 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 198 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "iyt", "module": 15, "section": 1, "page": 223 },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Charter checklist", "url": "https://www.rya.org.uk/boating-abroad/charter-checklist/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RNLI - Enjoy the sea trouble-free", "url": "https://rnli.org/safety/choose-your-activity/yacht-sailing-and-motorboating/enjoy-the-sea-trouble-free", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Liferaft", "url": "https://www.rya.org.uk/knowledge/safety/look-after-yourself/equipment-for-uk-pleasure-vessels/liferaft", "accessed": "2026-09-17" },
+        { "type": "web", "title": "RYA - Fire safety on boats", "url": "https://www.rya.org.uk/water-safety/boat-safety-and-maintenance/fire-safety-on-boats/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Deniz Turizmi Yönetmeliği (действующая редакция), ст. 42", "url": "https://www.mevzuat.gov.tr/MevzuatMetin/21.5.200915212.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Çevre ve Şehircilik Bakanlığı - Göcek Körfezi ile Göcek-Dalaman Koyları koruma ve kullanma usul ve esasları", "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf", "accessed": "2026-09-17" }
+      ],
+      "verified": true
     }
   ]
 }
