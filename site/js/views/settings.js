@@ -13,7 +13,7 @@ async function exportProgress(json, say) {
       await navigator.share({ files: [file], title: name });
       say('Файл передан. Сохраните его в «Файлы».');
     } catch (err) {
-      if (err.name !== 'AbortError') say(`Не удалось поделиться файлом: ${err.message}`);
+      if (err.name !== 'AbortError') say(`Не удалось поделиться файлом: ${err.message}`, { fail: true });
     }
     return;
   }
@@ -26,7 +26,10 @@ async function exportProgress(json, say) {
 export function settingsView(ctx) {
   const s = ctx.store.state.settings;
   const status = h('p', { class: 'status', role: 'status' });
-  const say = (text) => { status.textContent = text; };
+  const say = (text, { fail = false } = {}) => {
+    status.textContent = text;
+    status.classList.toggle('fail', fail);
+  };
 
   const form = h('form', { class: 'form' },
     field('tripDate', 'Дата выхода', { type: 'date', value: s.tripDate ?? '' }),
@@ -52,7 +55,7 @@ export function settingsView(ctx) {
       ctx.rerender();
       document.querySelector('.status').textContent = 'Прогресс загружен.';
     } catch (err) {
-      say(`Не удалось загрузить файл: ${err.message}`);
+      say(`Не удалось загрузить файл: ${err.message}`, { fail: true });
     }
   });
 

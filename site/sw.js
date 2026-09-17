@@ -67,10 +67,10 @@ const ASSETS = [
 // ASSETS:end
 
 self.addEventListener('install', (event) => {
-  // GitHub Pages sends Cache-Control: max-age=600, so a plain addAll(ASSETS) can pull
-  // stale files from the HTTP cache into a freshly-named cache. Bust it with a version
-  // query and { cache: 'reload' }; the fetch handler's ignoreSearch match still serves
-  // these entries for the plain (query-less) requests pages actually make.
+  // GitHub Pages отдаёт Cache-Control: max-age=600, поэтому простой addAll(ASSETS) может
+  // положить в новый кеш устаревшие файлы из HTTP-кеша. Обходим это параметром версии
+  // в запросе и { cache: 'reload' }; обработчик fetch ищет с ignoreSearch и всё равно
+  // отдаёт эти записи на обычные запросы страниц без параметров.
   event.waitUntil(
     caches.open(CACHE).then((cache) => cache.addAll(
       ASSETS.map((url) => new Request(`${url}${url.includes('?') ? '&' : '?'}v=${VERSION}`, { cache: 'reload' })),

@@ -3357,7 +3357,7 @@ Expected: build и deploy зелёные.
 ### Общие правила для всех задач наполнения
 
 **Источники.**
-- Учебник: `/Users/rsln/Downloads/IYT BBS rus.pdf` (271 стр.). Текст извлекается в `.local/iyt_bbs.txt` (Task 14, шаг 1); `.local/` в git не попадает.
+- Учебник: `<путь к PDF учебника IYT BBS>` (271 стр.). Текст извлекается в `.local/iyt_bbs.txt` (Task 14, шаг 1); `.local/` в git не попадает.
 - В тексте каждая строка повторяется 2-3 раза (слои PDF) - при чтении убирать дубли: `awk '!seen[$0]++'`. Осторожно: так удаляются и повторы коротких строк внутри страницы (например, вторая строка «шторм» в таблице Бофорта), поэтому перед записью факта перепроверять место без удаления дублей.
 - Страница PDF N размечена строкой `=== PAGE N ===`; в `sources` пишется печатный номер `N - 1`.
 - Как читать страницу: `awk -v p="=== PAGE 58 ===" '$0==p{f=1;next} /^=== PAGE/{f=0} f' .local/iyt_bbs.txt | awk '!seen[$0]++'`.
@@ -3414,7 +3414,7 @@ Run:
 
 ```bash
 mkdir -p .local
-osascript -l JavaScript scripts/extract-iyt-text.js "/Users/rsln/Downloads/IYT BBS rus.pdf" > .local/iyt_bbs.txt
+osascript -l JavaScript scripts/extract-iyt-text.js "<путь к PDF учебника IYT BBS>" > .local/iyt_bbs.txt
 grep -c "^=== PAGE" .local/iyt_bbs.txt
 git status --short .local
 ```

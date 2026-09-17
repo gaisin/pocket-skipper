@@ -59,6 +59,48 @@ test('импорт чужого файла отклоняется и не пор
   assert.equal(store.state.settings.boatName, 'Aurora');
 });
 
+test('при загрузке отбрасываются карточки с неверными box или due', () => {
+  const raw = JSON.stringify({
+    version: 1,
+    checks: {},
+    settings: {},
+    cards: {
+      ok: { box: 5, due: '2026-09-18' },
+      zero: { box: 0, due: '2026-09-18' },
+      six: { box: 6, due: '2026-09-18' },
+      frac: { box: 2.5, due: '2026-09-18' },
+      text: { box: '2', due: '2026-09-18' },
+      baddate: { box: 2, due: '18.09.2026' },
+      nodate: { box: 2 },
+      notobj: 3,
+      arr: [1, 2],
+    },
+  });
+  assert.deepEqual(parseState(raw).cards, { ok: { box: 5, due: '2026-09-18' } });
+});
+
+test('при загрузке отбрасываются поля настроек неверного типа', () => {
+  const raw = JSON.stringify({
+    version: 1,
+    cards: {},
+    checks: {},
+    settings: { tripDate: 'завтра', boatName: 42, callsign: 'TC1234', mmsi: '271000000', persons: '4', extra: { x: 1 } },
+  });
+  assert.deepEqual(parseState(raw).settings, { callsign: 'TC1234', mmsi: '271000000', persons: '4' });
+  const good = JSON.stringify({ version: 1, cards: {}, checks: {}, settings: { tripDate: '2026-10-08', boatName: 'Aurora' } });
+  assert.deepEqual(parseState(good).settings, { tripDate: '2026-10-08', boatName: 'Aurora' });
+});
+
+test('испорченные вложенные данные в хранилище не ломают запуск', () => {
+  const backend = memoryBackend({ [STORAGE_KEY]: JSON.stringify({
+    version: 1, cards: { q1: { box: 'x' }, q2: { box: 1, due: '2026-09-17' } }, checks: {}, settings: { tripDate: 5 },
+  }) });
+  const store = createStore(backend);
+  assert.equal(store.recovered, false);
+  assert.deepEqual(store.state.cards, { q2: { box: 1, due: '2026-09-17' } });
+  assert.deepEqual(store.state.settings, {});
+});
+
 test('отметки чек-листа', () => {
   let checks = toggleCheck({}, 'prep', 'docs', { now: 1000 });
   checks = toggleCheck(checks, 'prep', 'apps', { now: 2000 });

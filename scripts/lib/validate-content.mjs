@@ -69,7 +69,7 @@ function checkLights(img, err) {
 function checkElement(el, err, stepsCount = undefined) {
   if (!ELEMENT_TYPES.includes(el?.type)) return err(`неизвестный элемент ${el?.type}`);
   if (el.type === 'path' && !(text(el.d) && PATH_D.test(el.d))) err('path: недопустимые символы в d');
-  if (el.type === 'line' && !(list(el.points) && el.points.every((p) => num(p[0]) && num(p[1])))) err('line: нужны points');
+  if (el.type === 'line' && !(list(el.points) && el.points.every((p) => Array.isArray(p) && p.length === 2 && num(p[0]) && num(p[1])))) err('line: нужны points');
   if (el.type === 'label' && !text(el.text)) err('label: нет text');
   if (el.type === 'quay' && ![el.x, el.y, el.w, el.h].every(num)) err('quay: нужны x, y, w, h');
   if (['boat-moored', 'buoy', 'anchor', 'person', 'label'].includes(el.type) && !(num(el.x) && num(el.y))) err(`${el.type}: нужны x, y`);

@@ -97,6 +97,21 @@ test('у чек-листа поездки одна кнопка сброса', a
   await expect(page.getByRole('button', { name: 'Сбросить отметки' })).toHaveCount(1);
 });
 
+test('ошибка загрузки прогресса показана красным, успех - без пометки ошибки', async ({ page }) => {
+  await page.goto('./#/more/settings');
+  const status = page.locator('.status');
+  await page.setInputFiles('#importFile', { name: 'bad.json', mimeType: 'application/json', buffer: Buffer.from('{"foo": 1}') });
+  await expect(status).toContainText('Не удалось загрузить файл');
+  await expect(status).toHaveClass(/\bfail\b/);
+  const color = (loc) => loc.evaluate((el) => getComputedStyle(el).color);
+  const failColor = await color(status);
+  const good = JSON.stringify({ version: 1, cards: {}, checks: {}, settings: { boatName: 'Aurora' } });
+  await page.setInputFiles('#importFile', { name: 'good.json', mimeType: 'application/json', buffer: Buffer.from(good) });
+  await expect(page.locator('.status')).toHaveText('Прогресс загружен.');
+  await expect(page.locator('.status')).not.toHaveClass(/\bfail\b/);
+  expect(await color(page.locator('.status'))).not.toBe(failColor);
+});
+
 test('манёвр листается по шагам', async ({ page }) => {
   const maneuver = content('maneuvers').maneuvers[0];
   await page.goto(`./#/maneuvers/${maneuver.id}`);

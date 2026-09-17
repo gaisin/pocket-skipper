@@ -176,6 +176,17 @@ test('доля вопросов, где верный ответ строго с�
   assert.deepEqual(longestCorrectShare([]), { total: 0, longest: 0, share: 0, topics: [] });
 });
 
+test('line: точка - ровно две конечные координаты', () => {
+  for (const points of [[[1, 2, 3]], [[1]], [[1, Infinity]], ['ab'], [[1, 2], [3, 4, 5]]]) {
+    const c = minimal();
+    c.maneuvers.maneuvers[0].scene.elements.push({ type: 'line', points });
+    assert.ok(validateContent(c).some((e) => e.includes('line')), JSON.stringify(points));
+  }
+  const ok = minimal();
+  ok.maneuvers.maneuvers[0].scene.elements.push({ type: 'line', points: [[1, 2], [3, 4]] });
+  assert.deepEqual(validateContent(ok), []);
+});
+
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
 });
