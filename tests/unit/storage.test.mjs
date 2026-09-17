@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { createStore, parseState, STORAGE_KEY } from '../../site/js/storage.js';
-import { toggleCheck, resetChecks, countChecked } from '../../site/js/checks.js';
+import { toggleCheck, resetChecks, countChecked, activeItems, SITUATION_TTL_MS } from '../../site/js/checks.js';
 import { fillTemplate, callValues } from '../../site/js/template.js';
 
 function memoryBackend(initial = {}) {
@@ -60,13 +60,48 @@ test('импорт чужого файла отклоняется и не пор
 });
 
 test('отметки чек-листа', () => {
-  let checks = toggleCheck({}, 'prep', 'docs');
-  checks = toggleCheck(checks, 'prep', 'apps');
+  let checks = toggleCheck({}, 'prep', 'docs', { now: 1000 });
+  checks = toggleCheck(checks, 'prep', 'apps', { now: 2000 });
   assert.equal(countChecked(checks, 'prep', ['docs', 'apps', 'food']), 2);
-  checks = toggleCheck(checks, 'prep', 'docs');
-  assert.deepEqual(checks, { prep: { apps: true } });
-  assert.deepEqual(resetChecks({ prep: { apps: true }, other: { x: true } }, 'prep'), { other: { x: true } });
-  assert.equal(countChecked({ prep: { removed: true } }, 'prep', ['docs']), 0);
+  checks = toggleCheck(checks, 'prep', 'docs', { now: 3000 });
+  assert.deepEqual(checks, { prep: { items: { apps: true }, updatedAt: 3000 } });
+  assert.deepEqual(resetChecks({ prep: { items: { apps: true }, updatedAt: 1 }, other: { x: true } }, 'prep'), { other: { x: true } });
+  assert.equal(countChecked({ prep: { items: { removed: true }, updatedAt: 1 } }, 'prep', ['docs']), 0);
+});
+
+test('старый формат отметок без времени читается', () => {
+  const legacy = { prep: { apps: true } };
+  assert.deepEqual(activeItems(legacy, 'prep'), { apps: true });
+  assert.equal(countChecked(legacy, 'prep', ['apps', 'docs']), 1);
+  assert.deepEqual(toggleCheck(legacy, 'prep', 'docs', { now: 5 }),
+    { prep: { items: { apps: true, docs: true }, updatedAt: 5 } });
+});
+
+test('чек-лист без срока не истекает', () => {
+  const checks = toggleCheck({}, 'checklist:prep', 'docs', { now: 0 });
+  assert.deepEqual(activeItems(checks, 'checklist:prep', { now: 365 * 24 * 3600 * 1000 }), { docs: true });
+});
+
+test('отметки ситуации истекают через 12 часов', () => {
+  const opts = { ttlMs: SITUATION_TTL_MS };
+  assert.equal(SITUATION_TTL_MS, 12 * 60 * 60 * 1000);
+  const checks = toggleCheck({}, 'situation:mob', '0', { ...opts, now: 0 });
+  assert.deepEqual(activeItems(checks, 'situation:mob', { ...opts, now: SITUATION_TTL_MS }), { 0: true });
+  assert.equal(countChecked(checks, 'situation:mob', ['0'], { ...opts, now: SITUATION_TTL_MS }), 1);
+  assert.deepEqual(activeItems(checks, 'situation:mob', { ...opts, now: SITUATION_TTL_MS + 1 }), {});
+  assert.equal(countChecked(checks, 'situation:mob', ['0'], { ...opts, now: SITUATION_TTL_MS + 1 }), 0);
+  // Следующее изменение истёкшего списка начинает его с нуля.
+  const later = SITUATION_TTL_MS + 5;
+  assert.deepEqual(toggleCheck(checks, 'situation:mob', '1', { ...opts, now: later }),
+    { 'situation:mob': { items: { 1: true }, updatedAt: later } });
+  // Нажатие на истёкшую отметку ставит её заново, а не снимает.
+  assert.deepEqual(toggleCheck(checks, 'situation:mob', '0', { ...opts, now: later }),
+    { 'situation:mob': { items: { 0: true }, updatedAt: later } });
+});
+
+test('отметки ситуации без времени (старый формат) считаются истёкшими', () => {
+  const legacy = { 'situation:mob': { 0: true } };
+  assert.deepEqual(activeItems(legacy, 'situation:mob', { ttlMs: SITUATION_TTL_MS, now: 1 }), {});
 });
 
 test('шаблон радиовызова', () => {

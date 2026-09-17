@@ -52,8 +52,49 @@ test('отметки ситуации сохраняются и сбрасыва
   await expect(page.locator('.checklist p.meta')).toHaveText(`Отмечено 1 из ${situation.steps.length}`);
   await page.reload();
   await expect(page.locator('button.check[data-item="0"]')).toHaveAttribute('aria-pressed', 'true');
-  await page.getByRole('button', { name: 'Сбросить отметки' }).click();
+  await page.getByRole('button', { name: 'Сбросить отметки' }).last().click();
   await expect(page.locator('button.check[data-item="0"]')).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('отметки ситуации старше 12 часов не показываются', async ({ page }) => {
+  const situation = content('situations').situations[0];
+  await page.goto(`./#/situations/${situation.id}`);
+  const seed = (hoursAgo) => page.evaluate(({ id, ageMs }) => {
+    localStorage.setItem('pocket-skipper:v1', JSON.stringify({
+      version: 1,
+      cards: {},
+      settings: {},
+      checks: { [`situation:${id}`]: { items: { 0: true, 1: true }, updatedAt: Date.now() - ageMs } },
+    }));
+  }, { id: situation.id, ageMs: hoursAgo * 60 * 60 * 1000 });
+  await seed(11);
+  await page.reload();
+  await expect(page.locator('.checklist p.meta')).toHaveText(`Отмечено 2 из ${situation.steps.length}`);
+  await seed(13);
+  await page.reload();
+  await expect(page.locator('.checklist p.meta')).toHaveText(`Отмечено 0 из ${situation.steps.length}`);
+  await expect(page.locator('button.check[data-item="0"]')).toHaveAttribute('aria-pressed', 'false');
+  await page.locator('button.check[data-item="1"]').click();
+  await expect(page.locator('button.check[data-item="1"]')).toHaveAttribute('aria-pressed', 'true');
+  await expect(page.locator('button.check[data-item="0"]')).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('.checklist p.meta')).toHaveText(`Отмечено 1 из ${situation.steps.length}`);
+});
+
+test('кнопка сброса есть сверху и снизу карточки ситуации', async ({ page }) => {
+  const situation = content('situations').situations[0];
+  await page.goto(`./#/situations/${situation.id}`);
+  await page.locator('button.check[data-item="0"]').click();
+  const reset = page.getByRole('button', { name: 'Сбросить отметки' });
+  await expect(reset).toHaveCount(2);
+  await reset.first().click();
+  await expect(page.locator('button.check[data-item="0"]')).toHaveAttribute('aria-pressed', 'false');
+});
+
+test('у чек-листа поездки одна кнопка сброса', async ({ page }) => {
+  const list = content('checklists').checklists[0];
+  await page.goto(`./#/more/checklist/${list.id}`);
+  await expect(page.locator('button.check').first()).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Сбросить отметки' })).toHaveCount(1);
 });
 
 test('манёвр листается по шагам', async ({ page }) => {

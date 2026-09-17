@@ -1,5 +1,6 @@
 import { h, header, sourceFooter, notFound } from '../ui.js';
 import { checklistBlock } from './checklist-ui.js';
+import { SITUATION_TTL_MS } from '../checks.js';
 
 const GROUPS = [
   ['emergency', 'Аварийные'],
@@ -28,6 +29,6 @@ export function situationView(ctx, id) {
     h('div', { class: s.severity === 'emergency' ? 'alarm' : 'card' },
       h('h1', {}, s.title),
       h('p', {}, s.summary)),
-    checklistBlock(ctx, `situation:${s.id}`, [{ items }], { numbered: true }),
+    checklistBlock(ctx, `situation:${s.id}`, [{ items }], { numbered: true, ttlMs: SITUATION_TTL_MS, resetOnTop: true }),
     sourceFooter(s));
 }
