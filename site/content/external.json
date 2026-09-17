@@ -1,5 +1,11 @@
 {
   "links": [
-    { "id": "ext-sailquiz", "title": "SailQuiz", "url": "https://sailquiz.com/quiz", "lang": "en", "note": "Расхождение, огни, кардинальные знаки, с объяснениями", "accessed": "2026-09-16" }
+    { "id": "ext-navlib-lights", "title": "NavLib - тренажёр огней МППСС-72", "url": "https://navlib.net/%D1%82%D1%80%D0%B5%D0%BD%D0%B0%D0%B6%D0%B5%D1%80-%D0%BC%D0%BF%D0%BF%D1%81%D1%81-72-%D0%BE%D0%BD%D0%BB%D0%B0%D0%B9%D0%BD-%D0%BE%D0%B3%D0%BD%D0%B8-%D1%81%D1%83%D0%B4%D0%BE%D0%B2-colregs-test/", "lang": "ru", "note": "20 случайных вопросов по огням (пр. 23-30) с картинками, без регистрации", "accessed": "2026-09-17" },
+    { "id": "ext-sea-man", "title": "sea-man.org - тест по МППСС-72", "url": "https://sea-man.org/testy/test-po-mppss", "lang": "ru", "note": "Вопросы по правилам, огням и звуковым сигналам, режимы тренировки и проверки", "accessed": "2026-09-17" },
+    { "id": "ext-12knots", "title": "12knots - экзамен по МППСС-72", "url": "https://12knots.com/ru/sailing-school/test/ekzamen-po-pravilam-rashozhdeniya-sudov/", "lang": "ru", "note": "26 вопросов за 40 минут; нужно подтвердить e-mail, одна попытка", "accessed": "2026-09-17" },
+    { "id": "ext-sailquiz", "title": "SailQuiz", "url": "https://sailquiz.com/quiz", "lang": "en", "note": "Расхождение, огни, кардинальные знаки, с объяснениями", "accessed": "2026-09-17" },
+    { "id": "ext-safeskipper-lights", "title": "SafeSkipper - огни", "url": "https://www.safe-skipper.com/nav-lights-shapes-quiz-1-lights/", "lang": "en", "note": "20 вопросов: узнать судно по огням; нужен вход на сайт", "accessed": "2026-09-17" },
+    { "id": "ext-safeskipper-shapes", "title": "SafeSkipper - дневные знаки", "url": "https://www.safe-skipper.com/nav-lights-shapes-quiz-2-shapes/", "lang": "en", "note": "10 вопросов: узнать судно по дневным знакам; нужен вход на сайт", "accessed": "2026-09-17" },
+    { "id": "ext-openexamprep-src", "title": "OpenExamPrep - RYA SRC (УКВ)", "url": "https://open-exam-prep.com/practice/eu-rya-src-vhf", "lang": "en", "note": "Бесплатные вопросы к экзамену RYA SRC с объяснениями, без регистрации", "accessed": "2026-09-17" }
   ]
 }
