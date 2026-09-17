@@ -48,7 +48,7 @@ export function markSVG(kind, label = kind) {
   const slots = spec.top.length === 1 ? [40] : [20, 42];
   const tops = spec.top.map((t, i) => shape(t, slots[i], spec.topColor)).join('');
   return `<svg viewBox="0 0 200 120" role="img" aria-label="${escapeXml(label)}">`
-    + '<rect class="svg-water" width="200" height="120"/>'
+    + '<rect width="200" height="120" fill="#DCEAF2"/>' // знаки - дневные средства: фон дневной в любой теме
     + `<line x1="100" y1="${slots[0] - 10}" x2="100" y2="${BODY.y}" stroke="${C.black}" stroke-width="2"/>`
     + `${tops}${body(spec)}`
     + '<rect x="0" y="106" width="200" height="14" fill="#1B5E86" opacity=".45"/></svg>';

@@ -58,3 +58,9 @@ test('для моторной сцены гик не рисуется', () => {
   assert.doesNotMatch(svg, /class="boom"/);
   assert.throws(() => renderScene({ label: 'x', elements: [{ type: 'rocket' }] }, { x: 0, y: 0, rot: 0 }), /Неизвестный элемент/);
 });
+
+test('знаки рисуются на дневном фоне независимо от темы', () => {
+  const svg = markSVG('north');
+  assert.ok(svg.includes('fill="#DCEAF2"'), 'нет фиксированного дневного фона');
+  assert.ok(!svg.includes('svg-water'), 'фон знака не должен зависеть от темы');
+});
