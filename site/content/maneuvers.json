@@ -110,7 +110,7 @@
         {
           "who": "Экипаж",
           "command": "",
-          "text": "Когда лейзи-линия утонула, травить кормовые медленно, со шлагом на утке, чтобы они держали против двигателя; для этого их заводят на слип - с борта через рым на берегу и обратно на борт. Освободив, сразу выбрать на борт: конец в воде легко намотать на винт.",
+          "text": "Когда лейзи-линия утонула, травить кормовые медленно, со шлагом на утке, чтобы они держали против двигателя; для этого их заранее заводят на слип: конец с борта вокруг утки на берегу и обратно на борт, так его отдают с борта и выбирают за внутренний конец. Освободив, сразу выбрать на борт: конец в воде легко намотать на винт.",
           "pose": { "x": 164, "y": 74, "rot": 180 }
         },
         {
@@ -130,7 +130,9 @@
         { "type": "iyt", "module": 2, "section": 7, "page": 53 },
         { "type": "iyt", "module": 2, "section": 7, "page": 54 },
         { "type": "iyt", "module": 14, "section": 2, "page": 199 },
-        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Practical Boat Owner - Casting off with confidence (D. Wells, 2019)", "url": "https://www.pbo.co.uk/seamanship/casting-off-with-confidence-easy-ways-for-singlehanders-to-get-off-the-dock-62624", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth", "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -221,9 +223,9 @@
           "pose": { "x": 130, "y": 110, "rot": 0 }
         },
         {
-          "who": "Носовой",
+          "who": "Шкипер",
           "command": "Отдать якорь!",
-          "text": "Опустить якорь в воду, не бросая (цепь запутается). Следить по меткам на цепи, сколько отдано. Когда якорь лёг на дно, цепь сразу провиснет.",
+          "text": "Носовой опускает якорь в воду, не бросая (цепь запутается). Следить по меткам на цепи, сколько отдано. Когда якорь лёг на дно, цепь сразу провиснет.",
           "pose": { "x": 130, "y": 110, "rot": 0 }
         },
         {
