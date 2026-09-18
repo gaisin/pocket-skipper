@@ -46,5 +46,17 @@ export function maneuverView(ctx, id) {
     counter,
     h('div', { class: 'step', 'aria-live': 'polite' }, who, command, text),
     h('div', { class: 'ctrl' }, prev, next),
+    videoLinks(m.videos),
     sourceFooter(m));
+}
+
+// Видео - дополнительный просмотр, не источник; открывается во внешней вкладке.
+function videoLinks(videos) {
+  if (!videos?.length) return null;
+  return h('div', { class: 'videos' },
+    h('h2', {}, 'Видео'),
+    h('ul', { class: 'list' }, videos.map((v) => h('li', {},
+      h('a', { href: v.url, target: '_blank', rel: 'noopener' },
+        h('span', {}, v.title, h('small', {}, 'нужен интернет')),
+        h('span', { class: 'meta' }, 'YouTube'))))));
 }

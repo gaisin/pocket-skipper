@@ -12,6 +12,7 @@ const ID = /^[a-z0-9-]+$/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const PATH_D = /^[MLQCZmlqcz0-9 .,-]+$/;
 const ANNEXES = ['I', 'II', 'III', 'IV'];
+const YOUTUBE_URL = /^https:\/\/(?:www\.youtube\.com\/watch\?v=[\w-]{11}(?:&t=\d+s?|&list=[\w-]+)*|youtu\.be\/[\w-]{11})$/;
 
 const text = (v) => typeof v === 'string' && v.trim().length > 0;
 const num = (v) => typeof v === 'number' && Number.isFinite(v);
@@ -39,6 +40,15 @@ function checkSource(s, err) {
       break;
     default:
       err(`неизвестный тип источника ${JSON.stringify(s?.type)}`);
+  }
+}
+
+// Видео - дополнительный просмотр, не источник: только ссылки на YouTube.
+function checkVideos(videos, err) {
+  if (!list(videos)) return err('videos: нужен непустой список');
+  for (const v of videos) {
+    if (!text(v?.title)) err('видео: нет title');
+    if (!YOUTUBE_URL.test(v?.url ?? '')) err('видео: url должен быть ссылкой на YouTube (watch?v=<id> или youtu.be/<id>)');
   }
 }
 
@@ -118,6 +128,7 @@ const checkers = {
       if (!(num(s.pose?.x) && num(s.pose?.y) && num(s.pose?.rot))) err('шаг: pose с x, y, rot');
       if (s.pose?.boom !== undefined && !num(s.pose.boom)) err('шаг: pose.boom должен быть числом');
     }
+    if (r.videos !== undefined) checkVideos(r.videos, err);
   },
   checklists(r, err) {
     if (!text(r.title) || !text(r.intro)) err('нужны title и intro');
