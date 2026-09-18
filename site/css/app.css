@@ -1,6 +1,11 @@
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
-html { -webkit-text-size-adjust: 100%; }
+html { -webkit-text-size-adjust: 100%; min-height: 100%; }
+/* iOS, приложение с экрана Домой, status-bar-style black-translucent: веб-вью занимает весь экран,
+   но высота документа (100%) меньше экрана на верхний safe area. На короткой странице
+   position: fixed; bottom: 0 считается от этой высоты, и таб-бар висит над низом экрана.
+   Документ не короче экрана - и таб-бар прижат к низу. */
+html.standalone { min-height: calc(100% + env(safe-area-inset-top, 0px)); }
 body {
   margin: 0; background: var(--ground); color: var(--ink);
   font: 16px/1.5 var(--body);
@@ -31,6 +36,8 @@ button, input { font: inherit; color: inherit; }
 .button.primary { background: var(--sea); color: var(--on-accent); }
 .button.small { min-height: 32px; padding: 4px 10px; font-size: .85rem; }
 .button:disabled { opacity: .4; cursor: default; }
+.call-button { min-height: 52px; font-size: 1.05rem; font-weight: 700; }
+.alarm-button { background: var(--alarm-bg); border-color: var(--alarm-bg); color: #FFFFFF; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; }
 .ctrl { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 
@@ -44,6 +51,13 @@ button, input { font: inherit; color: inherit; }
 .list .severity-emergency { border-left: 4px solid var(--port); }
 
 .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: grid; gap: 8px; }
+/* Раздел, открытый ссылкой: отступ сверху от строки состояния и короткая подсветка. */
+[data-scroll-target] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
+.flash { animation: flash 1.8s ease-out; }
+@keyframes flash {
+  0%, 35% { box-shadow: 0 0 0 3px var(--sea); background: var(--sea-soft); }
+  100% { box-shadow: 0 0 0 3px transparent; }
+}
 .progress { height: 6px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .progress > div { height: 100%; background: var(--sea); transition: width .3s; }
 .stat { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; }
@@ -59,9 +73,14 @@ button, input { font: inherit; color: inherit; }
   border: 1px solid var(--line); background: var(--paper); cursor: pointer;
 }
 .answer:disabled { cursor: default; }
-.answer.ok { background: var(--ok-bg); border-color: var(--stbd); }
-.answer.bad { background: var(--bad-bg); border-color: var(--port); }
-.answer.chosen { border-color: var(--sea); border-width: 2px; }
+/* Выбранный, но ещё не подтверждённый вариант. Рамку утолщаем тенью, чтобы текст не прыгал. */
+.answer[aria-pressed="true"] { background: var(--sea-soft); border-color: var(--sea); box-shadow: inset 0 0 0 1px var(--sea); }
+.answer.ok { background: var(--ok-bg); border-color: var(--stbd); box-shadow: inset 0 0 0 1px var(--stbd); }
+.answer.bad { background: var(--bad-bg); border-color: var(--port); box-shadow: inset 0 0 0 1px var(--port); }
+.answer-tag { display: block; margin-top: 2px; font: 600 .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+ul.answers { list-style: none; margin: 0; padding: 0; }
+.runner { display: grid; gap: 14px; }
+.runner-head { display: grid; gap: 6px; }
 .explain { display: grid; gap: 8px; border-left: 3px solid var(--sea); padding-left: 10px; color: var(--muted); }
 .summary { display: grid; gap: 12px; }
 .score { font: 600 2.4rem var(--display); }

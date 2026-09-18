@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { formatSource, formatSources } from '../../site/js/sources.js';
 import { CONTENT_FILES, loadContent } from '../../site/js/content.js';
 import { validateContent, longestCorrectShare } from '../../scripts/lib/validate-content.mjs';
+import { CALL_SECTIONS } from '../../site/js/calls.js';
 
 async function realContent() {
   const entries = await Promise.all(CONTENT_FILES.map(async (name) =>
@@ -25,7 +26,10 @@ function minimal() {
       steps: [{ who: 'Шкипер', command: 'Поворот!', text: 'x', pose: { x: 130, y: 120, rot: -45, boom: 20 } }] })] },
     checklists: { checklists: [src({ id: 'c-1', title: 'Сборы', intro: 'x',
       groups: [{ title: 'Документы', items: [{ id: 'passport', text: 'Паспорт' }] }] })] },
-    vhf: { sections: [src({ id: 'v-1', title: 'Каналы', kind: 'channels', rows: [{ ch: '16', use: 'бедствие' }] })] },
+    vhf: { sections: [
+      src({ id: 'v-1', title: 'Каналы', kind: 'channels', rows: [{ ch: '16', use: 'бедствие' }] }),
+      src({ id: 'vhf-mayday', title: 'MAYDAY', kind: 'call', when: 'x', lines: ['MAYDAY'] }),
+    ] },
     reference: { sections: [src({ id: 'r-1', title: 'Знаки', kind: 'marks', rows: [{ label: 'Северный', value: 'x', mark: 'north' }] })] },
     external: { links: [{ id: 'e-1', title: 'SailQuiz', url: 'https://sailquiz.com/quiz', lang: 'en', note: 'x', accessed: '2026-09-16' }] },
   };
@@ -189,4 +193,22 @@ test('line: точка - ровно две конечные координаты
 
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
+});
+
+test('ситуация ссылается на шаблон вызова, которого нет в УКВ-радио', () => {
+  const c = minimal();
+  c.vhf.sections = c.vhf.sections.filter((x) => x.id !== 'vhf-mayday');
+  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-mayday в vhf\.json/);
+  c.vhf.sections.push(src({ id: 'vhf-mayday', title: 'MAYDAY', kind: 'channels', rows: [{ ch: '16', use: 'x' }] }));
+  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-mayday в vhf\.json/);
+  c.situations.situations[0].severity = 'problem';
+  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-panpan в vhf\.json/);
+});
+
+test('у каждой ситуации в содержании есть свой шаблон вызова', async () => {
+  const c = await realContent();
+  const calls = new Set(c.vhf.sections.filter((x) => x.kind === 'call').map((x) => x.id));
+  for (const s of c.situations.situations) assert.ok(calls.has(CALL_SECTIONS[s.severity].id), s.id);
+  assert.equal(CALL_SECTIONS.emergency.label, 'MAYDAY - шаблон вызова');
+  assert.equal(CALL_SECTIONS.problem.label, 'PAN-PAN - шаблон вызова');
 });

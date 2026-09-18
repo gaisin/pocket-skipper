@@ -1,4 +1,5 @@
 import { IALA_TOPICS } from '../../site/js/sources.js';
+import { CALL_SECTIONS } from '../../site/js/calls.js';
 
 export const ELEMENT_TYPES = ['quay', 'boat-moored', 'buoy', 'anchor', 'line', 'person', 'label', 'path'];
 export const IMAGE_KINDS = ['lights', 'marks', 'encounter'];
@@ -94,9 +95,13 @@ const checkers = {
     if (opts.filter((o) => o.correct === true).length !== 1) err('нужен ровно один верный вариант');
     if (r.image !== undefined) checkImage(r.image, err);
   },
-  situations(r, err) {
+  situations(r, err, content) {
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
     if (!['emergency', 'problem'].includes(r.severity)) err('severity: emergency или problem');
+    const call = Object.hasOwn(CALL_SECTIONS, r.severity) ? CALL_SECTIONS[r.severity].id : null;
+    if (call && !(content.vhf?.sections ?? []).some((s) => s.id === call && s.kind === 'call')) {
+      err(`нет шаблона вызова ${call} в vhf.json`);
+    }
     if (!list(r.steps) || !r.steps.every((s) => text(s.text))) err('нужны steps с text');
   },
   maneuvers(r, err) {

@@ -27,6 +27,7 @@ const ASSETS = [
   "icons/icon.svg",
   "index.html",
   "js/app.js",
+  "js/calls.js",
   "js/checks.js",
   "js/content.js",
   "js/dates.js",

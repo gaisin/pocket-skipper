@@ -3,7 +3,10 @@ import { createStore } from './storage.js';
 import { matchRoute } from './router.js';
 import { routes } from './routes.js';
 import { h, notFound } from './ui.js';
-import { registerServiceWorker } from './pwa.js';
+import { registerServiceWorker, isStandalone } from './pwa.js';
+
+// Класс нужен CSS, чтобы в режиме приложения растянуть документ на весь экран (см. app.css).
+document.documentElement.classList.toggle('standalone', isStandalone());
 
 const main = document.getElementById('view');
 const notice = document.getElementById('notice');
@@ -39,8 +42,25 @@ async function start() {
     main.replaceChildren(view ? view(ctx, ...params) : notFound());
     const heading = main.querySelector('h1')?.textContent.trim();
     document.title = heading ? `${heading} - Карманный шкипер` : 'Карманный шкипер';
-    window.scrollTo(0, 0);
-    if (moveFocus) main.focus({ preventScroll: true });
+    const target = main.querySelector('[data-scroll-target]');
+    if (target) showTarget(target);
+    else {
+      window.scrollTo(0, 0);
+      if (moveFocus) main.focus({ preventScroll: true });
+    }
+  }
+
+  // Экран открыт ссылкой на свой раздел: прокрутить к нему, подсветить и перенести фокус на заголовок.
+  function showTarget(target) {
+    target.scrollIntoView({ block: 'start' });
+    const scrolledTo = window.scrollY;
+    target.classList.add('flash');
+    target.addEventListener('animationend', () => target.classList.remove('flash'), { once: true });
+    (target.querySelector('[tabindex="-1"]') ?? main).focus({ preventScroll: true });
+    // Шрифты догружаются и меняют высоту текста выше раздела - поправить прокрутку, если её никто не трогал.
+    document.fonts?.ready.then(() => {
+      if (target.isConnected && window.scrollY === scrolledTo) target.scrollIntoView({ block: 'start' });
+    });
   }
 
   window.addEventListener('hashchange', () => render({ moveFocus: true }));

@@ -21,6 +21,7 @@ export const routes = [
   [/^#\/maneuvers\/([\w-]+)$/, maneuverView],
   [/^#\/more$/, moreView],
   [/^#\/more\/vhf$/, vhfView],
+  [/^#\/more\/vhf\/([\w-]+)$/, vhfView],
   [/^#\/more\/checklist\/([\w-]+)$/, checklistView],
   [/^#\/more\/reference$/, referenceView],
   [/^#\/more\/external$/, externalView],

@@ -19,14 +19,26 @@ function body(section, values) {
   }
 }
 
-export function vhfView(ctx) {
+// «Назад» из раздела, открытого кнопкой в ситуации, возвращает к этой ситуации, а не в «Ещё».
+function backToPrevious(event) {
+  if (history.length < 2) return;
+  event.preventDefault();
+  history.back();
+}
+
+// sectionId - раздел, к которому прокрутить экран (ссылка вида #/more/vhf/vhf-mayday).
+export function vhfView(ctx, sectionId) {
   const values = callValues(ctx.store.state.settings);
   const missing = !values.boat || !values.mmsi;
+  const { sections } = ctx.content.vhf;
+  const target = sections.some((s) => s.id === sectionId) ? sectionId : null;
+  const head = header('УКВ-радио', '#/more');
+  if (target) head.querySelector('.back').addEventListener('click', backToPrevious);
   return h('section', { class: 'view' },
-    header('УКВ-радио', '#/more'),
+    head,
     missing ? h('a', { class: 'button', href: '#/more/settings' }, 'Вписать название яхты и MMSI в шаблоны') : null,
-    ctx.content.vhf.sections.map((s) => h('article', { class: 'card', id: `vhf-${s.id}` },
-      h('h2', {}, s.title),
+    sections.map((s) => h('article', { class: 'card', id: `vhf-${s.id}`, 'data-scroll-target': s.id === target },
+      h('h2', { tabindex: s.id === target ? '-1' : null }, s.title),
       body(s, values),
       sourceFooter(s))));
 }

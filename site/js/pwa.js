@@ -1,5 +1,10 @@
 import { h } from './ui.js';
 
+// navigator.standalone - сигнал iOS для приложения с экрана Домой, display-mode - остальных браузеров.
+export function isStandalone(nav = globalThis.navigator, matchMedia = globalThis.matchMedia) {
+  return nav?.standalone === true || Boolean(matchMedia?.('(display-mode: standalone)').matches);
+}
+
 export function registerServiceWorker(banner) {
   if (!('serviceWorker' in navigator)) return;
   const hadController = Boolean(navigator.serviceWorker.controller);
