@@ -2391,12 +2391,12 @@
       "text": "Какие удержания из залога страховка залога обычно не возмещает?",
       "options": [
         { "text": "Уборку, бельё, топливо и откачку танка", "correct": true },
-        { "text": "Кранцы и винч-ручку, упавшие за борт на швартовке" },
+        { "text": "Стойку леера, погнутую при швартовке к причалу" },
         { "text": "Стаксель, порванный в шквал на переходе" },
-        { "text": "Якорь, потерянный на стоянке" }
+        { "text": "Перо руля, повреждённое при касании мели" }
       ],
-      "explain": "World Yacht Insurance: за уборку, бельё, топливо и откачку фекального танка база удерживает из залога, но страховка залога это не возмещает. Незакреплённое снаряжение - кранцы, винч-ручки, паруса, концы, якорь - у Schomacker покрыто.",
-      "sources": [{ "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" }, { "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" }],
+      "explain": "World Yacht Insurance: за уборку, бельё, топливо и откачку фекального танка база удерживает из залога, но страховка залога это не возмещает. Повреждение яхты по вине экипажа - погнутая стойка, задетое перо руля - обоснованное удержание, его Yacht-Pool возмещает. Повреждённые паруса покрыты у World Yacht Insurance и Schomacker. Осторожно с потерями: часто застраховано только повреждение, а не потеря.",
+      "sources": [{ "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" }, { "type": "web", "title": "YACHT-POOL - Charter Deposit Insurance", "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/", "accessed": "2026-09-18" }, { "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" }, { "type": "web", "title": "YACHT-POOL - Kautionsversicherung: doppelt bezahlt und trotzdem abgezockt", "url": "https://yacht-pool.de/blog/kautionsversicherung-doppelt-bezahlt-und-trotzdem-abgezockt/", "accessed": "2026-09-18" }],
       "verified": true
     },
     {

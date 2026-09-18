@@ -41,7 +41,7 @@
             },
             {
               "text": "После обеда в бухтах бывают сильные порывы с берега - проверьте, что якорь взял.",
-              "note": "Яхт-школа пишет это про бухты Bükeyağa и Kocabük, Boataround - про катабатические порывы с холмов в Cold Water Bay.",
+              "note": "Яхт-школа пишет это про бухты Büyükağa и Kocabük, Boataround - про катабатические порывы с холмов в Cold Water Bay.",
               "sources": [
                 {
                   "type": "web",
@@ -445,9 +445,21 @@
               ]
             },
             {
-              "text": "В Гёчеке береговой конец обносят вокруг камня, а не дерева: за деревья штрафуют.",
-              "note": "Блог яхт-школы.",
+              "text": "Где буёв нет, якорь в бухтах Гёчек-Даламан разрешён только с концом на береговую точку крепления (рым, «мапа»). Привязываться к деревьям запрещено.",
+              "note": "Так в правилах залива (ст. 9b), так же пересказывает Coast Guide TR. Блог яхт-школы советует обносить конец вокруг камня и пишет, что за деревья штрафует береговая охрана, - это мнение блога, а правило требует береговой точки крепления.",
               "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Körfezi ile Göcek-Dalaman Koyları - koruma ve kullanma usul ve esasları",
+                  "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                },
                 {
                   "type": "web",
                   "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
@@ -584,19 +596,25 @@
             },
             {
               "text": "Бухту Хамам и остров Домуз из проекта исключили как археологические зоны.",
-              "note": "Там же отменили 182 места в центре Гёчека и отказались от береговых рымов.",
+              "note": "Прибрежная часть бухты Хамам и так закрыта для любых судов (правила залива, ст. 7). В пересмотренном проекте также отменили 182 места в центре Гёчека и отказались от береговых рымов.",
               "sources": [
                 {
                   "type": "web",
                   "title": "Karar - Göcek-Dalaman: ÇED onayı geldi (03.09.2026)",
                   "url": "https://www.karar.com/guncel-haberler/mahkeme-yurutmeyi-durdurdu-proje-degisti-gocek-dalamanda-ced-onayi-geldi-2069710",
                   "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Göcek Körfezi ile Göcek-Dalaman Koyları - koruma ve kullanma usul ve esasları",
+                  "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf",
+                  "accessed": "2026-09-18"
                 }
               ]
             },
             {
-              "text": "Буй не гарантирует безопасность: в июле 2026 в Сарсале забронированный буй № 142 поехал по дну, яхту понесло на соседей.",
-              "note": "Конец под нагрузкой затянуло так, что его еле отдали. Держите под рукой нож и следите за яхтой, как на якоре (вывод).",
+              "text": "Буй не гарантирует безопасность: летом 2026 в Сарсале забронированный буй № 142 поехал по дну, яхту понесло на соседей.",
+              "note": "Статья YatMarina от 24.07.2026. Конец под нагрузкой затянуло так, что его еле отдали. Держите под рукой нож и следите за яхтой, как на якоре (вывод).",
               "sources": [
                 {
                   "type": "web",
@@ -619,9 +637,15 @@
               ]
             },
             {
-              "text": "Цена: в среднем 1 250 TL в сутки для 15-метровой яхты (февраль 2026); для 13 м цены не нашли.",
-              "note": "Там же - не больше 3 суток в одной бухте.",
+              "text": "Цена по тарифу Muğla Gazetesi (февраль 2026): для яхт 12-14,99 м - 900 TL в сутки.",
+              "note": "Для какого сезона эта таблица, статья прямо не пишет. YatMarina в феврале называла в среднем 1 250 TL в сутки для 15-метровой яхты. В одной бухте - не больше 3 суток.",
               "sources": [
+                {
+                  "type": "web",
+                  "title": "Muğla Gazetesi - Göcek'te tonoz tarifesi (26.02.2026)",
+                  "url": "https://www.muglagazetesi.com.tr/fethiye-haberleri/gocekte-tonoz-tarifesi-netlesti-baglama-ucretleri-345169-dolar-208609h",
+                  "accessed": "2026-09-18"
+                },
                 {
                   "type": "web",
                   "title": "YatMarina - Göcek'te tonoz dönemi: 1.250 TL (18.02.2026)",
@@ -842,8 +866,8 @@
               ]
             },
             {
-              "text": "Дрон тяжелее 500 г регистрируют в SHGM; над большинством археологических зон залива летать нельзя.",
-              "note": "До 120 м высоты, 50 м от людей и зданий, 9 км от аэропортов; аэропорт Даламан в 7 км от залива.",
+              "text": "Дрон от 500 г регистрируют в SHGM до приезда; над большинством археологических зон залива летать нельзя.",
+              "note": "Всё это - советы Sunsail, официальный сайт SHGM проверить не удалось. Sunsail же пишет: разрешение на полёт дрона от 500 г просят за 20 рабочих дней через дипломатические каналы, таможня может проверить дрон - возьмите чек и характеристики. До 120 м высоты, 50 м от людей и зданий, 9 км от аэропортов; полоса аэропорта Даламан - в 7 км от залива (Coast Guide TR).",
               "sources": [
                 {
                   "type": "web",
@@ -866,6 +890,24 @@
                   "type": "web",
                   "title": "Coast Guide TR - Göcek Gulf",
                   "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В заливе Гёчек и бухтах Гёчек-Даламан - не быстрее 6 узлов.",
+              "note": "Правила залива, ст. 9e. По регламенту 2026 года владельцу признанного иностранного сертификата за превышение скорости - штраф 2 500 TL за метр длины яхты.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Körfezi ile Göcek-Dalaman Koyları - koruma ve kullanma usul ve esasları",
+                  "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YatMarina - Amatör denizci belgesi: iki rejim (31.07.2026)",
+                  "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/",
                   "accessed": "2026-09-18"
                 }
               ]
@@ -927,8 +969,8 @@
               ]
             },
             {
-              "text": "Маршрут яхт-школы: Ağa Limanı - Экинчик и Дальян - Asi Koyu - Гемилер - Kapı Creek или Wall Bay - база.",
-              "note": "До Ağa Limanı около 12 миль, 3-4 часа. В Asi Koyu нет мобильной связи, есть Wi-Fi ресторана.",
+              "text": "Маршрут яхт-школы: Büyükağa или Kocabük - Экинчик и Дальян - Asi Koyu - Гемилер - Kapı Creek или Wall Bay - база.",
+              "note": "До Büyükağa и Kocabük (в блоге - Buyukaga Kouy и Kocabuk) около 12 миль, 3-4 часа. В Asi Koyu нет мобильной связи, есть Wi-Fi ресторана.",
               "sources": [
                 {
                   "type": "web",
@@ -987,7 +1029,7 @@
             },
             {
               "text": "Пример: Dufour 430 GL в Фетхие - залог 2 500 €, damage waiver 400 € снижает ответственность до 0 €.",
-              "note": "«Service Pack & Cleaning» 400 € в объявлении указан дважды - уточните, одна это позиция или две.",
+              "note": "Обязательный «Service Pack & Cleaning» в объявлении стоит двумя строками по 400 €, и в итоге обязательных услуг - 800 €. Уточните, не задвоение ли это.",
               "sources": [
                 {
                   "type": "web",
@@ -998,18 +1040,19 @@
               ]
             },
             {
-              "text": "Ущерб яхте при лёгкой небрежности покрывает каско владельца, вы теряете залог. При грубой каско-страховщик может взыскать с шкипера.",
+              "text": "При случайном ущербе ваша ответственность ограничена залогом - так пишут и брокер Göcek Yachting, и Sunsail.",
+              "note": "Göcek Yachting: остальное оплачивает страховка яхты.",
               "sources": [
                 {
                   "type": "web",
-                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
-                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
                   "accessed": "2026-09-18"
                 },
                 {
                   "type": "web",
-                  "title": "YACHT-POOL - Skipper-Haftpflicht",
-                  "url": "https://yacht-pool.de/versicherungen-charterskipper/skipper-haftpflicht-versicherung/",
+                  "title": "Sunsail - Yacht Damage Waiver",
+                  "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver",
                   "accessed": "2026-09-18"
                 }
               ]
@@ -1051,8 +1094,8 @@
               ]
             },
             {
-              "text": "Pantaenius продаёт полисы только жителям ЕС, Швейцарии, Норвегии и Исландии; Schomacker - ЕС, Лихтенштейна и Исландии.",
-              "note": "Проверьте, что доступно по вашему месту жительства.",
+              "text": "Pantaenius продаёт полисы только жителям ЕС, Швейцарии, Норвегии и Исландии. У Schomacker два продукта: для жителей ЕС, Лихтенштейна и Исландии и для тех, кто живёт вне их.",
+              "note": "Второй продукт Schomacker не продают гражданам США, Канады, России и Украины. Проверьте, что доступно по вашему месту жительства и гражданству.",
               "sources": [
                 {
                   "type": "web",
@@ -1064,6 +1107,12 @@
                   "type": "web",
                   "title": "Schomacker - Charterkautionsversicherung",
                   "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Schomacker - Charterkaution für Nicht-EWR",
+                  "url": "https://www.schomacker.de/charterversicherungen/charterkaution-nicht-ewr.html",
                   "accessed": "2026-09-18"
                 }
               ]
@@ -1081,13 +1130,19 @@
               ]
             },
             {
-              "text": "Ограничивает ли залог вашу ответственность - источники расходятся.",
-              "note": "Брокер из Гёчека: да, остальное платит страховка яхты. Sunsail: при небрежности или безрассудстве вы платите весь ущерб. Смотрите пункт о небрежности в своём договоре.",
+              "text": "При небрежности источники расходятся: ограничен ли ущерб залогом, решает ваш договор.",
+              "note": "World Yacht Insurance (немецкий рынок): при лёгкой небрежности вы теряете залог, остальное - каско владельца; при грубой каско-страховщик может взыскать с шкипера. Sunsail: при любой небрежности или безрассудстве вы платите весь ущерб, залог и waiver его не ограничивают. Найдите пункт о небрежности в своём договоре.",
               "sources": [
                 {
                   "type": "web",
-                  "title": "Göcek Yachting - Deposit and Insurance",
-                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
+                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Skipper-Haftpflicht",
+                  "url": "https://yacht-pool.de/versicherungen-charterskipper/skipper-haftpflicht-versicherung/",
                   "accessed": "2026-09-18"
                 },
                 {
@@ -1273,8 +1328,55 @@
               ]
             },
             {
-              "text": "Алкоголь: предел 0,05 % BAC. Владельцу иностранного сертификата - штраф 2 500 TL за каждый метр длины.",
-              "note": "Для 13,24 м это около 33 100 TL (расчёт). Тот же штраф - за превышение скорости и опасное сближение с зоной купания. Полис от несчастного случая при опьянении не платит.",
+              "text": "Ведите судовой журнал каждый день и сохраняйте GPS-трек.",
+              "note": "Журнал требует договор DYC; трек - совет с форума: в споре он показывает, где была яхта.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YBW Forum - Corfu: refusing to return our deposit",
+                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Штрафы и требования в Турции",
+          "tips": [
+            {
+              "text": "Если IYT в Турции не признан, под вопросом само управление яхтой: за управление без ADB регламент назначает штраф 2 500 TL за каждый метр полной длины - для 13,24 м около 33 100 TL.",
+              "note": "Сниженный режим - тот же штраф вместо приостановки за отдельные нарушения - YatMarina описывает только для иностранного документа, эквивалентность которого признана. Признан ли IYT, в открытых источниках не нашли; то, что 12Knots принимает IYT, - условие компании. Поэтому до оплаты возьмите у базы письменный ответ.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
+                  "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YatMarina - Amatör denizci belgesi: iki rejim (31.07.2026)",
+                  "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Алкоголь: предел 0,05 % BAC. Владельцу признанного иностранного сертификата за превышение - штраф 2 500 TL за каждый метр длины вместо приостановки документа.",
+              "note": "Для 13,24 м это около 33 100 TL (расчёт). Тот же штраф - за превышение скорости (в заливе Гёчек предел 6 узлов), опасное сближение с зоной купания и опасное управление. Полис от несчастного случая при опьянении не платит.",
               "sources": [
                 {
                   "type": "web",
@@ -1286,6 +1388,12 @@
                   "type": "web",
                   "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
                   "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Göcek Körfezi ile Göcek-Dalaman Koyları - koruma ve kullanma usul ve esasları",
+                  "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf",
                   "accessed": "2026-09-18"
                 },
                 {
@@ -1303,19 +1411,19 @@
               ]
             },
             {
-              "text": "Смена экипажа посреди чартера - только с записью в судовых документах и печатью береговой охраны.",
-              "note": "Человек не из списка на борту - нарушение. 12Knots берёт за смену экипажа 100 €. Предупредите базу заранее.",
+              "text": "Смена экипажа посреди чартера: зарегистрируйте её у ближайшего капитана порта и внесите в судовые документы с подписью и печатью береговой охраны.",
+              "note": "Капитана порта называет GöcekOnline, печать береговой охраны - Sunsail. Человек на борту, которого нет в транзит-логе, - нарушение. 12Knots берёт за смену экипажа 100 €. Предупредите базу заранее.",
               "sources": [
-                {
-                  "type": "web",
-                  "title": "Sunsail - Fethiye travel information",
-                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
-                  "accessed": "2026-09-18"
-                },
                 {
                   "type": "web",
                   "title": "GöcekOnline - Transitlog Turkey",
                   "url": "https://www.gocekonline.com/en/gocek-guide/sailing-and-navigation/transitlog-turkey-yachts",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
                   "accessed": "2026-09-18"
                 },
                 {
@@ -1339,24 +1447,6 @@
                   "type": "web",
                   "title": "12Knots - Dufour 430 GL Kummsal",
                   "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
-                  "accessed": "2026-09-18"
-                }
-              ]
-            },
-            {
-              "text": "Ведите судовой журнал каждый день и сохраняйте GPS-трек.",
-              "note": "Журнал требует договор DYC; трек - совет с форума: в споре он показывает, где была яхта.",
-              "sources": [
-                {
-                  "type": "web",
-                  "title": "Dream Yacht Charter - Terms & Conditions",
-                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
-                  "accessed": "2026-09-18"
-                },
-                {
-                  "type": "web",
-                  "title": "YBW Forum - Corfu: refusing to return our deposit",
-                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
                   "accessed": "2026-09-18"
                 }
               ]
@@ -1637,8 +1727,20 @@
             },
             {
               "text": "Удар килем о камень или мель.",
-              "note": "Кто платит: при лёгкой небрежности - каско владельца, вы теряете залог; при грубой каско-страховщик может взыскать с вас.\nСразу: проверить трюм, сообщить базе.\nСохранить: позицию, показания эхолота, была ли мель на карте, GPS-трек.",
+              "note": "Кто платит: если ущерб случайный - в пределах залога. При небрежности решает договор: по World Yacht Insurance лёгкая небрежность - в пределах залога, по Sunsail любая небрежность снимает этот предел.\nСразу: проверить трюм, сообщить базе.\nСохранить: позицию, показания эхолота, была ли мель на карте, GPS-трек.",
               "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Yacht Damage Waiver",
+                  "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver",
+                  "accessed": "2026-09-18"
+                },
                 {
                   "type": "web",
                   "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
@@ -1685,12 +1787,18 @@
             },
             {
               "text": "Сломался двигатель не по вашей вине.",
-              "note": "Кто платит: поломка от износа или дефекта материала - не вина экипажа, удержание за неё Yacht-Pool считает необоснованным.\nСразу: сообщить базе, ремонт со стороны - только с её согласия.\nСохранить: запись в журнале, счета.",
+              "note": "Кто платит: поломка от износа или дефекта материала - не вина экипажа. Yacht-Pool возмещает обоснованные удержания, а такое считает необоснованным; Pantaenius возмещает удержание, обоснованное или нет.\nСразу: сообщить базе, ремонт со стороны - только с её согласия.\nСохранить: запись в журнале, счета.",
               "sources": [
                 {
                   "type": "web",
                   "title": "YACHT-POOL - Charter Deposit Insurance",
                   "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Pantaenius - Charter Insurance",
+                  "url": "https://www.pantaenius.com/de-en/insurance/charter/",
                   "accessed": "2026-09-18"
                 },
                 {
@@ -1738,8 +1846,8 @@
               ]
             },
             {
-              "text": "Буй сорвало ночью.",
-              "note": "Так было в Сарсале в июле 2026: буй поехал по дну, яхту понесло на соседей, конец под нагрузкой еле отдали.\nСразу: двигатель, отдать или перерезать конец, уйти от соседей; при угрозе людям - MAYDAY или 112; сообщить базе. Кто отвечает за сорванный буй, источников не нашли.\nСохранить: номер буя, бронь, время, фото.",
+              "text": "Буй сорвало.",
+              "note": "Так было в Сарсале летом 2026 (статья YatMarina 24.07.2026): буй поехал по дну, яхту понесло на соседей, конец под нагрузкой еле отдали.\nСразу: двигатель, отдать или перерезать конец, уйти от соседей; при угрозе людям - MAYDAY или 112; сообщить базе. Кто отвечает за сорванный буй, источников не нашли.\nСохранить: номер буя, бронь, время, фото.",
               "sources": [
                 {
                   "type": "web",
