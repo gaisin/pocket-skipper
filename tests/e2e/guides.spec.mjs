@@ -13,7 +13,8 @@ test.afterEach(async ({ page }) => {
 
 const { guides } = content('guides');
 
-test('в «Ещё» гайды стоят после чек-листов и перед справочником', async ({ page }) => {
+test('в «Ещё» есть оба гайда, после чек-листов и перед справочником', async ({ page }) => {
+  expect(guides.map((g) => g.id)).toEqual(expect.arrayContaining(['fethiye', 'money']));
   await page.goto('./#/more');
   const hrefs = await page.locator('.list a').evaluateAll((links) => links.map((a) => a.getAttribute('href')));
   const lastChecklist = Math.max(...content('checklists').checklists.map((c) => hrefs.indexOf(`#/more/checklist/${c.id}`)));
@@ -69,6 +70,8 @@ test('несверенный гайд помечен, пояснение и не
   await expect(page.locator('.badge-unverified')).toHaveText('не сверено');
   const tips = page.locator('.tip');
   await expect(tips.nth(0).locator('.tip-note')).toHaveText('Почему так');
+  // Разбор сценария («Кто платит / Сразу / Сохранить») пишется с переводами строк - они видны.
+  await expect(tips.nth(0).locator('.tip-note')).toHaveCSS('white-space', 'pre-line');
   await expect(tips.nth(0).locator('.sources')).toHaveText('МППСС-72, пр. 26');
   await expect(tips.nth(0).locator('.sources a')).toHaveCount(0);
   await expect(tips.nth(1).locator('.sources a')).toHaveText('Сайт, 2026-09-18');

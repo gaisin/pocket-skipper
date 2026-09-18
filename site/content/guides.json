@@ -1,3 +1,1793 @@
 {
-  "guides": []
+  "guides": [
+    {
+      "id": "fethiye",
+      "title": "Лоция Фетхие",
+      "summary": "Погода, бухты, опасности, буи и местные обычаи - октябрь, Dufour 430 GL",
+      "verified": true,
+      "sections": [
+        {
+          "title": "Погода в начале октября",
+          "tips": [
+            {
+              "text": "Днём дует северо-западный бриз, у берегов до 15-20 узлов.",
+              "note": "Из залива на север идёте против ветра, обратно легче. Переходы на север планируйте на утро. Блог яхт-школы.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Мельтеми входит в залив через холмы Капыдага и перед Гёчеком заворачивает к югу. Ночью дует с севера.",
+              "note": "При сильном мельтеми в местах, открытых на запад, бывают шквалы, иногда очень сильные. SeaTV пишет иначе: днём с юга, ночью с севера.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "После обеда в бухтах бывают сильные порывы с берега - проверьте, что якорь взял.",
+              "note": "Яхт-школа пишет это про бухты Bükeyağa и Kocabük, Boataround - про катабатические порывы с холмов в Cold Water Bay.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boataround - 7 дней из Фетхие",
+                  "url": "https://www.boataround.com/blog/sensational-sailing-in-the-turquoise-turkey-7-days-itinerary-from-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В самом заливе Гёчек ветер обычно мягкий: послеобеденный бриз, а не мельтеми, как западнее.",
+              "note": "Бухты рядом: больше двух часов хода в день выходит редко.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "sailwithus - Sailing Fethiye & Göcek",
+                  "url": "https://sailwithus.de/en/blog/sailing-fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Закат: 7 октября в 18:40, 14 октября в 18:30. Сумерки кончаются примерно через 25 минут.",
+              "note": "Турция круглый год живёт по UTC+3, перехода на летнее время нет.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "sunrise-sunset.org - Фетхие, 07.10.2026",
+                  "url": "https://api.sunrise-sunset.org/json?lat=36.6217&lng=29.1164&date=2026-10-07&formatted=0&tzid=Europe/Istanbul",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "sunrise-sunset.org - Фетхие, 14.10.2026",
+                  "url": "https://api.sunrise-sunset.org/json?lat=36.6217&lng=29.1164&date=2026-10-14&formatted=0&tzid=Europe/Istanbul",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Октябрь заметно дождливее сентября.",
+              "note": "Мугла (город в глубине материка, 2001-2025): в октябре в среднем 4,9 дня с осадками и 70,8 мм, в сентябре 1,5 дня и 27 мм. Официальных цифр именно по Фетхие не нашли.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "MGM - Resmi İstatistikler: Muğla",
+                  "url": "https://www.mgm.gov.tr/veridegerlendirme/il-ve-ilceler-istatistik.aspx?k=A&m=MUGLA",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Море в октябре около 24 °C (от 21,6 до 26,6 °C).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "seatemperature.org - Fethiye, октябрь",
+                  "url": "https://www.seatemperature.org/europe/turkey/fethiye-october.htm",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Windfinder для Гёчека считает по модели GFS с сеткой около 13 км; есть подробный Superforecast.",
+              "note": "Такая сетка не видит порывов с гор в отдельной бухте - делайте поправку на местные советы (вывод).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Windfinder - Göcek",
+                  "url": "https://www.windfinder.com/forecast/gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Официальный морской прогноз MGM - на турецком и английском; 72-часовой - только на турецком.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "MGM - Marine Broadcasts for Shipping",
+                  "url": "https://www.mgm.gov.tr/eng/marine-broadcasts-shipping.aspx",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Стоянки и бухты",
+          "tips": [
+            {
+              "text": "Осадка Dufour 430 GL - 2,10 м: у ресторанных причалов уточняйте глубину до швартовки.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Kapı Creek: около 20 мест у ресторана, персонал помогает с концами, безопасна при любом ветре.",
+              "note": "Глубже 2,5 м только средние места у южного причала, у восточного около 2 м - при нашей осадке это слишком мелко (вывод). SeaTV предупреждает о сильных порывах с запада.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Seagull Bay, в миле западнее Kapı: якорь на 10-20 м в юго-восточном углу, когда Kapı занята.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Wall Bay: два понтона ресторана (около 30 яхт), на западе - якорь на 5-20 м с концом на берег.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Tomb Bay: 10-20 м, ил, конец на берег. Лучшие места - по обе стороны скального мыса на юго-западе, но их часто занимают гулеты.",
+              "note": "У ресторана ONNO мелко; старый причал на северной стороне разрушается.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Deep Bay: глубины 20-25 м, есть буи.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Boynuz Bükü: ил 5-15 м, укрытый северный рукав, причал ресторана до 18 яхт.",
+              "note": "Примерно в 500 м к востоку от входа камни и мели; на северной стороне риф, скала Tetranot в 0,5 мили от берега.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Tersane: узкий вход между скал, около 15 мест у причала ресторана, открыта только северо-западу.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Küçük Sarsala: причал ресторана, глубина около 4 м; неудобно при северо-восточном ветре.",
+              "note": "При северо-западном - порывы, от гулетов идёт волна. Вместимость источники называют разную: 20-30 или 35 яхт.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "GöcekOnline - рестораны в бухтах",
+                  "url": "https://www.gocekonline.com/en/gocek-guide/experience-gocek/best-cove-restaurants-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Острова Yassıca: днём много экскурсионных лодок, после 18:00 тихо. Буи - вдоль западного берега самого большого острова.",
+              "note": "Внутри - «бассейн» глубиной около 1 м, между островками мели.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boatscribe - Anchorage and Moorings in Skopea Bay",
+                  "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Большинство бухт забиты с 11:00 до 15:00 лодками тура «12 островов» - приходите раньше или позже.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Гемилер - лучшее укрытие района: якорь около 15 м, до 60 м цепи, концы на берег, с северо-западной стороны острова.",
+              "note": "С северо-запада меньше мешают экскурсионные лодки. По яхт-школе, в восточной части пролива мельче и якорь держит лучше. Вход на археологический участок платный.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Boataround - 7 дней из Фетхие",
+                  "url": "https://www.boataround.com/blog/sensational-sailing-in-the-turquoise-turkey-7-days-itinerary-from-fethiye",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Олюдениз: в лагуну яхтам заходить нельзя.",
+              "note": "Бухта Belcekız снаружи открыта южной зыби. В бухте западнее входа глубоко и держит переменно - только в устойчивую погоду.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Marinas of Turkey - Dead Sea Anchorages",
+                  "url": "https://turkeymarinas.blogspot.com/2016/04/dead-sea-anchorages.html",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Экинчик: около 25 миль, 5-7 часов хода - выходите рано.",
+              "note": "Якорь в северной части по песку (5-8 м по Sailparking, 8-15 м по MedGulets), от мельтеми лучше всего укрыт северо-восточный угол. От южных ветров стоянка защищена плохо. My Marina у восточного входа - кормой с мурингом.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "MedGulets - Ekincik Bay",
+                  "url": "https://blog.medgulets.com/turkey/marmaris/ekincik-bay",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailparking - Экинчик",
+                  "url": "https://sailparking.com/en/ekincik",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В Дальян по реке идут не на яхте, а на лодках местного кооператива. Договаривайтесь с вечера.",
+              "note": "Дорога около часа, на экскурсию уходит день.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "MedGulets - Ekincik Bay",
+                  "url": "https://blog.medgulets.com/turkey/marmaris/ekincik-bay",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailparking - Экинчик",
+                  "url": "https://sailparking.com/en/ekincik",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Якорь у Фетхие: западнее Ece Marina или в северной части бухты, 8-15 м, ил с водорослями, держит хорошо.",
+              "note": "Блог Sailparking, 2021.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailparking - якорная стоянка Фетхие",
+                  "url": "https://sailparking.com/turkey/mugla/anchorage-fethiye/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В глубоких узких бухтах стоят «по-гулетному»: якорь посередине, кормой к берегу, концы на берег. Нужны плавучие концы.",
+              "note": "При боковом ветре заводят два длинных конца. Деревья с обрезанными концами - след поспешного бегства в шторм. Блог.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Mediterranean Yachting - Mooring hints for Turkey",
+                  "url": "https://www.mediterranean-yachting.com/Turkey/tkymooring.htm",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Конец на берег заводите до послеобеденного бриза.",
+              "note": "Гулеты кладут до 100 м тяжёлой цепи, и она ложится поверх вашей; перехлёст цепей в тесных бухтах - обычная история. Судовой журнал частной яхты, около 2012.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "sailingissues.com - Sailing in Turkey",
+                  "url": "https://sailingissues.com/sailing-in-turkey.html",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В Гёчеке береговой конец обносят вокруг камня, а не дерева: за деревья штрафуют.",
+              "note": "Блог яхт-школы.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Опасности",
+          "tips": [
+            {
+              "text": "Мель Topburnu у острова Yılanlı: около 800 м с юга на север, огонь Fl(2) 10s.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Yassıca: в полумиле восточнее Büyük Yassıca два скалистых островка с обломками вокруг.",
+              "note": "Северо-восточнее Büyük Yassıca ещё островок, его обломки тянутся на 100 м к острову Гёчек.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Göcek Exclusive: к северу от марины риф.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Южный и западный ветер: Belcekız открыта южной зыби, Экинчик плохо защищён от южных ветров, Долина бабочек открыта западной волне.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailparking - Экинчик",
+                  "url": "https://sailparking.com/en/ekincik",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Между Экинчиком и Мармарисом иногда проходят военные учения.",
+              "note": "Блог яхт-школы; официальных координат и графика не нашли.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Медицина: Letoon Hospital в Фетхие - неотложная помощь круглосуточно. В Гёчеке частная клиника держит дежурный катер до 40 узлов.",
+              "note": "Экстренный номер - 112.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "МВД Турции - 112 Acil Çağrı Merkezleri Projesi",
+                  "url": "https://www.icisleri.gov.tr/illeridaresi/112-acil-agri-merkezleri-projesi",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Буи DERİA сейчас",
+          "tips": [
+            {
+              "text": "Статус системы буёв в 2026 году не устоялся - перед выходом спросите на базе, что действует.",
+              "note": "9 июля 2-й административный суд Муглы приостановил проект; 25 августа губернаторство одобрило пересмотренный вариант.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Karar - Göcek-Dalaman: ÇED onayı geldi (03.09.2026)",
+                  "url": "https://www.karar.com/guncel-haberler/mahkeme-yurutmeyi-durdurdu-proje-degisti-gocek-dalamanda-ced-onayi-geldi-2069710",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "1 сентября адвокат противников проекта заявил, что готовит новый иск.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YatMarina - DERİA için yeni dava hazırlığı (01.09.2026)",
+                  "url": "https://yatmarina.com.tr/gocekte-deria-projesi-icin-yeni-dava-hazirligi/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Бухту Хамам и остров Домуз из проекта исключили как археологические зоны.",
+              "note": "Там же отменили 182 места в центре Гёчека и отказались от береговых рымов.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Karar - Göcek-Dalaman: ÇED onayı geldi (03.09.2026)",
+                  "url": "https://www.karar.com/guncel-haberler/mahkeme-yurutmeyi-durdurdu-proje-degisti-gocek-dalamanda-ced-onayi-geldi-2069710",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Буй не гарантирует безопасность: в июле 2026 в Сарсале забронированный буй № 142 поехал по дну, яхту понесло на соседей.",
+              "note": "Конец под нагрузкой затянуло так, что его еле отдали. Держите под рукой нож и следите за яхтой, как на якоре (вывод).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YatMarina - Tonoz kaydı, halat kastı (24.07.2026)",
+                  "url": "https://yatmarina.com.tr/tonoz-kaydi-halat-kasti-elimizi-kolumuzu-az-kalsin-kopariyorduk/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "По правилам, объявленным в феврале: заезд на буй с 14:00, выезд до 12:00, поздний сезон - 1 сентября - 31 октября.",
+              "note": "На месте сканируют QR-код на буе; если не читается - вводят код вручную или вызывают швартовщика.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Muğla Gazetesi - Göcek'te tonoz tarifesi (26.02.2026)",
+                  "url": "https://www.muglagazetesi.com.tr/fethiye-haberleri/gocekte-tonoz-tarifesi-netlesti-baglama-ucretleri-345169-dolar-208609h",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Цена: в среднем 1 250 TL в сутки для 15-метровой яхты (февраль 2026); для 13 м цены не нашли.",
+              "note": "Там же - не больше 3 суток в одной бухте.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YatMarina - Göcek'te tonoz dönemi: 1.250 TL (18.02.2026)",
+                  "url": "https://yatmarina.com.tr/gocekte-tonoz-donemi-resmilesti-1-250-tl-ucret-3-gun-koy-siniri/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "На буях у мыса Dil Burnu (Yassıca) время поделено: экскурсионные лодки с 10:00 до 20:00, остальные суда с 20:00 до 10:00.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Топливо, вода, откачка, деньги",
+          "tips": [
+            {
+              "text": "Бак Dufour 430 GL - 250 л топлива и 430 л воды.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Заправки: Ece Marina (понтон G), Yacht Club Mai рядом с базой, D-Marin и муниципальная марина Mucev в Гёчеке.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "D-Marin Göcek",
+                  "url": "https://www.d-marin.com/en/marinas/gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "GöcekOnline - 6 марин Гёчека",
+                  "url": "https://www.gocekonline.com/en/gocek-guide/experience-gocek/best-marinas-in-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В последний день к заправке очередь - приходите раньше срока сдачи.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В Экинчике заправки нет: дизель туда привозят бензовозом из Кёйджегиза.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "MedGulets - Ekincik Bay",
+                  "url": "https://blog.medgulets.com/turkey/marmaris/ekincik-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "С водой в бухтах проблем нет: много родников и источников.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Спросите, на какой заправке дешевле: где-то при заправке бесплатно откачивают фекальный танк.",
+              "note": "Совет общий, не про Турцию.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The Checklist at the End of Your Charter",
+                  "url": "https://www.cruisingworld.com/charter/the-checklist-at-the-end-of-your-charter/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Нужны лиры: евро берут в крупных маринах и отелях, но не на рынках и в маленьких тавернах.",
+              "note": "Банкоматов в Фетхие много; есть в D-Marin и в муниципальной марине Гёчека.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "D-Marin Göcek",
+                  "url": "https://www.d-marin.com/en/marinas/gocek/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "mySea - Göcek Municipal Marina",
+                  "url": "https://my-sea.com/en/poi/turkey/marmaris-to-fethiye/gocek/gocek-municipal-marina/2c7b704a-9e3c-4b82-81f0-85979bd66ac8",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "База Sunsail в Фетхие не принимает наличные и не выдаёт их с карты.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Провизию на базе Sunsail заранее не заказать; рядом Migros и CarrefourSA.",
+              "note": "Рынок в Фетхие, по данным Sunsail, - по средам. На рыбном рынке покупаете рыбу, и её готовят в ресторане рядом.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Этикет и местные обычаи",
+          "tips": [
+            {
+              "text": "У ресторанного причала стоянка обычно бесплатна для тех, кто ужинает; вода, иногда электричество - в придачу.",
+              "note": "Правила у ресторанов разные - спросите до швартовки.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "GöcekOnline - рестораны в бухтах",
+                  "url": "https://www.gocekonline.com/en/gocek-guide/experience-gocek/best-cove-restaurants-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Место у причала и особые блюда (тандыр) бронируют днём по телефону или УКВ.",
+              "note": "Рестораны в бухтах - средние и высокие цены.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "GöcekOnline - рестораны в бухтах",
+                  "url": "https://www.gocekonline.com/en/gocek-guide/experience-gocek/best-cove-restaurants-gocek",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "У ресторана напротив Гемилера буй бывает бесплатным, если там ужинать.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boataround - 7 дней из Фетхие",
+                  "url": "https://www.boataround.com/blog/sensational-sailing-in-the-turquoise-turkey-7-days-itinerary-from-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Чаевые в ресторанах 10-15 %, за отличное обслуживание до 20 %.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Турецкий флаг нельзя поднимать рваным, распустившимся, дырявым, грязным, выцветшим или мятым.",
+              "note": "Проверьте флаг на приёмке (вывод).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Flags of the World - Turkey: Law on the flag",
+                  "url": "https://www.crwflags.com/fotw/flags/tr_law.html",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Дрон тяжелее 500 г регистрируют в SHGM; над большинством археологических зон залива летать нельзя.",
+              "note": "До 120 м высоты, 50 м от людей и зданий, 9 км от аэропортов; аэропорт Даламан в 7 км от залива.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Вечеринки на лодках в заливе Гёчек - только у южного берега острова Katrancı.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Пляж Изтузу с мая по октябрь закрыт с 20:00 до 08:00: там гнездятся черепахи.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "MedGulets - Ekincik Bay",
+                  "url": "https://blog.medgulets.com/turkey/marmaris/ekincik-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В охраняемой зоне (SEPA) ловить рыбу без разрешения нельзя.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SeaTV - Sailing Fethiye-Göcek",
+                  "url": "https://seatv.world/location/fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Маршруты на неделю",
+          "tips": [
+            {
+              "text": "Первую ночь проведите в базовой марине: яхту принимают с 17:00, вечером - провизия.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boataround - 7 дней из Фетхие",
+                  "url": "https://www.boataround.com/blog/sensational-sailing-in-the-turquoise-turkey-7-days-itinerary-from-fethiye",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "В начале недели идите на север (к Экинчику), переходы - в первой половине дня.",
+              "note": "Днём северо-западный ветер будет встречным.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Маршрут яхт-школы: Ağa Limanı - Экинчик и Дальян - Asi Koyu - Гемилер - Kapı Creek или Wall Bay - база.",
+              "note": "До Ağa Limanı около 12 миль, 3-4 часа. В Asi Koyu нет мобильной связи, есть Wi-Fi ресторана.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Яхтенная академия - маршруты Фетхие/Гёчек",
+                  "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Спокойный вариант - неделя в бухтах Скопеа и у Гемилера: переходы редко длиннее двух часов.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "sailwithus - Sailing Fethiye & Göcek",
+                  "url": "https://sailwithus.de/en/blog/sailing-fethiye-gocek/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Кто хочет в Калкан: гавань летом переполнена, а бухта Firnaz опасна при сильных южных и восточных ветрах.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Boataround - 7 дней из Фетхие",
+                  "url": "https://www.boataround.com/blog/sensational-sailing-in-the-turquoise-turkey-7-days-itinerary-from-fethiye",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "money",
+      "title": "Деньги и страховка",
+      "summary": "Залог, damage waiver, страховки и что делать при повреждениях",
+      "verified": true,
+      "sections": [
+        {
+          "title": "Как устроены залог и страховки",
+          "tips": [
+            {
+              "text": "Залог обычно равен франшизе каско-страховки владельца яхты. Это обеспечение, а не страховка.",
+              "note": "Для 45-футовой яхты в Средиземноморье обычно 1 500-5 000 €.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
+                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Пример: Dufour 430 GL в Фетхие - залог 2 500 €, damage waiver 400 € снижает ответственность до 0 €.",
+              "note": "«Service Pack & Cleaning» 400 € в объявлении указан дважды - уточните, одна это позиция или две.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Ущерб яхте при лёгкой небрежности покрывает каско владельца, вы теряете залог. При грубой каско-страховщик может взыскать с шкипера.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
+                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Skipper-Haftpflicht",
+                  "url": "https://yacht-pool.de/versicherungen-charterskipper/skipper-haftpflicht-versicherung/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Страховка ответственности шкипера - на грубую небрежность, травмы и претензии третьих лиц.",
+              "note": "Шкипер отвечает всем имуществом без лимита; яхты в Турции часто застрахованы только на свою стоимость; иски экипажа к шкиперу обычно не застрахованы.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Skipper-Haftpflicht",
+                  "url": "https://yacht-pool.de/versicherungen-charterskipper/skipper-haftpflicht-versicherung/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
+                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Страховка залога возвращает удержанный залог.",
+              "note": "Yacht-Pool - до 10 000 €, на год, франшиза 5 % (не меньше 50 €), только за обоснованные удержания. Pantaenius покрывает и необоснованные, включая мотор и тузик.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Pantaenius - Charter Insurance",
+                  "url": "https://www.pantaenius.com/de-en/insurance/charter/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Pantaenius продаёт полисы только жителям ЕС, Швейцарии, Норвегии и Исландии; Schomacker - ЕС, Лихтенштейна и Исландии.",
+              "note": "Проверьте, что доступно по вашему месту жительства.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Pantaenius - Charter Insurance",
+                  "url": "https://www.pantaenius.com/de-en/insurance/charter/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Schomacker - Charterkautionsversicherung",
+                  "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "«Страховка залога» от самой чартерной компании не независима: платить или нет, решает компания.",
+              "note": "Страховщик Yacht-Pool (заинтересованная сторона) приводит случай, когда база обвинила шкипера в опьянении и не заплатила.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Kautionsversicherung: doppelt bezahlt",
+                  "url": "https://yacht-pool.de/blog/kautionsversicherung-doppelt-bezahlt-und-trotzdem-abgezockt/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Ограничивает ли залог вашу ответственность - источники расходятся.",
+              "note": "Брокер из Гёчека: да, остальное платит страховка яхты. Sunsail: при небрежности или безрассудстве вы платите весь ущерб. Смотрите пункт о небрежности в своём договоре.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Yacht Damage Waiver",
+                  "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Приёмка: как не заплатить за чужое",
+          "tips": [
+            {
+              "text": "Компании годами не чинят мелкие дефекты и выставляют их каждой новой команде: погнутые релинги, царапины, повреждённое перо руля.",
+              "note": "Всё - в акт с подписью менеджера базы; устные обещания не в счёт, сдавать будете другому сотруднику.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Check-in: tips for taking over a charter yacht",
+                  "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Волосяные трещины вокруг килевых болтов - след неотремонтированного удара о грунт.",
+              "note": "Спор 2024 года на Корфу (форум): база удержала 2 500 € за трещину у киля, которую, по словам экипажа, уже ремонтировали.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Check-in: tips for taking over a charter yacht",
+                  "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YBW Forum - Corfu: refusing to return our deposit",
+                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Подпись под актом приёмки означает полное признание состояния яхты.",
+              "note": "Так в условиях Dream Yacht Charter.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Фотографируйте дефекты с датой: она сохраняется в метаданных снимка.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "ADAC Skipper - Tipps zum Chartern eines Bootes",
+                  "url": "https://skipper.adac.de/ratgeber/boot-chartern-tipps",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Не говорите базе, что у вас есть страховка залога.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Check-in: tips for taking over a charter yacht",
+                  "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Без обязательного аварийного снаряжения (приложение EK-2 регламента) яхту не выпускают в море.",
+              "note": "Плюс штраф 1 000 TL за метр длины. Регламент действует с 17.07.2026.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
+                  "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Договоритесь письменно: залог удерживают только за ущерб яхте по вине экипажа и только по счетам за ремонт.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "До оплаты проверьте, что ваш сертификат принимают, иначе страховка может не действовать.",
+              "note": "12Knots прямо называет IYT. По новому регламенту важен лимит длины в документе - какой он у IYT, уточните у базы.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "ADAC Skipper - Tipps zum Chartern eines Bootes",
+                  "url": "https://skipper.adac.de/ratgeber/boot-chartern-tipps",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
+                  "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Во время чартера: что аннулирует страховку",
+          "tips": [
+            {
+              "text": "Ночные переходы: у Dream Yacht Charter ходить от заката до рассвета без согласия базы запрещено.",
+              "note": "В начале октября закат около 18:30-18:45. Проверьте свой договор.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "sunrise-sunset.org - Фетхие, 07.10.2026",
+                  "url": "https://api.sunrise-sunset.org/json?lat=36.6217&lng=29.1164&date=2026-10-07&formatted=0&tzid=Europe/Istanbul",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Ветер: не выходить из порта или с якоря при 6 баллах и больше, фактических или по прогнозу.",
+              "note": "Условия Dream Yacht Charter.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Район: у базы бывает лимит расстояния; в Грецию - только по согласованию и с греческим сбором за транзит-лог.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Алкоголь: предел 0,05 % BAC. Владельцу иностранного сертификата - штраф 2 500 TL за каждый метр длины.",
+              "note": "Для 13,24 м это около 33 100 TL (расчёт). Тот же штраф - за превышение скорости и опасное сближение с зоной купания. Полис от несчастного случая при опьянении не платит.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YatMarina - Amatör denizci belgesi: iki rejim (31.07.2026)",
+                  "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
+                  "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Ингосстрах - страхование для парусного спорта",
+                  "url": "https://www.ingos.ru/life/neschastnyj-sluchaj/sport/parusnyj-sport",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Смена экипажа посреди чартера - только с записью в судовых документах и печатью береговой охраны.",
+              "note": "Человек не из списка на борту - нарушение. 12Knots берёт за смену экипажа 100 €. Предупредите базу заранее.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "GöcekOnline - Transitlog Turkey",
+                  "url": "https://www.gocekonline.com/en/gocek-guide/sailing-and-navigation/transitlog-turkey-yachts",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Людей на борту - не больше разрешённого (у этой яхты 8), иначе рейс считается «без разрешения».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "İMEAK DTO - Özel Teknelerin Donatımı ... Yönetmelik",
+                  "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Ведите судовой журнал каждый день и сохраняйте GPS-трек.",
+              "note": "Журнал требует договор DYC; трек - совет с форума: в споре он показывает, где была яхта.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YBW Forum - Corfu: refusing to return our deposit",
+                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Что делать, если что-то случилось",
+          "tips": [
+            {
+              "text": "Угроза людям - MAYDAY на 16-м канале и 112.",
+              "note": "Номер 158 (береговая охрана) по данным МВД Турции объединён с 112; некоторые лоции ещё указывают 158.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "МВД Турции - 112 Acil Çağrı Merkezleri Projesi",
+                  "url": "https://www.icisleri.gov.tr/illeridaresi/112-acil-agri-merkezleri-projesi",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "О любом повреждении или подозрении на него сразу сообщите базе.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Без согласия базы не платите за помощь со стороны, если нет угрозы. Цену буксировки согласуйте до начала работ, все счета и чеки храните.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Столкновение с третьей стороной: совместная декларация с данными её страховщика, иначе ущерб может остаться незастрахованным.",
+              "note": "Сообщите также капитану порта.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Damage report",
+                  "url": "https://yacht-pool.com/damage-report/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Для страховщика запишите: кто шкипер и кто на руле, откуда и куда шли, точную позицию, курс и скорость.",
+              "note": "При посадке на мель - что показывал эхолот и нанесена ли мель на карту. При столкновении - схему: ветер, паруса, двигатель, курсы, свидетели.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Damage report",
+                  "url": "https://yacht-pool.com/damage-report/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "О морском происшествии капитан обязан сообщить в Главный координационный центр поиска и спасения самым удобным способом.",
+              "note": "Регламент 2019 года. Как это оформляют для чартерной яхты, не нашли - спросите базу.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Inal Law - Deniz Kaza ve Olaylarını İnceleme Yönetmeliği",
+                  "url": "https://www.inal-law.com/deniz-kaza-ve-olaylarini-inceleme-yonetmeligi-hakkinda-bilgilendirme/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Сдача яхты и споры",
+          "tips": [
+            {
+              "text": "Пусть дайвер осматривает днище, пока вы сдаёте интерьер. Возьмите подписанную расписку, что корпус и подводная часть в порядке.",
+              "note": "Защитит, если винт намотают уже после вас.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The Checklist at the End of Your Charter",
+                  "url": "https://www.cruisingworld.com/charter/the-checklist-at-the-end-of-your-charter/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "При сотруднике покажите, что работают паруса, брашпиль и мотор тузика. Сфотографируйте яхту со всех сторон.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The Checklist at the End of Your Charter",
+                  "url": "https://www.cruisingworld.com/charter/the-checklist-at-the-end-of-your-charter/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Сдайте свой список неисправностей за чартер.",
+              "note": "Это защищает от счетов за то, что было до вас.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The Checklist at the End of Your Charter",
+                  "url": "https://www.cruisingworld.com/charter/the-checklist-at-the-end-of-your-charter/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Сроки: у 12Knots приём с 17:00, сдача до 08:00. Опоздание у DYC - цена чартера за это время плюс 50 %.",
+              "note": "Sunsail просит вернуться к 17:00 накануне вылета.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 GL Kummsal",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Частые удержания: неполный бак (DYC: 100 € сверх цены топлива), забитый гальюн (250 €), потерянный кранец, прожжённая подушка.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Удержали залог - возьмите расписку и счёт за ремонт. Дома отправьте страховщику вместе с описанием, подписанным экипажем.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "После чистой сдачи блокировку снимают сразу, но банк освобождает деньги за 3-10 рабочих дней.",
+              "note": "По Relax Yachting, на кредитках российских, американских, канадских и австралийских банков блокировка висит около месяца.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Relax Yachting - страховка депозита",
+                  "url": "https://relax-yachting.com/sovety-novichkam/strahovka-deposita-za-yachtu-damager-waiver",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Если спор затянулся: независимый сюрвейер, GPS-трек, опротестование платежа через банк, звонок агенту, через которого бронировали.",
+              "note": "Советы с британского форума (2024) и журнала YACHT; сработает ли опротестование для вашего банка, не проверяли.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YBW Forum - Corfu: refusing to return our deposit",
+                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Check-in: tips for taking over a charter yacht",
+                  "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Как это бывает на практике",
+          "tips": [
+            {
+              "text": "Задели соседа в марине.",
+              "note": "Кто платит: ущерб чужой яхте - страховка ответственности вашей чартерной яхты. Yacht-Pool пишет, что удерживать за это залог нельзя, а Sunsail - что залог покрывает претензии третьих лиц до своей суммы: источники расходятся.\nСразу: совместная декларация с данными страховщика соседа, сообщить базе и капитану порта.\nСохранить: фото, схему, контакты свидетелей.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Damage report",
+                  "url": "https://yacht-pool.com/damage-report/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Yacht Damage Waiver",
+                  "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Потеряли тузик или мотор.",
+              "note": "Кто платит: обычно вы из залога. Страховки залога часто платят за повреждение, но не за потерю: утопленный мотор могут не оплатить. Pantaenius прямо включает мотор и тузик, у Schomacker тузик - за доплату. Замену на время чартера DYC даёт только при отдельном залоге 2 000 €.\nСразу: сообщить базе.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Kautionsversicherung: doppelt bezahlt",
+                  "url": "https://yacht-pool.de/blog/kautionsversicherung-doppelt-bezahlt-und-trotzdem-abgezockt/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Pantaenius - Charter Insurance",
+                  "url": "https://www.pantaenius.com/de-en/insurance/charter/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Schomacker - Charterkautionsversicherung",
+                  "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Удар килем о камень или мель.",
+              "note": "Кто платит: при лёгкой небрежности - каско владельца, вы теряете залог; при грубой каско-страховщик может взыскать с вас.\nСразу: проверить трюм, сообщить базе.\nСохранить: позицию, показания эхолота, была ли мель на карте, GPS-трек.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution",
+                  "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Damage report",
+                  "url": "https://yacht-pool.com/damage-report/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Намотали конец на винт.",
+              "note": "Кто платит: повреждённый винт - частое удержание из залога.\nСразу: сообщить базе; у островов Yassıca есть дайвинг-центр для подводных работ - цену согласуйте заранее.\nСохранить: счёт.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Göcek Yachting - Deposit and Insurance",
+                  "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Coast Guide TR - Göcek Gulf",
+                  "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Сломался двигатель не по вашей вине.",
+              "note": "Кто платит: поломка от износа или дефекта материала - не вина экипажа, удержание за неё Yacht-Pool считает необоснованным.\nСразу: сообщить базе, ремонт со стороны - только с её согласия.\nСохранить: запись в журнале, счета.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Травма члена экипажа.",
+              "note": "Кто платит: страховка яхты несчастные случаи на борту не покрывает; иски экипажа к шкиперу без своей страховки шкипера обычно не застрахованы; полис от несчастного случая при опьянении не платит.\nСразу: 112, Letoon Hospital в Фетхие работает круглосуточно.\nСохранить: медицинские документы и чеки.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Skipper-Haftpflicht",
+                  "url": "https://yacht-pool.de/versicherungen-charterskipper/skipper-haftpflicht-versicherung/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Ингосстрах - страхование для парусного спорта",
+                  "url": "https://www.ingos.ru/life/neschastnyj-sluchaj/sport/parusnyj-sport",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "МВД Турции - 112 Acil Çağrı Merkezleri Projesi",
+                  "url": "https://www.icisleri.gov.tr/illeridaresi/112-acil-agri-merkezleri-projesi",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Fethiye travel information",
+                  "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "Буй сорвало ночью.",
+              "note": "Так было в Сарсале в июле 2026: буй поехал по дну, яхту понесло на соседей, конец под нагрузкой еле отдали.\nСразу: двигатель, отдать или перерезать конец, уйти от соседей; при угрозе людям - MAYDAY или 112; сообщить базе. Кто отвечает за сорванный буй, источников не нашли.\nСохранить: номер буя, бронь, время, фото.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YatMarina - Tonoz kaydı, halat kastı (24.07.2026)",
+                  "url": "https://yatmarina.com.tr/tonoz-kaydi-halat-kasti-elimizi-kolumuzu-az-kalsin-kopariyorduk/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "Dream Yacht Charter - Terms & Conditions",
+                  "url": "https://www.dreamyachtcharter.com/terms-and-conditions/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "МВД Турции - 112 Acil Çağrı Merkezleri Projesi",
+                  "url": "https://www.icisleri.gov.tr/illeridaresi/112-acil-agri-merkezleri-projesi",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            },
+            {
+              "text": "База нашла повреждение при сдаче.",
+              "note": "Сразу: сверить с актом приёмки, своими фото и списком неисправностей. Если удержали - расписка и счёт за ремонт, дома всё страховщику. Пример спора - Корфу, 2024: 2 500 € за трещину у киля.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The Checklist at the End of Your Charter",
+                  "url": "https://www.cruisingworld.com/charter/the-checklist-at-the-end-of-your-charter/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT-POOL - Charter Deposit Insurance",
+                  "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/",
+                  "accessed": "2026-09-18"
+                },
+                {
+                  "type": "web",
+                  "title": "YBW Forum - Corfu: refusing to return our deposit",
+                  "url": "https://forums.ybw.com/threads/corfu-bareboat-charter-refusing-to-return-our-deposit.612137/",
+                  "accessed": "2026-09-18"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
