@@ -13,7 +13,7 @@
             { "id": "vhf-cert", "text": "Сертификат УКВ-оператора - взять с собой", "note": "Учебник относит его к документам на борту. Нужен ли он компании - уточнить." },
             { "id": "charter-contract", "text": "Договор чартера", "note": "Найти пункты о небрежности, ночных переходах, ветре, районе плавания и опоздании с возвратом. Например, у Dream Yacht Charter нельзя ходить от заката до восхода без согласия базы и выходить при ветре от 6 баллов, фактическом или по прогнозу." },
             { "id": "insurance", "text": "Страховка яхты", "note": "Уточнить у компании, что покрывает полис яхты. Попросить подтверждение страховки, чартерную лицензию и разрешение на эксплуатацию яхты." },
-            { "id": "crew-list", "text": "Судовая роль: имена, паспортные данные, контакты родственников", "note": "Данные экипажа вносят в транзитный лог (seyir izin belgesi). Sunsail в Фетхие подаёт их турецким властям не позже чем за 7 дней до выхода; срок своей компании - уточнить. Кто садится или сходит в середине чартера, того вписывают в судовые документы с подписью и печатью береговой охраны." },
+            { "id": "crew-list", "text": "Судовая роль: имена, паспортные данные, контакты родственников", "note": "Данные экипажа вносят в транзитный лог (seyir izin belgesi). Sunsail в Фетхие подаёт их турецким властям не позже чем за 7 дней до выхода; срок своей компании - уточнить. Кто садится или сходит в середине чартера: смену регистрируют у ближайшего капитана порта (GöcekOnline) и вписывают в судовые документы с подписью и печатью береговой охраны (Sunsail)." },
             { "id": "transit-log", "text": "Транзитный лог (seyir izin belgesi): кто оформляет - уточнить у чартерной компании", "note": "Его подписывает владелец, оператор, капитан или агент; лог может быть электронным и должен быть на борту всё плавание." }
           ]
         },
@@ -113,6 +113,7 @@
         { "type": "web", "title": "Relax Yachting - Страховой депозит за яхту, страховка депозита (damage waiver)", "url": "https://relax-yachting.com/sovety-novichkam/strahovka-deposita-za-yachtu-damager-waiver", "accessed": "2026-09-18" },
         { "type": "web", "title": "Pantaenius - Charter Insurance", "url": "https://www.pantaenius.com/de-en/insurance/charter/", "accessed": "2026-09-18" },
         { "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" },
+        { "type": "web", "title": "GöcekOnline - Transitlog Turkey", "url": "https://www.gocekonline.com/en/gocek-guide/sailing-and-navigation/transitlog-turkey-yachts", "accessed": "2026-09-18" },
         { "type": "web", "title": "Schomacker - Charterkautionsversicherung für Nicht-EWR", "url": "https://www.schomacker.de/charterversicherungen/charterkaution-nicht-ewr.html", "accessed": "2026-09-18" },
         { "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" },
         { "type": "web", "title": "YACHT-POOL - Charter Deposit Insurance", "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/", "accessed": "2026-09-18" },
