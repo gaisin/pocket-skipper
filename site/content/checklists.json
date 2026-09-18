@@ -11,10 +11,21 @@
             { "id": "passport", "text": "Паспорт" },
             { "id": "iyt-cert", "text": "Оригинал сертификата IYT Bareboat Skipper", "note": "В Турции яхту под турецким флагом без экипажа дают, только если хотя бы у одного из арендаторов есть подходящее удостоверение; иностранец управляет в пределах прав своего сертификата. Письменно подтвердить у чартерной компании, что IYT принимают." },
             { "id": "vhf-cert", "text": "Сертификат УКВ-оператора - взять с собой", "note": "Учебник относит его к документам на борту. Нужен ли он компании - уточнить." },
-            { "id": "charter-contract", "text": "Договор чартера", "note": "Разобраться, за что могут удержать залог." },
-            { "id": "insurance", "text": "Страховка", "note": "Уточнить у компании, что покрывает полис яхты." },
-            { "id": "crew-list", "text": "Судовая роль: имена, паспортные данные, контакты родственников", "note": "Данные экипажа вносят в транзитный лог (seyir izin belgesi). Формат и срок - уточнить у чартерной компании." },
+            { "id": "charter-contract", "text": "Договор чартера", "note": "Найти пункты о небрежности, ночных переходах, ветре, районе плавания и опоздании с возвратом. Например, у Dream Yacht Charter нельзя ходить от заката до восхода без согласия базы и выходить при ветре от 6 баллов, фактическом или по прогнозу." },
+            { "id": "insurance", "text": "Страховка яхты", "note": "Уточнить у компании, что покрывает полис яхты. Попросить подтверждение страховки, чартерную лицензию и разрешение на эксплуатацию яхты." },
+            { "id": "crew-list", "text": "Судовая роль: имена, паспортные данные, контакты родственников", "note": "Данные экипажа вносят в транзитный лог (seyir izin belgesi). Sunsail в Фетхие подаёт их турецким властям не позже чем за 7 дней до выхода; срок своей компании - уточнить. Кто садится или сходит в середине чартера, того вписывают в судовые документы с подписью и печатью береговой охраны." },
             { "id": "transit-log", "text": "Транзитный лог (seyir izin belgesi): кто оформляет - уточнить у чартерной компании", "note": "Его подписывает владелец, оператор, капитан или агент; лог может быть электронным и должен быть на борту всё плавание." }
+          ]
+        },
+        {
+          "title": "Деньги и страховки",
+          "items": [
+            { "id": "deposit-waiver", "text": "По договору выяснить, что покрывают залог и damage waiver, а что нет", "note": "Пример Dufour 430 в Фетхие: залог 2 500 €, waiver 400 € за чартер снижает ответственность до 0 €. Но у Sunsail при небрежности или безрассудстве вы платите весь ущерб, залог и waiver его не ограничивают; у Dream Yacht Charter частичный waiver покрывает один инцидент за чартер." },
+            { "id": "deposit-deductions", "text": "Узнать, что база удерживает из залога помимо ущерба", "note": "Например, у Dream Yacht Charter: неполный бак - 100 € сверх топлива, забитый гальюн - 250 € за каждый, плохая уборка - 100-300 €. Уборку, бельё, топливо и откачку фекального танка страховка залога не возмещает." },
+            { "id": "deposit-card", "text": "Кредитная карта для залога: лимит не меньше суммы залога", "note": "Dream Yacht Charter принимает залог по правилам местных банков, например кредитной картой, а не дебетовой. С дебетовой карты сумму не блокируют, а списывают и потом возвращают, банк может взять комиссию. После чистой сдачи блокировку снимают сразу, но банк освобождает деньги за 3-10 рабочих дней; у карт российских, американских, канадских и австралийских банков - около месяца. База Sunsail в Фетхие не принимает наличные и не выдаёт их с карты." },
+            { "id": "deposit-insurance", "text": "Решить, нужна ли страховка залога и ответственности шкипера, и какая доступна по месту жительства", "note": "Pantaenius продаёт чартерные полисы только жителям ЕС, Швейцарии, Норвегии и Исландии, Schomacker - ЕС, Лихтенштейна и Исландии. Собственная «страховка залога» чартерной компании часто не настоящая страховка. Если полис есть, базе о нём не говорить." },
+            { "id": "claim-deadline", "text": "Записать срок заявления по страховке залога", "note": "У Schomacker гарантия истекает через месяц после окончания чартера; World Yacht Insurance тоже называет около месяца. Для заявления нужны расписка базы об удержании и счёт за ремонт." },
+            { "id": "travel-insurance", "text": "Медицинская страховка путешествия, в которой не исключено плавание на яхте", "note": "Полис от несчастного случая с опцией «парусный спорт» (например, Ингосстрах) не заменяет медицинскую страховку за рубежом и не действует при опьянении. Специализированные чартерные полисы (Topsail) прямо покрывают плавание и дальше 12 миль от берега." }
           ]
         },
         {
@@ -45,14 +56,16 @@
             { "id": "pump-out", "text": "Фекальный танк откачивать, как только он заполнен на 80%", "note": "На ближайшей станции приёма или судне-сборщике. Даже если танк не заполнен, отходы сдают после возвращения в порт: при вместимости яхты менее 12 человек - не позже 20 дней, при 12 и более - не позже 15. Вместимость смотреть в документах яхты: у Dufour 430 GL по руководству 10, 12 или 14 человек в зависимости от категории." },
             { "id": "waste-form", "text": "После каждой откачки хранить на борту форму передачи отходов (Atık Transfer Formu)", "note": "Кто не может подтвердить сдачу отходов, получает административное наказание." },
             { "id": "waste-record", "text": "Узнать у компании QR-код яхты в системе Mavi Kart и как отмечается откачка", "note": "Mavi Kart теперь часть онлайн-системы «Denizcilik Atıkları Uygulaması» (циркуляр 2026/12)." },
-            { "id": "deria-booking", "text": "Бухты Гёчека: буй или рым бронировать заранее в Deria", "note": "Система DERİA: 17 бухт, оплата онлайн, на месте помогают швартовщики. Цену смотреть в приложении." },
+            { "id": "deria-booking", "text": "Бухты Гёчека: спросить на базе, работают ли в октябре платные буи DERİA и как их бронировать", "note": "Статус спорный. Административный суд Муглы № 2 приостановил проект 9 июля 2026, 25 августа губернаторство одобрило изменённый проект («ÇED olumlu»), 1 сентября адвокат противников объявил о новом иске. Бухта Хамам и остров Домуз из проекта исключены, 182 места в центре Гёчека отменены. Если система работает - бронь и оплата в приложении Deria, на месте помогают швартовщики." },
             { "id": "seagrass", "text": "В зонах посидонии якорь не бросать", "note": "У о. Гёчек, в бухтах Кыш-Лиманы, Куршунлу, Сарсала, Сыралыбюк, у о-вов Ясыджа и Зейтинли - только буи и рымы." },
             { "id": "stern-line", "text": "Где буёв нет - якорь только с концом на береговой рым", "note": "Привязываться к деревьям запрещено. В бухтах Гёчек-Даламан якорь - только в отведённых местах." },
             { "id": "stay-limit", "text": "В бухтах Гёчек-Даламан - не дольше 3 суток в одной бухте и 11 суток подряд во всех" },
             { "id": "speed-limit", "text": "В заливе и бухтах Гёчек-Даламан - не быстрее 6 узлов" },
             { "id": "garbage", "text": "Мусор - только в контейнеры", "note": "Они стоят в пунктах обслуживания яхт (yat mola noktası) и в бухтах Kille и Sarsala." },
             { "id": "no-bbq-music", "text": "Мангал на открытой палубе и громкая музыка запрещены" },
-            { "id": "hamam", "text": "Прибрежная часть бухты Хамам закрыта для любых судов" }
+            { "id": "hamam", "text": "Прибрежная часть бухты Хамам закрыта для любых судов" },
+            { "id": "private-yacht-rules", "text": "С 17.07.2026 действует новый регламент о частных судах - он касается и бербоут-чартера", "note": "Владельцу признанного иностранного сертификата за алкоголь выше 0,05 % (0,5 промилле), превышение скорости, опасное сближение с зоной купания или опасное управление - штраф 2 500 TL за метр длины яхты. Для Dufour 430 (13,24 м) это около 33 000 TL. Суммы индексируются каждый год." },
+            { "id": "iyt-new-rules", "text": "Письменно спросить базу, признаётся ли IYT по новому регламенту", "note": "Регламент допускает иностранный документ, если его эквивалентность признана на основе взаимности. Признан ли IYT, в открытых источниках не подтверждено. То, что 12Knots для этой яхты принимает IYT, - условие компании, а не решение властей." }
           ]
         },
         {
@@ -87,7 +100,25 @@
         { "type": "web", "title": "RNLI - Enjoy the sea trouble-free", "url": "https://rnli.org/safety/choose-your-activity/yacht-sailing-and-motorboating/enjoy-the-sea-trouble-free", "accessed": "2026-09-17" },
         { "type": "web", "title": "RYA - What to wear sailing", "url": "https://www.rya.org.uk/get-started/sailing/what-to-wear-sailing/", "accessed": "2026-09-17" },
         { "type": "web", "title": "RYA / Sunsail - What to pack on your sailing holiday", "url": "https://www.rya.org.uk/about-us/our-partners/sunsail/what-to-pack-on-your-sailing-holiday/", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Sail Training International - Kit list", "url": "https://sailtraininginternational.org/life-onboard/kit-list/", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Sail Training International - Kit list", "url": "https://sailtraininginternational.org/life-onboard/kit-list/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Karar - Mahkeme yürütmeyi durdurdu, proje değişti: Göcek-Dalaman'da ÇED onayı geldi (03.09.2026)", "url": "https://www.karar.com/guncel-haberler/mahkeme-yurutmeyi-durdurdu-proje-degisti-gocek-dalamanda-ced-onayi-geldi-2069710", "accessed": "2026-09-18" },
+        { "type": "web", "title": "YatMarina - Göcek'te DERİA projesi için yeni dava hazırlığı (01.09.2026)", "url": "https://yatmarina.com.tr/gocekte-deria-projesi-icin-yeni-dava-hazirligi/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "İMEAK Deniz Ticaret Odası - Özel Teknelerin Donatımı ve Özel Tekneleri Kullanacak Kişilerin Yeterlikleri Hakkında Yönetmelik (RG 17.01.2026 № 33140)", "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548", "accessed": "2026-09-18" },
+        { "type": "web", "title": "YatMarina - Amatör Denizci Belgesi Askıya Alınabilir, Para Cezası Kanunda: İki Rejim Bir Arada (31.07.2026)", "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Sunsail - Security Deposits - Yacht Damage Waiver", "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Sunsail - Fethiye Travel Information & Planning Guide", "url": "https://www.sunsail.com/yacht-charter/mediterranean/turkey/fethiye/useful-information", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Göcek Yachting - Deposit and Insurance: What You Need to Know in Boat Charters", "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Relax Yachting - Страховой депозит за яхту, страховка депозита (damage waiver)", "url": "https://relax-yachting.com/sovety-novichkam/strahovka-deposita-za-yachtu-damager-waiver", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Pantaenius - Charter Insurance", "url": "https://www.pantaenius.com/de-en/insurance/charter/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" },
+        { "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" },
+        { "type": "web", "title": "YACHT-POOL - Charter Deposit Insurance", "url": "https://yacht-pool.com/charter-skipper-insurance/charter-deposit-insurance/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "ADAC Skipper - Tipps zum Chartern eines Bootes", "url": "https://skipper.adac.de/ratgeber/boot-chartern-tipps", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Ингосстрах - Страхование для занятий парусным спортом", "url": "https://www.ingos.ru/life/neschastnyj-sluchaj/sport/parusnyj-sport", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Topsail Insurance - Charter Travel Insurance", "url": "https://www.topsailinsurance.com/travel-insurance/charter-travel-insurance", "accessed": "2026-09-18" }
       ],
       "verified": true
     },
@@ -99,9 +130,12 @@
         {
           "title": "Документы и инвентарь",
           "items": [
-            { "id": "boat-papers", "text": "Судовые документы, страховка и транзитный лог на борту", "note": "Попросить объяснить документы для района плавания." },
+            { "id": "boat-papers", "text": "Судовые документы, страховка и транзитный лог на борту", "note": "Попросить объяснить документы для района плавания и показать подтверждение страховки яхты." },
             { "id": "inventory", "text": "Пройти опись инвентаря и отметить недостающее" },
-            { "id": "defects", "text": "Все дефекты - в акт с подписью представителя базы, копию себе", "note": "Иначе за незамеченные повреждения прошлой команды могут удержать залог. Неисправности, важные для безопасности (руль, такелаж, двигатель, спасательное снаряжение), - требовать устранить до выхода." },
+            { "id": "defects", "text": "Все дефекты - в акт с подписью представителя базы, копию себе", "note": "Иначе за незамеченные повреждения прошлой команды могут удержать залог. Устное «мы знаем об этой царапине» не поможет: сдавать яхту будете другому сотруднику. Неисправности, важные для безопасности (руль, такелаж, двигатель, спасательное снаряжение), - требовать устранить до выхода." },
+            { "id": "no-sign-unlisted", "text": "Не подписывать акт, пока в нём нет всех найденных дефектов", "note": "У Dream Yacht Charter подпись под актом приёмки означает полное признание состояния яхты по этому акту." },
+            { "id": "photo-video", "text": "Снять всю яхту на фото и видео: корпус, палубу, кокпит, интерьер, каждый дефект", "note": "На снимках нужна дата и время (они сохраняются в метаданных). Удобно включить видео и обойти всю яхту. Если кто-то из экипажа ныряет - осмотреть под водой киль, перо руля и винт." },
+            { "id": "engine-hours", "text": "Записать моточасы и уровень топлива", "note": "Обычно яхту выдают с полным баком и так же возвращают." },
             { "id": "charts", "text": "Бумажные карты и лоция района на борту", "note": "Плоттер их не заменяет." },
             { "id": "manuals", "text": "Инструкции к оборудованию на борту" },
             { "id": "toolbox", "text": "Открыть ящик с инструментами и проверить содержимое" },
@@ -116,7 +150,7 @@
             { "id": "bungs", "text": "Деревянные пробки у каждого кингстона" },
             { "id": "bilge", "text": "Льяла сухие, без запаха топлива" },
             { "id": "bilge-pumps", "text": "Ручная и электрическая помпы работают", "note": "Где ручка ручной помпы и выключатель электрической." },
-            { "id": "keel-bolts", "text": "Осмотреть кильболты", "note": "Трещины вокруг них - след касания грунта." },
+            { "id": "keel-bolts", "text": "Осмотреть кильболты", "note": "Волосяные трещины вокруг болтов - след серьёзного удара о грунт, который ещё не отремонтирован. Нашли - в акт." },
             { "id": "stern-gland", "text": "Сальник вала или уплотнение колонки не течёт" },
             { "id": "steering", "text": "Рулевое устройство: проверить, люфта быть не должно" },
             { "id": "outer-hull", "text": "Осмотреть палубу, корпус снаружи и перо руля (задняя кромка и низ), повреждения - в акт", "note": "Следы на пере руля выдают касание грунта." },
@@ -159,13 +193,14 @@
             { "id": "vhf-check", "text": "УКВ: проверка связи с мариной", "note": "Радиошаблоны: см. Ещё → УКВ-радио." },
             { "id": "yacht-id", "text": "Записать название, позывной и MMSI яхты в «Настройки»" },
             { "id": "plotter", "text": "Картплоттер работает, карты района актуальны" },
-            { "id": "depth-log", "text": "Эхолот и лаг показывают" },
+            { "id": "depth-log", "text": "Эхолот и лаг показывают", "note": "Уточнить, что показывает эхолот: глубину под датчиком или под килем. Осадка Dufour 430 GL - 2,10 м." },
             { "id": "compass", "text": "Компас и таблица девиации" }
           ]
         },
         {
           "title": "Безопасность",
           "items": [
+            { "id": "emergency-kit", "text": "Обязательное аварийное снаряжение по приложению EK-2 регламента о частных судах - на борту", "note": "Без него яхту не выпускают в рейс, а владельцу грозит штраф 1 000 TL за метр полной длины. Попросить у базы список и сверить с описью." },
             { "id": "life-jackets", "text": "Спасательные жилеты - по одному на каждого, подогнать", "note": "У автоматических проверить баллончик и таблетку." },
             { "id": "harnesses", "text": "Страховочные пояса и лини на каждого" },
             { "id": "liferaft", "text": "Спасательный плот: где стоит, как спускается, когда обслуживался", "note": "На Dufour 430 GL рундук плота в транце, доступ через кормовую калитку." },
@@ -188,8 +223,8 @@
             { "id": "bitter-end", "text": "Коренной конец цепи закреплён" },
             { "id": "windlass", "text": "Брашпиль: пульт работает, рукоятка тормоза на борту", "note": "Брашпилем работать при запущенном двигателе. Спросить, где его предохранитель." },
             { "id": "bow-roller", "text": "Носовой ролик и крепления без повреждений" },
-            { "id": "mooring-lines", "text": "Швартовы и кранцы по размеру яхты" },
-            { "id": "shore-line", "text": "Длинный конец для крепления к берегу", "note": "В бухтах Гёчека без буёв стоять на якоре можно только с концом на берег." },
+            { "id": "mooring-lines", "text": "Швартовы и кранцы по размеру яхты", "note": "Минимум - четыре швартова длиной примерно с яхту; перетёртые - требовать заменить. Кормовой кранец для швартовки кормой часто забывают." },
+            { "id": "shore-line", "text": "Два береговых конца по 30 м", "note": "Это минимум по YACHT. В бухтах Гёчека без буёв стоять на якоре можно только с концом на берег." },
             { "id": "boathook", "text": "Отпорный крюк" }
           ]
         },
@@ -224,13 +259,19 @@
         { "type": "iyt", "module": 14, "section": 2, "page": 199 },
         { "type": "iyt", "module": 15, "section": 1, "page": 223 },
         { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
-        { "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-17" },
+        { "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-18" },
         { "type": "web", "title": "RYA - Charter checklist", "url": "https://www.rya.org.uk/boating-abroad/charter-checklist/", "accessed": "2026-09-17" },
         { "type": "web", "title": "RNLI - Enjoy the sea trouble-free", "url": "https://rnli.org/safety/choose-your-activity/yacht-sailing-and-motorboating/enjoy-the-sea-trouble-free", "accessed": "2026-09-17" },
         { "type": "web", "title": "RYA - Liferaft", "url": "https://www.rya.org.uk/knowledge/safety/look-after-yourself/equipment-for-uk-pleasure-vessels/liferaft", "accessed": "2026-09-17" },
         { "type": "web", "title": "RYA - Fire safety on boats", "url": "https://www.rya.org.uk/water-safety/boat-safety-and-maintenance/fire-safety-on-boats/", "accessed": "2026-09-17" },
         { "type": "web", "title": "Deniz Turizmi Yönetmeliği (действующая редакция), ст. 42", "url": "https://www.mevzuat.gov.tr/MevzuatMetin/21.5.200915212.pdf", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Çevre ve Şehircilik Bakanlığı - Göcek Körfezi ile Göcek-Dalaman Koyları koruma ve kullanma usul ve esasları", "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Çevre ve Şehircilik Bakanlığı - Göcek Körfezi ile Göcek-Dalaman Koyları koruma ve kullanma usul ve esasları", "url": "https://webdosya.csb.gov.tr/db/tabiat/haberler/banner43_20180126111908.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "ADAC Skipper - Tipps zum Chartern eines Bootes", "url": "https://skipper.adac.de/ratgeber/boot-chartern-tipps", "accessed": "2026-09-18" },
+        { "type": "web", "title": "Boataround - Tips for a smooth boat handover", "url": "https://www.boataround.com/blog/charter-check-in-tips", "accessed": "2026-09-18" },
+        { "type": "web", "title": "SeaHelp - Charter yacht: tips for takeover", "url": "https://www.sea-help.eu/en/guide/charter-yacht-advice-takeover/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "İMEAK Deniz Ticaret Odası - Özel Teknelerin Donatımı ve Özel Tekneleri Kullanacak Kişilerin Yeterlikleri Hakkında Yönetmelik (RG 17.01.2026 № 33140)", "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548", "accessed": "2026-09-18" },
+        { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" }
       ],
       "verified": true
     }

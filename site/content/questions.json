@@ -8,7 +8,8 @@
     { "id": "weather", "title": "Метеорология" },
     { "id": "anchor-mooring", "title": "Якорь и швартовка" },
     { "id": "safety", "title": "Безопасность и аварии" },
-    { "id": "skipper", "title": "Обязанности шкипера и приёмка" }
+    { "id": "skipper", "title": "Обязанности шкипера и приёмка" },
+    { "id": "charter", "title": "Чартер: деньги и правила" }
   ],
   "questions": [
     {
@@ -1560,6 +1561,48 @@
       "verified": true
     },
     {
+      "id": "weather-q-fethiye-gusts",
+      "topic": "weather",
+      "text": "Бухты Фетхие-Гёчека, яхта стоит на якоре. Когда здесь особенно ждать сильных порывов с берега?",
+      "options": [
+        { "text": "Во второй половине дня", "correct": true },
+        { "text": "Перед рассветом" },
+        { "text": "Только ночью при северном ветре" },
+        { "text": "Никогда: бухты со всех сторон закрыты горами" }
+      ],
+      "explain": "Яхт-школа предупреждает: во второй половине дня в бухтах возможны сильные порывы с берега, поэтому убедитесь, что якорь взял и держит. Днём у берегов, особенно в глубине заливов, бриз доходит до 15-20 узлов.",
+      "sources": [{ "type": "web", "title": "Яхтенная академия - Лучшие яхтенные маршруты для новичков: Турция, Фетхие/Гёчек", "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "weather-q-gocek-squalls",
+      "topic": "weather",
+      "text": "Снаружи залива Гёчек дует сильный мельтеми. Где внутри залива вероятнее всего шквалы?",
+      "options": [
+        { "text": "В местах, открытых на запад", "correct": true },
+        { "text": "В местах, открытых на юг" },
+        { "text": "Только у самого выхода из залива, а внутри всегда тихо" },
+        { "text": "Нигде: мельтеми в залив не заходит" }
+      ],
+      "explain": "Coast Guide TR: мельтеми входит в залив через низкие холмы полуострова Капыдаг и растекается на север; когда он сильный, в местах, открытых на запад, бывают шквалы. Ночью ветер дует с севера.",
+      "sources": [{ "type": "web", "title": "Coast Guide TR - Göcek Gulf", "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "weather-q-ekincik-start",
+      "topic": "weather",
+      "text": "Переход из Фетхие в бухту Экинчик. Когда лучше выходить?",
+      "options": [
+        { "text": "Рано утром, пока дневной северо-западный ветер не усилился", "correct": true },
+        { "text": "Около полудня, когда установится дневной бриз" },
+        { "text": "После обеда: к вечеру встречный ветер обычно стихает" },
+        { "text": "Вечером, чтобы идти ночью по прохладе" }
+      ],
+      "explain": "Днём здесь преобладают северо-западные ветры, и после обеда встречный ветер на пути в Экинчик вероятно усилится. Яхт-школа советует выходить пораньше.",
+      "sources": [{ "type": "web", "title": "Яхтенная академия - Лучшие яхтенные маршруты для новичков: Турция, Фетхие/Гёчек", "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
       "id": "anchor-q-scope-chain",
       "topic": "anchor-mooring",
       "text": "Глубина 8 м, яхта стоит только на цепи. Сколько цепи вытравить как минимум?",
@@ -1767,6 +1810,62 @@
       ],
       "explain": "Лейзи-линии часто наматываются на винт, поэтому её бросают с носа и дают опуститься на дно, а уже потом отдают кормовые и выходят малым ходом. Если корму несёт на соседа - быстро нейтраль, чтобы не намотать его лейзи-линию.",
       "sources": [{ "type": "web", "title": "Sail Ionian - Lazy line mooring: a masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-17" }, { "type": "iyt", "module": 14, "section": 2, "page": 199 }],
+      "verified": true
+    },
+    {
+      "id": "anchor-q-kapi-draught",
+      "topic": "anchor-mooring",
+      "text": "Dufour 430 с осадкой 2,10 м идёт к ресторанным причалам бухты Kapı Creek. Где встать?",
+      "options": [
+        { "text": "На средних местах у южного причала, где глубже 2,5 м", "correct": true },
+        { "text": "У восточного причала: там около 2 м, хватит впритык" },
+        { "text": "На любом месте: у причалов везде больше 4 м" },
+        { "text": "На крайних местах у восточного причала, там глубже всего" }
+      ],
+      "explain": "Boatscribe: средние места у южного причала глубже 2,5 м, у восточного около 2 м. При осадке 2,10 м восточный причал слишком мелкий.",
+      "sources": [{ "type": "web", "title": "Boatscribe - Anchorage and Moorings in Skopea Bay (Gocek)", "url": "https://boatscribe.com/journal/itineraries/mooring-in-skopea-limani-gocek", "accessed": "2026-09-18" }, { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "anchor-q-shore-lines-min",
+      "topic": "anchor-mooring",
+      "text": "Какой минимум береговых концов должен быть на чартерной яхте в Средиземном море?",
+      "options": [
+        { "text": "Два конца по 30 м", "correct": true },
+        { "text": "Один на 15 м" },
+        { "text": "Четыре конца по 10 м" },
+        { "text": "Не нужны: хватит обычных швартовов длиной с яхту" }
+      ],
+      "explain": "Журнал YACHT: минимум - четыре швартова длиной примерно с яхту и два береговых конца по 30 м. Сильно перетёртые концы просите заменить.",
+      "sources": [{ "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "anchor-q-yassica-buoys",
+      "topic": "anchor-mooring",
+      "text": "Буи у мыса Dil Burnu островов Yassıca. Когда ими могут пользоваться яхты, кроме экскурсионных лодок?",
+      "options": [
+        { "text": "С 20:00 до 10:00", "correct": true },
+        { "text": "С 10:00 до 20:00" },
+        { "text": "Круглосуточно, в порядке очереди" },
+        { "text": "Только с 12:00 до 14:00" }
+      ],
+      "explain": "Coast Guide TR: экскурсионные лодки занимают эти буи с 10:00 до 20:00, остальные суда - с 20:00 до 10:00. Днём идти туда за буём бессмысленно.",
+      "sources": [{ "type": "web", "title": "Coast Guide TR - Göcek Gulf", "url": "https://www.coastguidetr.com/en/gulf/1012/gocek-bay", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "anchor-q-oludeniz",
+      "topic": "anchor-mooring",
+      "text": "Можно ли яхте зайти в лагуну Олюдениз и встать там на якорь?",
+      "options": [
+        { "text": "Нет, заходить в лагуну яхтам запрещено", "correct": true },
+        { "text": "Да, если глубина под килем больше 3 м" },
+        { "text": "Да, но только на ночь, когда уйдут экскурсионные лодки" },
+        { "text": "Да, если завести конец на берег" }
+      ],
+      "explain": "Яхт-школа прямо указывает: в лагуну Олюдениз заходить на яхтах строго запрещено.",
+      "sources": [{ "type": "web", "title": "Яхтенная академия - Лучшие яхтенные маршруты для новичков: Турция, Фетхие/Гёчек", "url": "https://yacht-academy.ru/blog/yahtennye-marshruty-turkey-fethiye", "accessed": "2026-09-18" }],
       "verified": true
     },
     {
@@ -2200,6 +2299,230 @@
       ],
       "explain": "Учебник IYT: не подвергайте экипаж и яхту лишней опасности и не бойтесь отказаться от плана. Поэтому места укрытия отмечают на карте заранее, ещё при планировании.",
       "sources": [{ "type": "iyt", "module": 11, "section": 1, "page": 184 }, { "type": "iyt", "module": 9, "section": 2, "page": 151 }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-negligence",
+      "topic": "charter",
+      "text": "Залог внесён, damage waiver куплен. Яхта повреждена из-за небрежности шкипера. Сколько платить по условиям Sunsail?",
+      "options": [
+        { "text": "Весь ущерб: залог и waiver его не ограничивают", "correct": true },
+        { "text": "Не больше суммы залога, остальное покроет страховка яхты" },
+        { "text": "Ничего: waiver снижает ответственность до нуля в любом случае" },
+        { "text": "Половину ущерба сверх залога" }
+      ],
+      "explain": "Sunsail: при небрежности или безрассудстве вы отвечаете за весь ущерб, залог и waiver этого не ограничивают. Брокер Göcek Yachting пишет, что залог ограничивает ответственность за случайный ущерб, а о небрежности там не сказано. Ищите в своём договоре пункт о небрежности.",
+      "sources": [{ "type": "web", "title": "Sunsail - Security Deposits - Yacht Damage Waiver", "url": "https://www.sunsail.com/about-us/legals/yacht-damage-waiver", "accessed": "2026-09-18" }, { "type": "web", "title": "Göcek Yachting - Deposit and Insurance: What You Need to Know in Boat Charters", "url": "https://www.gocekyachting.com/en/explore/boat-rental-costs-procedures/boat-charter-deposit-insurance-guide", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-waiver-incidents",
+      "topic": "charter",
+      "text": "У вас частичный damage waiver по условиям Dream Yacht Charter. Сколько инцидентов за чартер он покрывает?",
+      "options": [
+        { "text": "Один инцидент за чартер", "correct": true },
+        { "text": "Любое число, пока не кончится сумма залога" },
+        { "text": "Два" },
+        { "text": "Ни одного, если яхта стояла на якоре" }
+      ],
+      "explain": "Условия Dream Yacht Charter: частичный waiver действует на один инцидент за чартер. У других компаний правила свои - сверьтесь с договором.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-sign-inventory",
+      "topic": "charter",
+      "text": "На приёмке вы нашли царапину на корпусе, но в акте её нет. Менеджер: «Мы о ней знаем, подписывайте». Что делать?",
+      "options": [
+        { "text": "Сначала вписать царапину в акт, потом подписать", "correct": true },
+        { "text": "Подписать: устного подтверждения базы достаточно" },
+        { "text": "Подписать, а царапину потом сфотографировать и никому не показывать" },
+        { "text": "Отказаться от яхты и потребовать другую" }
+      ],
+      "explain": "У Dream Yacht Charter подпись под актом приёмки - полное признание состояния яхты по этому акту. YACHT предупреждает: при сдаче на причале часто другой сотрудник, который про дефект ничего не знает.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }, { "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-photos",
+      "topic": "charter",
+      "text": "Как лучше задокументировать состояние яхты на приёмке?",
+      "options": [
+        { "text": "Фото и видео всей яхты с датой и временем, дефекты - ещё и в акт", "correct": true },
+        { "text": "Достаточно фото тех дефектов, которые менеджер базы отказался вписать в акт" },
+        { "text": "Устного обхода яхты вместе с менеджером базы достаточно" },
+        { "text": "Снимать не нужно: база сама фотографирует яхту перед чартером" }
+      ],
+      "explain": "ADAC: у фото дефектов должна быть отметка даты, например в метаданных. Boataround советует включить видео и обойти всю яхту, а также записать моточасы и уровень топлива.",
+      "sources": [{ "type": "web", "title": "ADAC Skipper - Tipps zum Chartern eines Bootes", "url": "https://skipper.adac.de/ratgeber/boot-chartern-tipps", "accessed": "2026-09-18" }, { "type": "web", "title": "Boataround - Tips for a smooth boat handover", "url": "https://www.boataround.com/blog/charter-check-in-tips", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-keel-cracks",
+      "topic": "charter",
+      "text": "На приёмке в трюме видны волосяные трещины вокруг килевых болтов. Что это значит?",
+      "options": [
+        { "text": "След неотремонтированного удара о грунт - в акт", "correct": true },
+        { "text": "Обычная усадка краски, на прочность не влияет" },
+        { "text": "Признак того, что болты недавно подтянули на верфи" },
+        { "text": "Нормальный износ за сезон, вносить в акт не нужно" }
+      ],
+      "explain": "YACHT: волосяные трещины вокруг болтов - признак серьёзного удара о грунт, который ещё не отремонтирован. Не внесёте в акт - ущерб могут списать на вас.",
+      "sources": [{ "type": "web", "title": "YACHT - Check-in: important tips for taking over a charter yacht", "url": "https://www.yacht.de/en/travel-and-charter/counsellor/check-in-important-tips-for-taking-over-a-charter-yacht/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-claim-deadline",
+      "topic": "charter",
+      "text": "У вас страховка залога Schomacker, база удержала залог. Когда истекает гарантия, если не подать заявление?",
+      "options": [
+        { "text": "Через месяц после окончания чартера", "correct": true },
+        { "text": "Через год после окончания чартера" },
+        { "text": "Через 7 дней после сдачи яхты" },
+        { "text": "Никогда, пока база не вернула залог" }
+      ],
+      "explain": "Schomacker: гарантия истекает через месяц после даты окончания чартера. World Yacht Insurance тоже называет срок около месяца. Расписку базы и счёт за ремонт берите сразу.",
+      "sources": [{ "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" }, { "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-not-covered",
+      "topic": "charter",
+      "text": "Какие удержания из залога страховка залога обычно не возмещает?",
+      "options": [
+        { "text": "Уборку, бельё, топливо и откачку танка", "correct": true },
+        { "text": "Кранцы и винч-ручку, упавшие за борт на швартовке" },
+        { "text": "Стаксель, порванный в шквал на переходе" },
+        { "text": "Якорь, потерянный на стоянке" }
+      ],
+      "explain": "World Yacht Insurance: за уборку, бельё, топливо и откачку фекального танка база удерживает из залога, но страховка залога это не возмещает. Незакреплённое снаряжение - кранцы, винч-ручки, паруса, концы, якорь - у Schomacker покрыто.",
+      "sources": [{ "type": "web", "title": "World Yacht Insurance - Skipperhaftpflicht & Charterkaution: wer zahlt was", "url": "https://worldyachtinsurance.com/de/skipper-haftpflicht", "accessed": "2026-09-18" }, { "type": "web", "title": "Schomacker - Die Charterkautionsversicherung", "url": "https://www.schomacker.de/charterversicherungen/charterkaution.html", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-night",
+      "topic": "charter",
+      "text": "Договор запрещает ходить от заката до восхода без согласия базы. Как спланировать переход 7 октября в районе Фетхие?",
+      "options": [
+        { "text": "Встать на стоянку до заката (около 18:40), с запасом времени", "correct": true },
+        { "text": "Идти до 19:05, пока не кончились сумерки" },
+        { "text": "После заката просто включить ходовые огни" },
+        { "text": "Выйти после заката, когда стихнет дневной ветер" }
+      ],
+      "explain": "Так записано, например, в условиях Dream Yacht Charter. По расчёту sunrise-sunset.org 7 октября солнце в Фетхие садится в 18:40, гражданские сумерки кончаются в 19:05.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }, { "type": "web", "title": "sunrise-sunset.org API - Фетхие, 07.10.2026", "url": "https://api.sunrise-sunset.org/json?lat=36.6217&lng=29.1164&date=2026-10-07&formatted=0&tzid=Europe/Istanbul", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-force6",
+      "topic": "charter",
+      "text": "По условиям Dream Yacht Charter при каком ветре нельзя выходить из порта или с якорной стоянки?",
+      "options": [
+        { "text": "От 6 баллов, фактическом или по прогнозу", "correct": true },
+        { "text": "Только от 8 баллов, и только если такой ветер уже дует" },
+        { "text": "От 5 баллов, но только при встречном ветре" },
+        { "text": "Ограничений нет, решает шкипер" }
+      ],
+      "explain": "Условия Dream Yacht Charter считают опасной погодой ветер 6 баллов по Бофорту и больше, если он дует или ожидается по прогнозу. Выходить из порта или с якорной стоянки в такую погоду нельзя.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-alcohol",
+      "topic": "charter",
+      "text": "Новый турецкий регламент о частных судах. С какого уровня алкоголя у того, кто управляет яхтой, начинается нарушение?",
+      "options": [
+        { "text": "Выше 0,05 % (0,5 промилле)", "correct": true },
+        { "text": "Выше 0,2 %" },
+        { "text": "Выше 0,1 % (1 промилле)" },
+        { "text": "Порога нет, наказывают только за аварию" }
+      ],
+      "explain": "Регламент действует с 17.07.2026 и распространяется на бербоут-чартер. Порог - 0,05 % BAC. Владельцу признанного иностранного документа за это - штраф 2 500 TL за метр длины яхты.",
+      "sources": [{ "type": "web", "title": "İMEAK Deniz Ticaret Odası - Özel Teknelerin Donatımı ve Özel Tekneleri Kullanacak Kişilerin Yeterlikleri Hakkında Yönetmelik (RG 17.01.2026 № 33140)", "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548", "accessed": "2026-09-18" }, { "type": "web", "title": "YatMarina - Amatör Denizci Belgesi Askıya Alınabilir, Para Cezası Kanunda: İki Rejim Bir Arada (31.07.2026)", "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-fine",
+      "topic": "charter",
+      "text": "Вы ведёте Dufour 430 (13,24 м) по признанному иностранному сертификату и превысили скорость. Что грозит по новому регламенту?",
+      "options": [
+        { "text": "Штраф 2 500 TL за каждый метр длины яхты", "correct": true },
+        { "text": "Фиксированный штраф 2 500 TL за всё нарушение" },
+        { "text": "Приостановка сертификата на полгода, как у турецкого ADB" },
+        { "text": "Только предупреждение за первое нарушение" }
+      ],
+      "explain": "Турецкий ADB за такие нарушения приостанавливают, а владельцу иностранного документа вместо этого - штраф 2 500 TL за метр. По полной длине 13,24 м это около 33 000 TL; какую длину берут, в статье не уточнено.",
+      "sources": [{ "type": "web", "title": "YatMarina - Amatör Denizci Belgesi Askıya Alınabilir, Para Cezası Kanunda: İki Rejim Bir Arada (31.07.2026)", "url": "https://yatmarina.com.tr/amator-denizci-belgesi-askiya-alinabilir-para-cezasi-kanunda-iki-rejim-bir-arada/", "accessed": "2026-09-18" }, { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-ek2",
+      "topic": "charter",
+      "text": "На борту нет части обязательного аварийного снаряжения из приложения EK-2 нового регламента. Что будет?",
+      "options": [
+        { "text": "Яхту не выпустят в рейс, владельца оштрафуют", "correct": true },
+        { "text": "Можно выйти, если шкипер распишется в судовом журнале" },
+        { "text": "Штраф шкиперу, но выходить можно" },
+        { "text": "Ничего: это касается только коммерческих судов" }
+      ],
+      "explain": "По регламенту яхту без минимального снаряжения из EK-2 в рейс не выпускают, а владельцу штраф 1 000 TL за метр полной длины. Поэтому сверяйте снаряжение на приёмке.",
+      "sources": [{ "type": "web", "title": "İMEAK Deniz Ticaret Odası - Özel Teknelerin Donatımı ve Özel Tekneleri Kullanacak Kişilerin Yeterlikleri Hakkında Yönetmelik (RG 17.01.2026 № 33140)", "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-deria",
+      "topic": "charter",
+      "text": "Начало октября 2026, бухты Гёчека. Что делать с платными буями DERİA?",
+      "options": [
+        { "text": "Спросить на базе, работают ли они и как бронировать", "correct": true },
+        { "text": "Ничего: суд в июле окончательно отменил проект" },
+        { "text": "Бронировать заранее во всех 17 бухтах, включая Хамам" },
+        { "text": "Ничего: буи бесплатные, бронь не нужна" }
+      ],
+      "explain": "Суд приостановил проект 9 июля 2026, 25 августа губернаторство одобрило изменённую версию без бухты Хамам и острова Домуз, а 1 сентября противники объявили о новом иске. Что действует в октябре, надёжнее узнать на базе.",
+      "sources": [{ "type": "web", "title": "Karar - Mahkeme yürütmeyi durdurdu, proje değişti: Göcek-Dalaman'da ÇED onayı geldi (03.09.2026)", "url": "https://www.karar.com/guncel-haberler/mahkeme-yurutmeyi-durdurdu-proje-degisti-gocek-dalamanda-ced-onayi-geldi-2069710", "accessed": "2026-09-18" }, { "type": "web", "title": "YatMarina - Göcek'te DERİA projesi için yeni dava hazırlığı (01.09.2026)", "url": "https://yatmarina.com.tr/gocekte-deria-projesi-icin-yeni-dava-hazirligi/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-collision",
+      "topic": "charter",
+      "text": "В бухте вы задели чужую яхту. Что сделать?",
+      "options": [
+        { "text": "Составить с её шкипером декларацию с данными страховщика", "correct": true },
+        { "text": "Договориться устно и разойтись" },
+        { "text": "Оплатить ремонт соседу из своего залога прямо на месте" },
+        { "text": "Ничего, пока нет видимых повреждений" }
+      ],
+      "explain": "Dream Yacht Charter требует составить декларацию со второй стороной, указав её страховщиков, и сообщить о повреждениях базе. YACHT-POOL: из залога нельзя удерживать ущерб другой яхте, а случаи ответственности перед третьими лицами надо заявлять капитану порта.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }, { "type": "web", "title": "YACHT-POOL - Damage report", "url": "https://yacht-pool.com/damage-report/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-grounding-report",
+      "topic": "charter",
+      "text": "Вам кажется, что яхта задела дно килем. Течи нет. Что делать?",
+      "options": [
+        { "text": "Сразу сообщить базе, даже если повреждений не видно", "correct": true },
+        { "text": "Сообщить при сдаче, если база сама заметит" },
+        { "text": "Нанять водолаза и оплатить ремонт, не говоря базе" },
+        { "text": "Ничего, раз течи нет" }
+      ],
+      "explain": "Dream Yacht Charter: о любом повреждении или подозрении на него сообщать базе немедленно, а тратить деньги на стороннюю помощь без её ведома - только при угрозе людям или яхте. Страховщик потом спросит позицию, курс и показания эхолота.",
+      "sources": [{ "type": "web", "title": "Dream Yacht Charter - Terms & Conditions (Bareboat, December 2025)", "url": "https://www.dreamyachtcharter.com/terms-and-conditions/", "accessed": "2026-09-18" }, { "type": "web", "title": "YACHT-POOL - Damage report", "url": "https://yacht-pool.com/damage-report/", "accessed": "2026-09-18" }],
+      "verified": true
+    },
+    {
+      "id": "charter-q-accident-policy",
+      "topic": "charter",
+      "text": "У вас российский полис от несчастного случая с опцией «парусный спорт». Заменяет ли он медицинскую страховку путешествия?",
+      "options": [
+        { "text": "Нет: для лечения за рубежом нужна отдельная медицинская страховка", "correct": true },
+        { "text": "Да, он покрывает любое лечение за рубежом" },
+        { "text": "Да, если ходить не дальше 12 миль от берега" },
+        { "text": "Да, если купить его на весь срок поездки" }
+      ],
+      "explain": "Ингосстрах: для поездки за границу нужна отдельная медицинская страховка путешествия. Полис от несчастного случая не покрывает и случаи под действием алкоголя.",
+      "sources": [{ "type": "web", "title": "Ингосстрах - Страхование для занятий парусным спортом", "url": "https://www.ingos.ru/life/neschastnyj-sluchaj/sport/parusnyj-sport", "accessed": "2026-09-18" }],
       "verified": true
     }
   ]
