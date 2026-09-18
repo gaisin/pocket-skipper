@@ -187,6 +187,56 @@ test('line: точка - ровно две конечные координаты
   assert.deepEqual(validateContent(ok), []);
 });
 
+test('видео к манёврам: корректные ссылки YouTube проходят', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].videos = [
+    { title: 'Поворот оверштаг', url: 'https://www.youtube.com/watch?v=nG7e3K5JB4E' },
+    { title: 'С таймкодом и плейлистом', url: 'https://www.youtube.com/watch?v=aDAVzY6vsPk&t=95&list=PLs6j9IuTwY-UcqW0ePFOqb_G9tL-zrlSp' },
+    { title: 'Короткая ссылка', url: 'https://youtu.be/loU4MgPH5Ro' },
+  ];
+  assert.deepEqual(validateContent(c), []);
+});
+
+test('видео к манёврам: пустой список и не массив не проходят', () => {
+  for (const videos of [[], 'https://youtu.be/loU4MgPH5Ro', {}, null]) {
+    const c = minimal();
+    c.maneuvers.maneuvers[0].videos = videos;
+    assert.match(validateContent(c).join('\n'), /m-1: videos: нужен непустой список/, JSON.stringify(videos));
+  }
+});
+
+test('видео к манёврам: нужен title', () => {
+  for (const title of [undefined, '', '   ', 42]) {
+    const c = minimal();
+    c.maneuvers.maneuvers[0].videos = [{ title, url: 'https://youtu.be/loU4MgPH5Ro' }];
+    assert.match(validateContent(c).join('\n'), /m-1: видео: нет title/, JSON.stringify(title));
+  }
+});
+
+test('видео к манёврам: url только YouTube watch или youtu.be с id из 11 символов', () => {
+  const bad = [
+    undefined,
+    'http://www.youtube.com/watch?v=loU4MgPH5Ro',
+    'https://youtube.com/watch?v=loU4MgPH5Ro',
+    'https://www.youtube.com/watch?v=loU4MgPH5R',
+    'https://www.youtube.com/watch?v=loU4MgPH5Roo',
+    'https://www.youtube.com/watch?v=loU4MgPH5R!',
+    'https://www.youtube.com/watch?v=loU4MgPH5Ro&autoplay=1',
+    'https://www.youtube.com/watch?v=loU4MgPH5Ro&t=abc',
+    'https://www.youtube.com/playlist?list=PLs6j9IuTwY-UcqW0ePFOqb_G9tL-zrlSp',
+    'https://www.youtube.com/embed/loU4MgPH5Ro',
+    'https://youtu.be/loU4MgPH5Ro/extra',
+    'https://youtu.be.evil.com/loU4MgPH5Ro',
+    'https://www.youtube.com/watch?v=loU4MgPH5Ro"><script>',
+    'javascript:alert(1)',
+  ];
+  for (const url of bad) {
+    const c = minimal();
+    c.maneuvers.maneuvers[0].videos = [{ title: 'Видео', url }];
+    assert.match(validateContent(c).join('\n'), /m-1: видео: url должен быть ссылкой на YouTube/, String(url));
+  }
+});
+
 test('реальное содержание репозитория проходит проверку', async () => {
   assert.deepEqual(validateContent(await realContent()), []);
 });
