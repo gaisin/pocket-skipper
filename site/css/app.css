@@ -156,3 +156,6 @@ button, input { font: inherit; color: inherit; }
 .tabbar i { width: 20px; height: 3px; border-radius: 2px; background: currentColor; opacity: .45; }
 .tabbar a[aria-current="page"] { color: var(--sea); font-weight: 600; }
 .tabbar a[aria-current="page"] i { opacity: 1; }
+
+/* Видео к манёврам */
+.videos { display: grid; gap: 8px; }
