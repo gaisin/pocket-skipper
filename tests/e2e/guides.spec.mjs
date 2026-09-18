@@ -16,6 +16,8 @@ const { guides } = content('guides');
 test('в «Ещё» есть оба гайда, после чек-листов и перед справочником', async ({ page }) => {
   expect(guides.map((g) => g.id)).toEqual(expect.arrayContaining(['fethiye', 'money']));
   await page.goto('./#/more');
+  // Меню строится после загрузки содержания - дождаться ссылки на справочник, иначе список может быть пустым.
+  await expect(page.locator('.list a[href="#/more/reference"]')).toBeVisible();
   const hrefs = await page.locator('.list a').evaluateAll((links) => links.map((a) => a.getAttribute('href')));
   const lastChecklist = Math.max(...content('checklists').checklists.map((c) => hrefs.indexOf(`#/more/checklist/${c.id}`)));
   const guideAt = guides.map((g) => hrefs.indexOf(`#/more/guide/${g.id}`));
