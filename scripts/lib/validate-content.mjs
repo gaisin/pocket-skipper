@@ -105,6 +105,25 @@ function checkElement(el, err, stepsCount = undefined) {
   }
 }
 
+// Гайд (guides.json) - советы по разделам, у каждого совета свои источники:
+// { id, title, summary, verified, sections: [{ title, tips: [{ text, note?, sources: [...] }] }] }.
+// Общего списка sources у гайда нет: источник всегда стоит рядом с советом, который он подтверждает.
+function checkGuideSections(sections, err) {
+  if (!list(sections)) return err('нет sections');
+  sections.forEach((section, i) => {
+    const where = `раздел ${i + 1}`;
+    if (!text(section?.title)) err(`${where}: нет title`);
+    if (!list(section?.tips)) return err(`${where}: нет tips`);
+    section.tips.forEach((tip, j) => {
+      const tipErr = (msg) => err(`${where}, совет ${j + 1}: ${msg}`);
+      if (!text(tip?.text)) tipErr('нет text');
+      if (tip?.note !== undefined && !text(tip.note)) tipErr('note должна быть непустой строкой');
+      if (!list(tip?.sources)) tipErr('нет источников');
+      for (const src of tip?.sources ?? []) checkSource(src, tipErr);
+    });
+  });
+}
+
 const checkers = {
   questions(r, err, content) {
     const topics = new Set((content.questions.topics ?? []).map((t) => t.id));
@@ -165,6 +184,10 @@ const checkers = {
       err('columns: нужны две подписи');
     }
   },
+  guides(r, err) {
+    if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
+    checkGuideSections(r.sections, err);
+  },
   reference(r, err) {
     if (!text(r.title)) err('нет title');
     if (!REFERENCE_KINDS.includes(r.kind)) return err(`неизвестный kind ${r.kind}`);
@@ -187,7 +210,11 @@ const RECORD_LISTS = {
   checklists: (c) => c.checklists?.checklists,
   vhf: (c) => c.vhf?.sections,
   reference: (c) => c.reference?.sections,
+  guides: (c) => c.guides?.guides,
 };
+
+// Файлы, где источники стоят у отдельных пунктов записи, а не у записи целиком.
+const ITEM_SOURCED = new Set(['guides']);
 
 export function validateContent(content) {
   const errors = [];
@@ -208,8 +235,12 @@ export function validateContent(content) {
       const where = `${file}.json`;
       useId(r.id, where);
       const err = (msg) => errors.push(`${where}: ${r.id}: ${msg}`);
-      if (!list(r.sources)) err('нет источников');
-      for (const s of r.sources ?? []) checkSource(s, err);
+      if (ITEM_SOURCED.has(file)) {
+        if (r.sources !== undefined) err('источники указываются у советов, а не у гайда');
+      } else {
+        if (!list(r.sources)) err('нет источников');
+        for (const s of r.sources ?? []) checkSource(s, err);
+      }
       if (typeof r.verified !== 'boolean') err('verified должен быть true или false');
       checkers[file](r, err, content);
     }

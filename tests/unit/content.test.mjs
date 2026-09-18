@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { formatSource, formatSources } from '../../site/js/sources.js';
 import { CONTENT_FILES, loadContent } from '../../site/js/content.js';
-import { validateContent, longestCorrectShare } from '../../scripts/lib/validate-content.mjs';
+import { validateContent, contentStats, longestCorrectShare } from '../../scripts/lib/validate-content.mjs';
 import { callButton, vhfSectionHref } from '../../site/js/calls.js';
 
 async function realContent() {
@@ -31,6 +31,9 @@ function minimal() {
       src({ id: 'vhf-mayday', title: 'MAYDAY', kind: 'call', when: 'x', lines: ['MAYDAY'] }),
     ] },
     reference: { sections: [src({ id: 'r-1', title: 'Знаки', kind: 'marks', rows: [{ label: 'Северный', value: 'x', mark: 'north' }] })] },
+    guides: { guides: [{ id: 'g-1', title: 'Лоция', summary: 'x', verified: false, sections: [
+      { title: 'Погода', tips: [{ text: 'Днём дует с северо-запада', note: 'почему', sources: [{ type: 'web', title: 'Лоция', url: 'https://x.example', accessed: '2026-09-18' }] }] },
+    ] }] },
     external: { links: [{ id: 'e-1', title: 'SailQuiz', url: 'https://sailquiz.com/quiz', lang: 'en', note: 'x', accessed: '2026-09-16' }] },
   };
 }
@@ -108,6 +111,7 @@ test('неизвестный вид знака и неверный verified не
 test('loadContent грузит все файлы и сообщает об ошибке', async () => {
   const ok = await loadContent(async (url) => ({ ok: true, json: async () => ({ url }) }));
   assert.equal(ok.vhf.url, 'content/vhf.json');
+  assert.equal(ok.guides.url, 'content/guides.json');
   await assert.rejects(loadContent(async () => ({ ok: false, status: 404 })), /content\/questions\.json: 404/);
 });
 
@@ -295,4 +299,58 @@ test('надпись и вид кнопки вызова', () => {
 
 test('ссылка на шаблон вызова помнит ситуацию, из которой открыта', () => {
   assert.equal(vhfSectionHref('vhf-mayday', 'mob'), '#/more/vhf/vhf-mayday?from=situations/mob');
+});
+
+// Гайды: источник у каждого совета, общего списка источников у гайда нет.
+const guideErrors = (mutate) => {
+  const c = minimal();
+  mutate(c.guides.guides[0], c);
+  return validateContent(c).join('\n');
+};
+
+test('гайд: нужны title, summary и непустые разделы с советами', () => {
+  assert.match(guideErrors((g) => { g.title = ' '; }), /guides\.json: g-1: нужны title и summary/);
+  assert.match(guideErrors((g) => { delete g.summary; }), /g-1: нужны title и summary/);
+  for (const sections of [undefined, [], 'x']) {
+    assert.match(guideErrors((g) => { g.sections = sections; }), /g-1: нет sections/, JSON.stringify(sections));
+  }
+  assert.match(guideErrors((g) => { g.sections[0].title = ''; }), /g-1: раздел 1: нет title/);
+  for (const tips of [undefined, [], {}]) {
+    assert.match(guideErrors((g) => { g.sections[0].tips = tips; }), /g-1: раздел 1: нет tips/, JSON.stringify(tips));
+  }
+});
+
+test('гайд: у совета нужен text, note - непустая строка, если задан', () => {
+  assert.match(guideErrors((g) => { g.sections[0].tips[0].text = ''; }), /g-1: раздел 1, совет 1: нет text/);
+  assert.match(guideErrors((g) => { g.sections[0].tips[0].note = ' '; }), /g-1: раздел 1, совет 1: note должна быть непустой строкой/);
+  assert.equal(guideErrors((g) => { delete g.sections[0].tips[0].note; }), '');
+});
+
+test('гайд: у каждого совета свои корректные источники', () => {
+  assert.match(guideErrors((g) => { g.sections[0].tips[0].sources = []; }), /g-1: раздел 1, совет 1: нет источников/);
+  assert.match(guideErrors((g) => { delete g.sections[0].tips[0].sources; }), /g-1: раздел 1, совет 1: нет источников/);
+  const bad = guideErrors((g) => {
+    g.sections.push({ title: 'Деньги', tips: [{ text: 'Залог', sources: [{ type: 'web', title: 'x', url: 'http://x', accessed: '18.09' }] }] });
+  });
+  assert.match(bad, /g-1: раздел 2, совет 1: web: url должен начинаться с https/);
+  assert.match(bad, /g-1: раздел 2, совет 1: web: accessed/);
+});
+
+test('гайд: общий список источников не нужен и не допускается', () => {
+  assert.doesNotMatch(guideErrors(() => {}), /нет источников/);
+  assert.match(guideErrors((g) => { g.sources = [{ type: 'colregs', rule: 26 }]; }), /g-1: источники указываются у советов, а не у гайда/);
+});
+
+test('гайд: verified - true или false, id уникален среди всех файлов', () => {
+  assert.match(guideErrors((g) => { g.verified = 'yes'; }), /g-1: verified должен быть true или false/);
+  assert.match(guideErrors((g) => { g.id = 'q-1'; }), /guides\.json: q-1: id повторяется/);
+  assert.match(guideErrors((g) => { g.id = 'Fethiye Guide'; }), /guides\.json: плохой id/);
+  assert.match(validateContent({ ...minimal(), guides: {} }).join('\n'), /guides\.json: нет списка записей/);
+});
+
+test('статистика сверки учитывает гайды', () => {
+  const c = minimal();
+  assert.ok(contentStats(c).unverified.includes('g-1'));
+  c.guides.guides[0].verified = true;
+  assert.ok(!contentStats(c).unverified.includes('g-1'));
 });

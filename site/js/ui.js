@@ -22,13 +22,18 @@ export function header(title, backHref) {
     title ? h('h1', {}, title) : null);
 }
 
+// Источники через « · »; веб-источник - ссылка во внешнюю вкладку.
+export function sourceLinks(sources) {
+  return sources.map((src, i) => [
+    i > 0 ? ' · ' : null,
+    src.type === 'web' ? h('a', { href: src.url, target: '_blank', rel: 'noopener' }, formatSource(src)) : formatSource(src),
+  ]);
+}
+
 export function sourceFooter(record) {
   return h('footer', { class: 'sources' },
     'Источник: ',
-    record.sources.map((src, i) => [
-      i > 0 ? ' · ' : null,
-      src.type === 'web' ? h('a', { href: src.url, target: '_blank', rel: 'noopener' }, formatSource(src)) : formatSource(src),
-    ]),
+    sourceLinks(record.sources),
     record.verified ? null : h('span', { class: 'badge-unverified' }, 'не сверено'));
 }
 

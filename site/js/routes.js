@@ -6,6 +6,7 @@ import { maneuversIndexView, maneuverView } from './views/maneuvers.js';
 import { moreView } from './views/more.js';
 import { vhfView } from './views/vhf.js';
 import { referenceView } from './views/reference.js';
+import { guideView } from './views/guides.js';
 import { externalView } from './views/external.js';
 import { settingsView } from './views/settings.js';
 
@@ -24,6 +25,7 @@ export const routes = [
   // Любой хвост - раздел, к которому прокрутить; неизвестный раздел открывает обычный экран УКВ-радио.
   [/^#\/more\/vhf\/(.+)$/, vhfView],
   [/^#\/more\/checklist\/([\w-]+)$/, checklistView],
+  [/^#\/more\/guide\/([\w-]+)$/, guideView],
   [/^#\/more\/reference$/, referenceView],
   [/^#\/more\/external$/, externalView],
   [/^#\/more\/settings$/, settingsView],

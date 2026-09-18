@@ -192,5 +192,13 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 .tabbar a[aria-current="page"] { color: var(--sea); font-weight: 600; }
 .tabbar a[aria-current="page"] i { opacity: 1; }
 
+/* Гайды: короткие советы, под каждым - свои источники */
+.guide-section { display: grid; gap: 8px; }
+.tips { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.tip { display: grid; gap: 4px; padding: 10px 12px; background: var(--paper); border: 1px solid var(--line); border-radius: 8px; }
+.tip-text { font-weight: 500; line-height: 1.4; }
+.tip-note { color: var(--muted); font-size: .9rem; line-height: 1.4; }
+.tip .sources { overflow-wrap: anywhere; }
+
 /* Видео к манёврам */
 .videos { display: grid; gap: 8px; }

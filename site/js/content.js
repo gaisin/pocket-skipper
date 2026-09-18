@@ -1,4 +1,4 @@
-export const CONTENT_FILES = ['questions', 'situations', 'maneuvers', 'checklists', 'vhf', 'reference', 'external'];
+export const CONTENT_FILES = ['questions', 'situations', 'maneuvers', 'checklists', 'vhf', 'reference', 'guides', 'external'];
 
 export async function loadContent(fetchFn = (url) => fetch(url)) {
   const entries = await Promise.all(CONTENT_FILES.map(async (name) => {

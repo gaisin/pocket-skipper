@@ -30,6 +30,13 @@ test('раздел УКВ-радио открывается по ссылке н
   assert.deepEqual(matchRoute('#/more/vhf', appRoutes), { view: vhfView, params: [], tab: 'more', query: {} });
 });
 
+test('гайд открывается по id во вкладке «Ещё»', async () => {
+  const { routes: appRoutes } = await import('../../site/js/routes.js');
+  const { guideView } = await import('../../site/js/views/guides.js');
+  assert.deepEqual(matchRoute('#/more/guide/fethiye', appRoutes), { view: guideView, params: ['fethiye'], tab: 'more', query: {} });
+  assert.equal(matchRoute('#/more/guide/', appRoutes).view, null);
+});
+
 test('УКВ-радио со слешем в конце или странным id - обычный экран, а не «Не найдено»', async () => {
   const { routes: appRoutes } = await import('../../site/js/routes.js');
   const { vhfView } = await import('../../site/js/views/vhf.js');
