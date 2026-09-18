@@ -1,11 +1,24 @@
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
 html { -webkit-text-size-adjust: 100%; min-height: 100%; }
-/* iOS, приложение с экрана Домой, status-bar-style black-translucent: веб-вью занимает весь экран,
-   но высота документа (100%) меньше экрана на верхний safe area. На короткой странице
-   position: fixed; bottom: 0 считается от этой высоты, и таб-бар висит над низом экрана.
-   Документ не короче экрана - и таб-бар прижат к низу. */
-html.standalone { min-height: calc(100% + env(safe-area-inset-top, 0px)); }
+/* Обход ошибки WebKit: iOS, приложение с экрана Домой, status-bar-style black-translucent.
+   Веб-вью занимает весь экран, но высота документа (100%) меньше экрана на верхний safe area.
+   На короткой странице position: fixed; bottom: 0 считается от этой высоты, и таб-бар висит
+   над низом экрана. Документ не короче экрана - и таб-бар прижат к низу.
+   Включается только на iOS в режиме приложения: класс ставит app.js по navigator.standalone,
+   а @supports-дубль ниже срабатывает ещё до JS, чтобы не было скачка при первой отрисовке.
+   -webkit-touch-callout - свойство только WebKit на iOS (media-признака с таким именем нет),
+   поэтому Android, десктоп и Safari на Mac его не выполняют.
+   Если зазор останется и на длинных страницах, запасной путь - сменить
+   apple-mobile-web-app-status-bar-style в index.html на black (строка состояния станет
+   непрозрачной, safe area сверху уйдёт из веб-вью); после этого иконку на экране Домой
+   нужно добавить заново, iOS читает эту настройку только при установке. */
+html.ios-standalone { min-height: calc(100% + env(safe-area-inset-top, 0px)); }
+@supports (-webkit-touch-callout: none) {
+  @media (display-mode: standalone) {
+    html { min-height: calc(100% + env(safe-area-inset-top, 0px)); }
+  }
+}
 body {
   margin: 0; background: var(--ground); color: var(--ink);
   font: 16px/1.5 var(--body);
@@ -36,6 +49,7 @@ button, input { font: inherit; color: inherit; }
 .button.primary { background: var(--sea); color: var(--on-accent); }
 .button.small { min-height: 32px; padding: 4px 10px; font-size: .85rem; }
 .button:disabled { opacity: .4; cursor: default; }
+.calls { display: grid; gap: 8px; }
 .call-button { min-height: 52px; font-size: 1.05rem; font-weight: 700; }
 .alarm-button { background: var(--alarm-bg); border-color: var(--alarm-bg); color: #FFFFFF; }
 .row { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -51,8 +65,9 @@ button, input { font: inherit; color: inherit; }
 .list .severity-emergency { border-left: 4px solid var(--port); }
 
 .card { background: var(--paper); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: grid; gap: 8px; }
-/* Раздел, открытый ссылкой: отступ сверху от строки состояния и короткая подсветка. */
-[data-scroll-target] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 12px); }
+/* Раздел, открытый ссылкой: отступ сверху от строки состояния и прилипших плашек
+   (--sticky-bars ставит app.js) и короткая подсветка. Длительность - FLASH_MS в app.js. */
+[data-scroll-target] { scroll-margin-top: calc(env(safe-area-inset-top, 0px) + var(--sticky-bars, 0px) + 12px); }
 .flash { animation: flash 1.8s ease-out; }
 @keyframes flash {
   0%, 35% { box-shadow: 0 0 0 3px var(--sea); background: var(--sea-soft); }
@@ -79,6 +94,7 @@ button, input { font: inherit; color: inherit; }
 .answer.bad { background: var(--bad-bg); border-color: var(--port); box-shadow: inset 0 0 0 1px var(--port); }
 .answer-tag { display: block; margin-top: 2px; font: 600 .72rem var(--mono); text-transform: uppercase; letter-spacing: .06em; }
 ul.answers { list-style: none; margin: 0; padding: 0; }
+.review .answer { cursor: default; }
 .runner { display: grid; gap: 14px; }
 .runner-head { display: grid; gap: 6px; }
 .explain { display: grid; gap: 8px; border-left: 3px solid var(--sea); padding-left: 10px; color: var(--muted); }

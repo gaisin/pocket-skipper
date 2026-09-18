@@ -20,8 +20,9 @@ export const routes = [
   [/^#\/maneuvers$/, maneuversIndexView],
   [/^#\/maneuvers\/([\w-]+)$/, maneuverView],
   [/^#\/more$/, moreView],
-  [/^#\/more\/vhf$/, vhfView],
-  [/^#\/more\/vhf\/([\w-]+)$/, vhfView],
+  [/^#\/more\/vhf\/?$/, vhfView],
+  // Любой хвост - раздел, к которому прокрутить; неизвестный раздел открывает обычный экран УКВ-радио.
+  [/^#\/more\/vhf\/(.+)$/, vhfView],
   [/^#\/more\/checklist\/([\w-]+)$/, checklistView],
   [/^#\/more\/reference$/, referenceView],
   [/^#\/more\/external$/, externalView],

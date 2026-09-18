@@ -57,6 +57,6 @@ function videoLinks(videos) {
     h('h2', {}, 'Видео'),
     h('ul', { class: 'list' }, videos.map((v) => h('li', {},
       h('a', { href: v.url, target: '_blank', rel: 'noopener' },
-        h('span', {}, v.title, h('small', {}, 'нужен интернет')),
+        h('span', {}, v.title, h('span', { class: 'visually-hidden' }, ' (откроется во внешнем приложении)'), h('small', {}, 'нужен интернет')),
         h('span', { class: 'meta' }, 'YouTube'))))));
 }

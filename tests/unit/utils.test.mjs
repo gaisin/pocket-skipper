@@ -33,11 +33,12 @@ test('shuffle возвращает перестановку и не меняет
   assert.deepEqual(out, [2, 3, 4, 1]);
 });
 
-test('isStandalone узнаёт приложение с экрана Домой', async () => {
-  const { isStandalone } = await import('../../site/js/pwa.js');
-  const media = (matches) => () => ({ matches });
-  assert.equal(isStandalone({ standalone: true }, media(false)), true);
-  assert.equal(isStandalone({}, media(true)), true);
-  assert.equal(isStandalone({ standalone: false }, media(false)), false);
-  assert.equal(isStandalone({}, undefined), false);
+test('isIosStandalone узнаёт только приложение с экрана Домой на iOS', async () => {
+  const { isIosStandalone } = await import('../../site/js/pwa.js');
+  assert.equal(isIosStandalone({ standalone: true }), true);
+  // Android и десктоп: navigator.standalone нет, даже если display-mode: standalone.
+  assert.equal(isIosStandalone({}), false);
+  assert.equal(isIosStandalone({ standalone: false }), false);
+  assert.equal(isIosStandalone({ standalone: 'yes' }), false);
+  assert.equal(isIosStandalone(undefined), false);
 });

@@ -27,6 +27,11 @@ test('манёвр с видео показывает ссылки на YouTube 
     await expect(link).toHaveAttribute('href', video.url);
     await expect(link).toHaveAttribute('target', '_blank');
     await expect(link).toHaveAttribute('rel', 'noopener');
+    // Экранный диктор предупреждает, что ссылка уводит из приложения; на экране пометки не видно.
+    await expect(link).toHaveAccessibleName(new RegExp(`${video.title}.*\\(откроется во внешнем приложении\\)`));
+    const hint = link.getByText('(откроется во внешнем приложении)');
+    await expect(hint).toHaveCount(1);
+    expect(await hint.evaluate((el) => el.getBoundingClientRect().width)).toBeLessThanOrEqual(1);
   }
 
   // Видео стоят под шагами и над подписью источников.

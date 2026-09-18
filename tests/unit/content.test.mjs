@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { formatSource, formatSources } from '../../site/js/sources.js';
 import { CONTENT_FILES, loadContent } from '../../site/js/content.js';
 import { validateContent, longestCorrectShare } from '../../scripts/lib/validate-content.mjs';
-import { CALL_SECTIONS } from '../../site/js/calls.js';
+import { callButton, vhfSectionHref } from '../../site/js/calls.js';
 
 async function realContent() {
   const entries = await Promise.all(CONTENT_FILES.map(async (name) =>
@@ -245,20 +245,54 @@ test('реальное содержание репозитория проход�
   assert.deepEqual(validateContent(await realContent()), []);
 });
 
-test('ситуация ссылается на шаблон вызова, которого нет в УКВ-радио', () => {
+test('ситуация без calls не требует шаблонов вызова', () => {
   const c = minimal();
   c.vhf.sections = c.vhf.sections.filter((x) => x.id !== 'vhf-mayday');
-  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-mayday в vhf\.json/);
-  c.vhf.sections.push(src({ id: 'vhf-mayday', title: 'MAYDAY', kind: 'channels', rows: [{ ch: '16', use: 'x' }] }));
-  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-mayday в vhf\.json/);
-  c.situations.situations[0].severity = 'problem';
-  assert.match(validateContent(c).join('\n'), /s-1: нет шаблона вызова vhf-panpan в vhf\.json/);
+  assert.deepEqual(validateContent(c), []);
 });
 
-test('у каждой ситуации в содержании есть свой шаблон вызова', async () => {
+test('calls ситуации: непустой список id разделов vhf.json вида call', () => {
+  const ok = minimal();
+  ok.situations.situations[0].calls = ['vhf-mayday'];
+  assert.deepEqual(validateContent(ok), []);
+
+  for (const calls of [[], 'vhf-mayday', {}, null]) {
+    const c = minimal();
+    c.situations.situations[0].calls = calls;
+    assert.match(validateContent(c).join('\n'), /s-1: calls: нужен непустой список id разделов vhf\.json/, JSON.stringify(calls));
+  }
+  // Нет такого раздела; раздел есть, но это не шаблон вызова; не строка.
+  for (const id of ['vhf-nope', 'v-1', 42]) {
+    const c = minimal();
+    c.situations.situations[0].calls = ['vhf-mayday', id];
+    assert.ok(validateContent(c).includes(`situations.json: s-1: calls: нет шаблона вызова ${id} в vhf.json`), String(id));
+  }
+  const dup = minimal();
+  dup.situations.situations[0].calls = ['vhf-mayday', 'vhf-mayday'];
+  assert.match(validateContent(dup).join('\n'), /s-1: calls: vhf-mayday повторяется/);
+});
+
+// Кнопки вызова в карточке - ровно те вызовы, что названы в шагах, в порядке первого упоминания.
+test('calls каждой ситуации совпадают с вызовами, которые названы в её шагах', async () => {
   const c = await realContent();
-  const calls = new Set(c.vhf.sections.filter((x) => x.kind === 'call').map((x) => x.id));
-  for (const s of c.situations.situations) assert.ok(calls.has(CALL_SECTIONS[s.severity].id), s.id);
-  assert.equal(CALL_SECTIONS.emergency.label, 'MAYDAY - шаблон вызова');
-  assert.equal(CALL_SECTIONS.problem.label, 'PAN-PAN - шаблон вызова');
+  const CALL_WORDS = [['vhf-mayday', /MAYDAY(?! RELAY)/], ['vhf-panpan', /PAN-PAN/]];
+  for (const s of c.situations.situations) {
+    const text = s.steps.map((st) => `${st.text} ${st.note ?? ''}`).join('\n');
+    const mentioned = CALL_WORDS
+      .map(([id, re]) => [id, text.search(re)])
+      .filter(([, pos]) => pos >= 0)
+      .sort((a, b) => a[1] - b[1])
+      .map(([id]) => id);
+    assert.deepEqual(s.calls ?? [], mentioned, s.id);
+  }
+});
+
+test('надпись и вид кнопки вызова', () => {
+  assert.deepEqual(callButton({ id: 'vhf-mayday', title: 'MAYDAY - бедствие' }), { label: 'MAYDAY - шаблон вызова', alarm: true });
+  assert.deepEqual(callButton({ id: 'vhf-panpan', title: 'PAN-PAN - срочность' }), { label: 'PAN-PAN - шаблон вызова', alarm: false });
+  assert.deepEqual(callButton({ id: 'vhf-securite', title: 'SÉCURITÉ' }), { label: 'SÉCURITÉ - шаблон', alarm: false });
+});
+
+test('ссылка на шаблон вызова помнит ситуацию, из которой открыта', () => {
+  assert.equal(vhfSectionHref('vhf-mayday', 'mob'), '#/more/vhf/vhf-mayday?from=situations/mob');
 });

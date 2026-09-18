@@ -1,8 +1,9 @@
 import { h } from './ui.js';
 
-// navigator.standalone - сигнал iOS для приложения с экрана Домой, display-mode - остальных браузеров.
-export function isStandalone(nav = globalThis.navigator, matchMedia = globalThis.matchMedia) {
-  return nav?.standalone === true || Boolean(matchMedia?.('(display-mode: standalone)').matches);
+// Приложение открыто с экрана Домой на iPhone или iPad. navigator.standalone есть только у iOS;
+// display-mode: standalone тут не годится - он совпадает и у установленных приложений на Android и десктопе.
+export function isIosStandalone(nav = globalThis.navigator) {
+  return nav?.standalone === true;
 }
 
 export function registerServiceWorker(banner) {

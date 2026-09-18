@@ -1,7 +1,7 @@
 import { h, header, sourceFooter, notFound } from '../ui.js';
 import { checklistBlock } from './checklist-ui.js';
 import { SITUATION_TTL_MS } from '../checks.js';
-import { CALL_SECTIONS, vhfSectionHref } from '../calls.js';
+import { callButton, vhfSectionHref } from '../calls.js';
 
 const GROUPS = [
   ['emergency', 'Аварийные'],
@@ -21,18 +21,27 @@ export function situationsIndexView(ctx) {
     }));
 }
 
+// Кнопки радиовызова - ровно те вызовы, что названы в шагах ситуации (поле calls), в их порядке.
+function callButtons(ctx, s) {
+  if (!s.calls?.length) return null;
+  const sections = new Map(ctx.content.vhf.sections.map((x) => [x.id, x]));
+  return h('div', { class: 'calls' }, s.calls.map((id) => {
+    const { label, alarm } = callButton(sections.get(id));
+    return h('a', { class: `button call-button ${alarm ? 'alarm-button' : 'primary'}`, href: vhfSectionHref(id, s.id) }, label);
+  }));
+}
+
 export function situationView(ctx, id) {
   const s = ctx.content.situations.situations.find((x) => x.id === id);
   if (!s) return notFound();
   const items = s.steps.map((step, i) => ({ id: String(i), text: step.text, note: step.note }));
   const emergency = s.severity === 'emergency';
-  const call = CALL_SECTIONS[s.severity];
   return h('section', { class: 'view' },
     header('', '#/situations'),
     h('div', { class: emergency ? 'alarm' : 'card' },
       h('h1', {}, s.title),
       h('p', {}, s.summary)),
-    h('a', { class: emergency ? 'button call-button alarm-button' : 'button call-button primary', href: vhfSectionHref(call.id) }, call.label),
+    callButtons(ctx, s),
     checklistBlock(ctx, `situation:${s.id}`, [{ items }], { numbered: true, ttlMs: SITUATION_TTL_MS, resetOnTop: true }),
     sourceFooter(s));
 }

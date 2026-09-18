@@ -3,13 +3,14 @@ import { createStore } from './storage.js';
 import { matchRoute } from './router.js';
 import { routes } from './routes.js';
 import { h, notFound } from './ui.js';
-import { registerServiceWorker, isStandalone } from './pwa.js';
+import { registerServiceWorker, isIosStandalone } from './pwa.js';
 
-// Класс нужен CSS, чтобы в режиме приложения растянуть документ на весь экран (см. app.css).
-document.documentElement.classList.toggle('standalone', isStandalone());
+// Класс включает обход ошибки WebKit с таб-баром в приложении на iOS (см. app.css).
+document.documentElement.classList.toggle('ios-standalone', isIosStandalone());
 
 const main = document.getElementById('view');
 const notice = document.getElementById('notice');
+const banner = document.getElementById('banner');
 
 function safeLocalStorage() {
   try {
@@ -17,6 +18,16 @@ function safeLocalStorage() {
   } catch {
     return null;
   }
+}
+
+// Длительность подсветки раздела - как у анимации .flash в app.css.
+const FLASH_MS = 1800;
+
+// Плашки обновления и предупреждения прилипают к верху экрана. Их высота уходит в
+// scroll-margin-top раздела (app.css), чтобы прокрутка не спрятала раздел под ними.
+function syncStickyBars() {
+  const height = Math.max(0, ...[banner, notice].map((bar) => (bar.hidden ? 0 : bar.getBoundingClientRect().height)));
+  document.documentElement.style.setProperty('--sticky-bars', `${Math.ceil(height)}px`);
 }
 
 function showNotice(text) {
@@ -34,12 +45,12 @@ async function start() {
 
   function render({ moveFocus = false } = {}) {
     const hash = location.hash || '#/today';
-    const { view, params, tab } = matchRoute(hash, routes);
+    const { view, params, tab, query } = matchRoute(hash, routes);
     for (const link of document.querySelectorAll('.tabbar a')) {
       if (link.dataset.tab === tab) link.setAttribute('aria-current', 'page');
       else link.removeAttribute('aria-current');
     }
-    main.replaceChildren(view ? view(ctx, ...params) : notFound());
+    main.replaceChildren(view ? view({ ...ctx, query }, ...params) : notFound());
     const heading = main.querySelector('h1')?.textContent.trim();
     document.title = heading ? `${heading} - Карманный шкипер` : 'Карманный шкипер';
     const target = main.querySelector('[data-scroll-target]');
@@ -52,10 +63,14 @@ async function start() {
 
   // Экран открыт ссылкой на свой раздел: прокрутить к нему, подсветить и перенести фокус на заголовок.
   function showTarget(target) {
+    syncStickyBars();
     target.scrollIntoView({ block: 'start' });
     const scrolledTo = window.scrollY;
     target.classList.add('flash');
-    target.addEventListener('animationend', () => target.classList.remove('flash'), { once: true });
+    // При prefers-reduced-motion анимации нет и animationend не придёт - снимаем подсветку по таймеру.
+    const unflash = () => target.classList.remove('flash');
+    target.addEventListener('animationend', unflash, { once: true });
+    setTimeout(unflash, FLASH_MS);
     (target.querySelector('[tabindex="-1"]') ?? main).focus({ preventScroll: true });
     // Шрифты догружаются и меняют высоту текста выше раздела - поправить прокрутку, если её никто не трогал.
     document.fonts?.ready.then(() => {
@@ -76,4 +91,4 @@ start().catch((err) => {
   window.addEventListener('hashchange', () => location.reload(), { once: true });
 });
 
-registerServiceWorker(document.getElementById('banner'));
+registerServiceWorker(banner);

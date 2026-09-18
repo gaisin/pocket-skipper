@@ -1,5 +1,4 @@
 import { IALA_TOPICS } from '../../site/js/sources.js';
-import { CALL_SECTIONS } from '../../site/js/calls.js';
 
 export const ELEMENT_TYPES = ['quay', 'boat-moored', 'buoy', 'anchor', 'line', 'person', 'label', 'path'];
 export const IMAGE_KINDS = ['lights', 'marks', 'encounter'];
@@ -49,6 +48,18 @@ function checkVideos(videos, err) {
   for (const v of videos) {
     if (!text(v?.title)) err('видео: нет title');
     if (!YOUTUBE_URL.test(v?.url ?? '')) err('видео: url должен быть ссылкой на YouTube (watch?v=<id> или youtu.be/<id>)');
+  }
+}
+
+// Кнопки радиовызова в ситуации: id шаблонов вызова (kind call) из vhf.json, без повторов.
+function checkCalls(calls, content, err) {
+  if (!list(calls)) return err('calls: нужен непустой список id разделов vhf.json');
+  const callIds = new Set((content.vhf?.sections ?? []).filter((s) => s.kind === 'call').map((s) => s.id));
+  const seen = new Set();
+  for (const id of calls) {
+    if (!callIds.has(id)) err(`calls: нет шаблона вызова ${id} в vhf.json`);
+    else if (seen.has(id)) err(`calls: ${id} повторяется`);
+    seen.add(id);
   }
 }
 
@@ -108,11 +119,8 @@ const checkers = {
   situations(r, err, content) {
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
     if (!['emergency', 'problem'].includes(r.severity)) err('severity: emergency или problem');
-    const call = Object.hasOwn(CALL_SECTIONS, r.severity) ? CALL_SECTIONS[r.severity].id : null;
-    if (call && !(content.vhf?.sections ?? []).some((s) => s.id === call && s.kind === 'call')) {
-      err(`нет шаблона вызова ${call} в vhf.json`);
-    }
     if (!list(r.steps) || !r.steps.every((s) => text(s.text))) err('нужны steps с text');
+    if (r.calls !== undefined) checkCalls(r.calls, content, err);
   },
   maneuvers(r, err) {
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
