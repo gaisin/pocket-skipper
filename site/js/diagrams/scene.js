@@ -42,8 +42,8 @@ export function poseStyle({ x, y, rot }) {
 export function renderScene(scene, pose) {
   const elements = scene.elements.map((el, i) => `<g data-el="${i}">${elementSVG(el)}</g>`).join('');
   const boat = scene.power ? powerSVG() : hullSVG() + boomSVG(pose.boom ?? 0);
-  return `<svg viewBox="0 0 260 200" role="img" aria-label="${escapeXml(scene.label)}">`
-    + '<rect class="svg-water" width="260" height="200"/>'
+  return `<svg viewBox="0 0 ${SCENE_WIDTH} 200" role="img" aria-label="${escapeXml(scene.label)}">`
+    + `<rect class="svg-water" width="${SCENE_WIDTH}" height="200"/>`
     + elements
     + (scene.wind === undefined ? ''
       : scene.mirrored ? windArrowSVG(scene.wind, SCENE_WIDTH - WIND_X, WIND_Y, 'left') : windArrowSVG(scene.wind, WIND_X, WIND_Y))

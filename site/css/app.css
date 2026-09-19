@@ -180,6 +180,8 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 .walk-switch { display: grid; gap: 6px; font: .8rem var(--mono); color: var(--muted); }
 .walk-switch-label { display: block; }
 .walk-switch-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+/* Переключатель нажимают на воде мокрыми руками: не ниже 44 px, как остальные кнопки (у .small только 32 px). */
+.walk-switch .seg { min-height: 44px; }
 .walk-switch .seg[aria-pressed="true"] { background: var(--sea); color: var(--on-accent); border-color: var(--sea); }
 .walk-note { font-size: .85rem; color: var(--muted); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

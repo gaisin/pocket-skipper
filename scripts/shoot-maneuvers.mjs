@@ -10,6 +10,9 @@ const STORAGE_KEY = 'pocket-skipper:v1';
 
 const args = process.argv.slice(2);
 const outAt = args.indexOf('--out');
+if (outAt >= 0 && (args[outAt + 1] === undefined || args[outAt + 1].startsWith('--'))) {
+  throw new Error('--out: после ключа нужна папка, например --out .local/shots');
+}
 const outDir = outAt >= 0 ? args[outAt + 1] : '.local/shots';
 const ids = outAt >= 0 ? args.filter((_, i) => i !== outAt && i !== outAt + 1) : args;
 

@@ -92,6 +92,8 @@ export function maneuverView(ctx, id) {
     figure.innerHTML = renderScene(m.scene, m.steps[index].pose);
     svg = figure.firstElementChild;
     head.querySelector('h1').textContent = m.title;
+    // Тот же формат, что у заголовка вкладки в app.js: при смене стороны меняется и название манёвра.
+    document.title = `${m.title} - Карманный шкипер`;
     lead.textContent = m.summary;
   }
 

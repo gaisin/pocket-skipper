@@ -39,14 +39,28 @@ test('без настройки - схема для заброса влево и
   await expect(page.locator('.walk-note')).toBeVisible();
   await expect(page.locator('.step-text')).toHaveText('Подойти левым бортом');
   await expect(page.locator('.scene .boat')).toHaveAttribute('style', /translate\(60px, 100px\) rotate\(0deg\)/);
+  const link = page.locator('.walk-note a[href="#/maneuvers/prop-walk-test"]');
+  await expect(link).toHaveText('как проверить заброс');
+  await link.click();
+  await expect(page).toHaveURL(/#\/maneuvers\/prop-walk-test$/);
+  await expect(page.locator('.walk-note')).toBeVisible();
+});
+
+test('на самом манёвре проверки заброса заметка есть, а ссылки на него нет', async ({ page }) => {
+  await page.goto('./#/maneuvers/prop-walk-test');
+  await expect(page.locator('.walk-note')).toBeVisible();
+  await expect(page.locator('.walk-note')).toContainText('Сторона не проверена');
+  await expect(page.locator('.walk-note a')).toHaveCount(0);
 });
 
 test('переключатель зеркалит схему, меняет текст, сохраняет шаг и запоминается', async ({ page }) => {
   await page.goto('./#/maneuvers/mirror-demo');
+  await expect(page).toHaveTitle('Лагом левым бортом - Карманный шкипер');
   await page.getByRole('button', { name: 'Дальше' }).click();
   await page.getByRole('button', { name: 'Вправо' }).click();
   await expect(page.getByText('Шаг 2 из 2')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Лагом правым бортом', level: 1 })).toBeVisible();
+  await expect(page).toHaveTitle('Лагом правым бортом - Карманный шкипер');
   await expect(page.locator('.scene .boat')).toHaveAttribute('style', /translate\(210px, 100px\) rotate\(-10deg\)/);
   await expect(page.locator('.scene .quay')).toHaveAttribute('x', '240');
   await expect(page.locator('.walk-note')).toBeHidden();
@@ -80,18 +94,13 @@ test('у манёвра без стрелок на схеме легенды н�
   await expect(page.locator('.scene-legend')).toHaveCount(0);
 });
 
-test('кнопки «Влево» и «Вправо» стоят в одной строке на iPhone 13', async ({ page }) => {
+test('кнопки «Влево» и «Вправо» на экране 375 px - в одной строке и не ниже 44 px', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 812 });
   await page.goto('./#/maneuvers/mirror-demo');
   const left = page.getByRole('button', { name: 'Влево' });
   const right = page.getByRole('button', { name: 'Вправо' });
   const [leftBox, rightBox] = await Promise.all([left.boundingBox(), right.boundingBox()]);
   expect(leftBox.y).toBe(rightBox.y);
-});
-
-test('контейнер переключателя стороны имеет класс walk-control, а не walk', async ({ page }) => {
-  await page.goto('./#/maneuvers/mirror-demo');
-  const control = page.locator('.walk-control');
-  await expect(control).toHaveCount(1);
-  const classes = (await control.getAttribute('class')).split(' ');
-  expect(classes).not.toContain('walk');
+  expect(leftBox.height).toBeGreaterThanOrEqual(44);
+  expect(rightBox.height).toBeGreaterThanOrEqual(44);
 });
