@@ -148,6 +148,11 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 .rope { fill: none; stroke: var(--ink); stroke-width: 1.5; }
 .rope.dashed, .track { stroke-dasharray: 4 5; }
 .track { fill: none; stroke: var(--muted); stroke-width: 1.5; }
+.force line { stroke-width: 2.5; stroke-linecap: round; }
+.force.walk line { stroke: var(--port); }
+.force.walk polygon { fill: var(--port); }
+.force.drift line { stroke: var(--sea); stroke-dasharray: 4 3; }
+.force.drift polygon { fill: var(--sea); }
 .person circle { fill: var(--port); }
 .person .head { fill: #FFFFFF; }
 .wind line { stroke: var(--sea); stroke-width: 2; }
@@ -166,7 +171,11 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 
 .form { display: grid; gap: 12px; }
 .field { display: grid; gap: 4px; font-weight: 500; }
-.field input { min-height: 44px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); }
+.field input, .field select { min-height: 44px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); }
+.walk { display: grid; gap: 6px; }
+.walk-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: .8rem var(--mono); color: var(--muted); }
+.walk-switch .seg[aria-pressed="true"] { background: var(--sea); color: var(--on-accent); border-color: var(--sea); }
+.walk-note { font-size: .85rem; color: var(--muted); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .status { min-height: 1.5em; color: var(--stbd); font-weight: 500; }
 .status.fail { color: var(--port); }

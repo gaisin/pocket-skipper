@@ -37,6 +37,7 @@ const ASSETS = [
   "js/diagrams/index.js",
   "js/diagrams/lights.js",
   "js/diagrams/marks.js",
+  "js/diagrams/mirror.js",
   "js/diagrams/scene.js",
   "js/diagrams/svg.js",
   "js/leitner.js",

@@ -1,6 +1,8 @@
 import { IALA_TOPICS } from '../../site/js/sources.js';
+import { stripSidePairs } from '../../site/js/diagrams/mirror.js';
 
-export const ELEMENT_TYPES = ['quay', 'boat-moored', 'buoy', 'anchor', 'line', 'person', 'label', 'path'];
+export const ELEMENT_TYPES = ['quay', 'boat-moored', 'buoy', 'anchor', 'line', 'person', 'label', 'path', 'arrow'];
+export const ARROW_KINDS = ['walk', 'drift'];
 export const IMAGE_KINDS = ['lights', 'marks', 'encounter'];
 export const MARK_KINDS = ['port', 'starboard', 'north', 'south', 'east', 'west', 'isolated-danger', 'safe-water', 'special', 'emergency-wreck'];
 export const LIGHT_COLORS = ['red', 'green', 'white', 'yellow'];
@@ -10,6 +12,7 @@ export const REFERENCE_KINDS = ['table', 'lights', 'marks'];
 const ID = /^[a-z0-9-]+$/;
 const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
 const PATH_D = /^[MLQCZmlqcz0-9 .,-]+$/;
+const ABS_PATH_D = /^[MLQCZ0-9 .,-]+$/;
 const ANNEXES = ['I', 'II', 'III', 'IV'];
 const YOUTUBE_URL = /^https:\/\/(?:www\.youtube\.com\/watch\?v=[\w-]{11}(?:&t=\d+s?|&list=[\w-]+)*|youtu\.be\/[\w-]{11})$/;
 
@@ -98,6 +101,11 @@ function checkElement(el, err, stepsCount = undefined) {
   if (el.type === 'boat-moored' && ((el.rot !== undefined && !num(el.rot)) || (el.scale !== undefined && !num(el.scale)))) {
     err('boat-moored: rot и scale должны быть числами');
   }
+  if (el.type === 'arrow') {
+    if (![el.x1, el.y1, el.x2, el.y2].every(num)) err('arrow: нужны x1, y1, x2, y2');
+    if (!ARROW_KINDS.includes(el.kind)) err(`arrow: kind - ${ARROW_KINDS.join(' или ')}`);
+  }
+  if (el.type === 'label' && el.anchor !== undefined && !['start', 'end'].includes(el.anchor)) err('label: anchor - start или end');
   if (el.steps !== undefined) {
     if (!Array.isArray(el.steps) || el.steps.length === 0 || !el.steps.every((s) => Number.isInteger(s) && s >= 0 && s < stepsCount)) {
       err(`элемент ${el.type}: steps должны быть номерами шагов 0..${stepsCount - 1}`);
@@ -124,6 +132,27 @@ function checkGuideSections(sections, err) {
   });
 }
 
+// Тексты манёвра, где допустимы пары сторон [[левым|правым]].
+function maneuverTexts(r) {
+  return [r.title, r.summary, r.scene?.label,
+    ...(r.scene?.elements ?? []).filter((el) => el?.type === 'label').map((el) => el.text),
+    ...(r.steps ?? []).flatMap((s) => [s?.who, s?.command, s?.text]),
+  ].filter((t) => typeof t === 'string');
+}
+
+function checkSidePairs(r, err) {
+  for (const t of maneuverTexts(r)) {
+    const rest = stripSidePairs(t);
+    if (rest.includes('[[') || rest.includes(']]')) err(`неверная пара сторон в «${t}»`);
+    else if (!r.mirror && rest !== t) err('пары сторон [[левый|правый]] допустимы только при mirror: true');
+  }
+  if (r.mirror === true) {
+    for (const el of r.scene?.elements ?? []) {
+      if (el?.type === 'path' && !ABS_PATH_D.test(el.d ?? '')) err('path в зеркальном манёвре: только абсолютные M L Q C Z');
+    }
+  }
+}
+
 const checkers = {
   questions(r, err, content) {
     const topics = new Set((content.questions.topics ?? []).map((t) => t.id));
@@ -141,7 +170,11 @@ const checkers = {
     if (!list(r.steps) || !r.steps.every((s) => text(s.text))) err('нужны steps с text');
     if (r.calls !== undefined) checkCalls(r.calls, content, err);
   },
-  maneuvers(r, err) {
+  maneuvers(r, err, content) {
+    const groups = new Set((content.maneuvers?.groups ?? []).map((g) => g.id));
+    if (!groups.has(r.group)) err(`неизвестная группа ${r.group}`);
+    if (r.mirror !== undefined && typeof r.mirror !== 'boolean') err('mirror: true или false');
+    checkSidePairs(r, err);
     if (!text(r.title) || !text(r.summary)) err('нужны title и summary');
     if (!text(r.scene?.label)) err('scene: нет label');
     if (!Array.isArray(r.scene?.elements)) err('scene: нет elements');
@@ -247,6 +280,15 @@ export function validateContent(content) {
   }
 
   for (const t of content.questions?.topics ?? []) useId(t.id, 'questions.json: topics');
+
+  const groups = content.maneuvers?.groups;
+  if (!list(groups)) errors.push('maneuvers.json: нет списка groups');
+  const groupIds = new Set();
+  for (const g of groups ?? []) {
+    if (!ID.test(g?.id ?? '') || groupIds.has(g.id)) errors.push(`maneuvers.json: groups: плохой или повторный id ${JSON.stringify(g?.id)}`);
+    else if (!text(g.title)) errors.push(`maneuvers.json: groups: ${g.id}: нет title`);
+    groupIds.add(g?.id);
+  }
 
   const links = content.external?.links;
   if (!Array.isArray(links)) errors.push('external.json: нет списка links');

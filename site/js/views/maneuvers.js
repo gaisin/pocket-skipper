@@ -1,21 +1,67 @@
 import { h, header, sourceFooter, notFound } from '../ui.js';
 import { renderScene, applyPose } from '../diagrams/scene.js';
+import { maneuverFor } from '../diagrams/mirror.js';
+
+const WALK_TEST_ID = 'prop-walk-test';
+
+function groupedManeuvers(data) {
+  return data.groups
+    .map((g) => ({ ...g, items: data.maneuvers.filter((m) => m.group === g.id) }))
+    .filter((g) => g.items.length > 0);
+}
 
 export function maneuversIndexView(ctx) {
+  const walk = ctx.store.state.settings.propWalk;
   return h('section', { class: 'view' },
     header('Манёвры'),
-    h('ul', { class: 'list' }, ctx.content.maneuvers.maneuvers.map((m) => h('li', {},
-      h('a', { href: `#/maneuvers/${m.id}` },
-        h('span', {}, m.title, h('small', {}, m.summary)),
-        h('span', { class: 'meta' }, `${m.steps.length} шаг.`))))));
+    groupedManeuvers(ctx.content.maneuvers).map((g) => [
+      h('h2', {}, g.title),
+      h('ul', { class: 'list' }, g.items.map((raw) => {
+        const m = maneuverFor(raw, walk);
+        return h('li', {},
+          h('a', { href: `#/maneuvers/${m.id}` },
+            h('span', {}, m.title, h('small', {}, m.summary)),
+            h('span', { class: 'meta' }, `${m.steps.length} шаг.`)));
+      })),
+    ]));
+}
+
+// Переключатель «куда уводит корму на заднем ходу»; значение общее с настройками.
+function propWalkControl(ctx, currentId, onChange) {
+  const hasTest = currentId !== WALK_TEST_ID && ctx.content.maneuvers.maneuvers.some((x) => x.id === WALK_TEST_ID);
+  const note = h('p', { class: 'walk-note' },
+    'Сторона не проверена - схема для случая, когда корму уводит влево. Проверьте на приёмке',
+    hasTest ? [': ', h('a', { href: `#/maneuvers/${WALK_TEST_ID}` }, 'как проверить заброс')] : null,
+    '.');
+  const buttons = [['left', 'Влево'], ['right', 'Вправо']].map(([side, label]) =>
+    h('button', { type: 'button', class: 'button small seg', 'data-side': side }, label));
+  function sync() {
+    const walk = ctx.store.state.settings.propWalk;
+    for (const b of buttons) b.setAttribute('aria-pressed', String(b.dataset.side === walk));
+    note.hidden = walk !== undefined;
+  }
+  for (const b of buttons) {
+    b.addEventListener('click', () => {
+      ctx.store.update((st) => ({ ...st, settings: { ...st.settings, propWalk: b.dataset.side } }));
+      sync();
+      onChange(b.dataset.side);
+    });
+  }
+  sync();
+  return h('div', { class: 'walk' },
+    h('div', { class: 'walk-switch', role: 'group', 'aria-label': 'Куда уводит корму на заднем ходу' },
+      h('span', {}, 'Корму на заднем ходу уводит:'), buttons),
+    note);
 }
 
 export function maneuverView(ctx, id) {
-  const m = ctx.content.maneuvers.maneuvers.find((x) => x.id === id);
-  if (!m) return notFound();
+  const raw = ctx.content.maneuvers.maneuvers.find((x) => x.id === id);
+  if (!raw) return notFound();
 
-  const figure = h('div', { class: 'scene', html: renderScene(m.scene, m.steps[0].pose) });
-  const svg = figure.firstElementChild;
+  let m = maneuverFor(raw, ctx.store.state.settings.propWalk);
+  const head = header(m.title, '#/maneuvers');
+  const lead = h('p', { class: 'lead' }, m.summary);
+  const figure = h('div', { class: 'scene' });
   const counter = h('p', { class: 'meta' });
   const who = h('div', { class: 'who' });
   const command = h('div', { class: 'cmd' });
@@ -23,6 +69,15 @@ export function maneuverView(ctx, id) {
   const prev = h('button', { type: 'button', class: 'button' }, 'Назад');
   const next = h('button', { type: 'button', class: 'button primary' }, 'Дальше');
   let index = 0;
+  let svg;
+
+  // Перерисовать схему целиком (при смене стороны) - без анимации, сразу в положении текущего шага.
+  function draw() {
+    figure.innerHTML = renderScene(m.scene, m.steps[index].pose);
+    svg = figure.firstElementChild;
+    head.querySelector('h1').textContent = m.title;
+    lead.textContent = m.summary;
+  }
 
   function show() {
     const step = m.steps[index];
@@ -37,11 +92,17 @@ export function maneuverView(ctx, id) {
 
   prev.addEventListener('click', () => { index = Math.max(0, index - 1); show(); });
   next.addEventListener('click', () => { index = (index + 1) % m.steps.length; show(); });
+  draw();
   show();
 
+  const walkControl = raw.mirror
+    ? propWalkControl(ctx, raw.id, (walk) => { m = maneuverFor(raw, walk); draw(); show(); })
+    : null;
+
   return h('section', { class: 'view' },
-    header(m.title, '#/maneuvers'),
-    h('p', { class: 'lead' }, m.summary),
+    head,
+    lead,
+    walkControl,
     figure,
     counter,
     h('div', { class: 'step', 'aria-live': 'polite' }, who, command, text),

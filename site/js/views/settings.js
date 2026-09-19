@@ -5,6 +5,11 @@ function field(id, label, attrs) {
   return h('label', { class: 'field', for: id }, h('span', {}, label), h('input', { id, name: id, ...attrs }));
 }
 
+function select(id, label, options, value) {
+  return h('label', { class: 'field', for: id }, h('span', {}, label),
+    h('select', { id, name: id }, options.map(([v, text]) => h('option', { value: v, selected: v === value }, text))));
+}
+
 async function exportProgress(json, say) {
   const name = `pocket-skipper-${todayISO()}.json`;
   const file = new File([json], name, { type: 'application/json' });
@@ -37,12 +42,17 @@ export function settingsView(ctx) {
     field('callsign', 'Позывной', { type: 'text', value: s.callsign ?? '', autocapitalize: 'characters', autocomplete: 'off' }),
     field('mmsi', 'MMSI (9 цифр)', { type: 'text', inputmode: 'numeric', pattern: '[0-9]{9}', value: s.mmsi ?? '', autocomplete: 'off' }),
     field('persons', 'Людей на борту', { type: 'number', min: 1, max: 30, value: s.persons ?? '' }),
+    select('propWalk', 'Корму на заднем ходу уводит', [['', 'не проверено'], ['left', 'влево'], ['right', 'вправо']], s.propWalk ?? ''),
     h('button', { type: 'submit', class: 'button primary' }, 'Сохранить'));
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     const data = Object.fromEntries(new FormData(form));
-    ctx.store.update((st) => ({ ...st, settings: { ...st.settings, ...data } }));
+    ctx.store.update((st) => {
+      const settings = { ...st.settings, ...data };
+      if (!settings.propWalk) delete settings.propWalk;
+      return { ...st, settings };
+    });
     say('Сохранено.');
   });
 

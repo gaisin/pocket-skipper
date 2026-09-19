@@ -1,5 +1,18 @@
 import { escapeXml, windArrowSVG } from './svg.js';
 import { hullSVG, powerSVG, boomSVG, boomStyle } from './boat.js';
+import { SCENE_WIDTH } from './mirror.js';
+
+const WIND_X = 36;
+const WIND_Y = 30;
+const r1 = (v) => Math.round(v * 10) / 10;
+
+// Стрелка силы: walk - заброс кормы, drift - снос ветром; наконечник в (x2, y2).
+function arrowSVG({ x1, y1, x2, y2, kind }) {
+  const a = Math.atan2(y2 - y1, x2 - x1);
+  const barb = (da) => `${r1(x2 - 8 * Math.cos(a + da))},${r1(y2 - 8 * Math.sin(a + da))}`;
+  return `<g class="force ${kind}"><line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}"/>`
+    + `<polygon points="${x2},${y2} ${barb(0.45)} ${barb(-0.45)}"/></g>`;
+}
 
 function elementSVG(el) {
   switch (el.type) {
@@ -9,8 +22,9 @@ function elementSVG(el) {
     case 'anchor': return `<g class="anchor" transform="translate(${el.x} ${el.y})"><line x1="0" y1="-8" x2="0" y2="7"/><line x1="-4" y1="-4" x2="4" y2="-4"/><path d="M-7 2 Q0 12 7 2"/></g>`;
     case 'line': return `<polyline class="rope${el.dashed ? ' dashed' : ''}" points="${el.points.map((p) => p.join(',')).join(' ')}"/>`;
     case 'person': return `<g class="person" transform="translate(${el.x} ${el.y})"><circle r="6"/><circle class="head" r="2.5"/></g>`;
-    case 'label': return `<text class="svg-label" x="${el.x}" y="${el.y}">${escapeXml(el.text)}</text>`;
+    case 'label': return `<text class="svg-label" x="${el.x}" y="${el.y}"${el.anchor ? ` text-anchor="${el.anchor}"` : ''}>${escapeXml(el.text)}</text>`;
     case 'path': return `<path class="track" d="${el.d}"/>`;
+    case 'arrow': return arrowSVG(el);
     default: throw new Error(`Неизвестный элемент схемы: ${el.type}`);
   }
 }
@@ -25,7 +39,8 @@ export function renderScene(scene, pose) {
   return `<svg viewBox="0 0 260 200" role="img" aria-label="${escapeXml(scene.label)}">`
     + '<rect class="svg-water" width="260" height="200"/>'
     + elements
-    + (scene.wind === undefined ? '' : windArrowSVG(scene.wind, 36, 30))
+    + (scene.wind === undefined ? ''
+      : scene.mirrored ? windArrowSVG(scene.wind, SCENE_WIDTH - WIND_X, WIND_Y, 'left') : windArrowSVG(scene.wind, WIND_X, WIND_Y))
     + `<g class="boat" style="${poseStyle(pose)}">${boat}</g></svg>`;
 }
 

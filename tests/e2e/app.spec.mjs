@@ -232,7 +232,7 @@ test('ошибка загрузки прогресса показана крас
 });
 
 test('манёвр листается по шагам', async ({ page }) => {
-  const maneuver = content('maneuvers').maneuvers[0];
+  const maneuver = content('maneuvers').maneuvers.find((m) => !m.mirror);
   await page.goto(`./#/maneuvers/${maneuver.id}`);
   await expect(page.getByText(`Шаг 1 из ${maneuver.steps.length}`)).toBeVisible();
   await page.getByRole('button', { name: 'Дальше' }).click();

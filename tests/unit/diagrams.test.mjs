@@ -64,3 +64,21 @@ test('знаки рисуются на дневном фоне независи�
   assert.ok(svg.includes('fill="#DCEAF2"'), 'нет фиксированного дневного фона');
   assert.ok(!svg.includes('svg-water'), 'фон знака не должен зависеть от темы');
 });
+
+test('стрелка силы рисуется с наконечником и классом вида', () => {
+  const svg = renderScene({ label: 'x', power: true, elements: [{ type: 'arrow', x1: 100, y1: 150, x2: 80, y2: 150, kind: 'walk' }] }, { x: 130, y: 100, rot: 0 });
+  assert.match(svg, /<g class="force walk"><line x1="100" y1="150" x2="80" y2="150"\/><polygon points="80,150 /);
+});
+
+test('подпись с anchor получает text-anchor', () => {
+  const svg = renderScene({ label: 'x', power: true, elements: [{ type: 'label', x: 30, y: 40, text: 'А', anchor: 'end' }] }, { x: 130, y: 100, rot: 0 });
+  assert.match(svg, /<text class="svg-label" x="30" y="40" text-anchor="end">А<\/text>/);
+});
+
+test('в отражённой сцене стрелка ветра стоит справа, подпись слева от неё', () => {
+  const base = renderScene({ label: 'x', wind: 90, power: true, elements: [] }, { x: 130, y: 100, rot: 0 });
+  assert.match(base, /translate\(36 30\) rotate\(90\)/);
+  const mirrored = renderScene({ label: 'x', wind: 270, power: true, mirrored: true, elements: [] }, { x: 130, y: 100, rot: 0 });
+  assert.match(mirrored, /translate\(224 30\) rotate\(270\)/);
+  assert.match(mirrored, /<text class="svg-label" x="210" y="24" text-anchor="end">ВЕТЕР<\/text>/);
+});

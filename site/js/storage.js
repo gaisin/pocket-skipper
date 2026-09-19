@@ -18,6 +18,7 @@ const SETTINGS_FIELDS = {
   callsign: isString,
   mmsi: isString,
   persons: (v) => isString(v) || Number.isFinite(v),
+  propWalk: (v) => v === 'left' || v === 'right',
 };
 
 function sanitizeCards(cards) {

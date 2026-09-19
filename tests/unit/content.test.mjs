@@ -21,7 +21,7 @@ function minimal() {
       options: [{ text: 'Да', correct: true }, { text: 'Нет' }],
     })] },
     situations: { situations: [src({ id: 's-1', title: 'MOB', severity: 'emergency', summary: 'x', steps: [{ text: 'Крикнуть' }] })] },
-    maneuvers: { maneuvers: [src({ id: 'm-1', title: 'Оверштаг', summary: 'x',
+    maneuvers: { groups: [{ id: 'sail', title: 'Под парусом' }], maneuvers: [src({ id: 'm-1', group: 'sail', title: 'Оверштаг', summary: 'x',
       scene: { label: 'схема', wind: 0, elements: [{ type: 'buoy', x: 10, y: 10 }] },
       steps: [{ who: 'Шкипер', command: 'Поворот!', text: 'x', pose: { x: 130, y: 120, rot: -45, boom: 20 } }] })] },
     checklists: { checklists: [src({ id: 'c-1', title: 'Сборы', intro: 'x',
@@ -87,6 +87,56 @@ test('неизвестный элемент схемы и опасный path н
   const text = validateContent(c).join('\n');
   assert.match(text, /неизвестный элемент rocket/);
   assert.match(text, /path: недопустимые символы/);
+});
+
+test('манёвр: группа обязательна и должна быть в списке groups', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].group = 'nope';
+  assert.match(validateContent(c).join('\n'), /m-1: неизвестная группа nope/);
+  const d = minimal();
+  delete d.maneuvers.groups;
+  assert.match(validateContent(d).join('\n'), /maneuvers\.json: нет списка groups/);
+  const e = minimal();
+  e.maneuvers.groups.push({ id: 'sail', title: 'Повтор' }, { id: 'x' });
+  const text = validateContent(e).join('\n');
+  assert.match(text, /groups: плохой или повторный id "sail"/);
+  assert.match(text, /groups: x: нет title/);
+});
+
+test('пары сторон - только при mirror: true и только правильной формы', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].title = 'Лагом [[левым|правым]] бортом';
+  assert.match(validateContent(c).join('\n'), /m-1: пары сторон \[\[левый\|правый\]\] допустимы только при mirror: true/);
+  const d = minimal();
+  d.maneuvers.maneuvers[0].mirror = true;
+  d.maneuvers.maneuvers[0].steps[0].text = 'Корму уводит [[влево]]';
+  assert.match(validateContent(d).join('\n'), /m-1: неверная пара сторон/);
+  const e = minimal();
+  e.maneuvers.maneuvers[0].mirror = true;
+  e.maneuvers.maneuvers[0].steps[0].text = 'Корму уводит [[влево|вправо]]';
+  assert.deepEqual(validateContent(e), []);
+  const f = minimal();
+  f.maneuvers.maneuvers[0].mirror = 'yes';
+  assert.match(validateContent(f).join('\n'), /m-1: mirror: true или false/);
+});
+
+test('зеркальный манёвр: path только из абсолютных M L Q C Z', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].mirror = true;
+  c.maneuvers.maneuvers[0].scene.elements.push({ type: 'path', d: 'M10 10 l20 0' });
+  assert.match(validateContent(c).join('\n'), /m-1: path в зеркальном манёвре: только абсолютные M L Q C Z/);
+});
+
+test('стрелка силы и выравнивание подписи проверяются', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].scene.elements.push(
+    { type: 'arrow', x1: 0, y1: 0, x2: 10, kind: 'push' },
+    { type: 'label', x: 1, y: 1, text: 'А', anchor: 'middle' },
+  );
+  const text = validateContent(c).join('\n');
+  assert.match(text, /arrow: нужны x1, y1, x2, y2/);
+  assert.match(text, /arrow: kind - walk или drift/);
+  assert.match(text, /label: anchor - start или end/);
 });
 
 test('подписи колонок раздела УКВ: две непустые строки', () => {

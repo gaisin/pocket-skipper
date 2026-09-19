@@ -91,6 +91,14 @@ test('при загрузке отбрасываются поля настрое
   assert.deepEqual(parseState(good).settings, { tripDate: '2026-10-08', boatName: 'Aurora' });
 });
 
+test('propWalk: только left или right, остальное отбрасывается', () => {
+  const raw = (v) => JSON.stringify({ version: 1, cards: {}, checks: {}, settings: { propWalk: v } });
+  assert.equal(parseState(raw('left')).settings.propWalk, 'left');
+  assert.equal(parseState(raw('right')).settings.propWalk, 'right');
+  assert.equal(parseState(raw('up')).settings.propWalk, undefined);
+  assert.equal(parseState(raw('')).settings.propWalk, undefined);
+});
+
 test('испорченные вложенные данные в хранилище не ломают запуск', () => {
   const backend = memoryBackend({ [STORAGE_KEY]: JSON.stringify({
     version: 1, cards: { q1: { box: 'x' }, q2: { box: 1, due: '2026-09-17' } }, checks: {}, settings: { tripDate: 5 },
