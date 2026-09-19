@@ -1916,12 +1916,12 @@
       "text": "Встаёте лагом тем бортом, от которого задний ход уводит корму. Как подходить?",
       "options": [
         { "text": "Круче, под 40-50°, а у самого причала дать сильный задний, чтобы заброс успел развернуть корму" },
-        { "text": "Так же, как другим бортом: под 30-40° и полный задний у самого причала" },
+        { "text": "Так же, как другим бортом: под 20-30° и сильный задний у самого причала" },
         { "text": "Кормой вперёд: на заднем ходу заброс сам поставит яхту параллельно причалу" },
         { "text": "Полого, под 10-15°; у причала руль от причала, толчок вперёд, потом задний до остановки", "correct": true }
       ],
-      "explain": "Pinney: при забросе от причала - угол 10-15°; за четверть корпуса руль от причала и короткий толчок вперёд - струя на руле заносит корму к причалу; затем задний ровно до остановки, и заброс лишь чуть уводит корму, выравнивая яхту. Сильный задний здесь уводит корму от причала.",
-      "sources": [{ "type": "web", "title": "SAIL - Walking the prop (T. Pinney, 2013)", "url": "https://sailmagazine.com/cruising/walking-the-prop/", "accessed": "2026-09-19" }],
+      "explain": "Pinney: при забросе от причала - угол 10-15°; за четверть корпуса руль круто от причала и короткий толчок вперёд, затем задний - ровно столько, чтобы остановиться. Толчок вперёд на переложенный руль заносит корму к причалу (Pearson), а задний на этом борту уводит её от причала - поэтому его нужно как можно меньше, и сильный задний только вредит.",
+      "sources": [{ "type": "web", "title": "SAIL - Walking the prop (T. Pinney, 2013)", "url": "https://sailmagazine.com/cruising/walking-the-prop/", "accessed": "2026-09-19" }, { "type": "web", "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)", "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf", "accessed": "2026-09-19" }],
       "verified": true
     },
     {
@@ -1962,7 +1962,7 @@
         { "text": "Не сбрасывать ход рано и повернуть к причалу в последний момент", "correct": true },
         { "text": "Подойти кормой вперёд: корму ветер сам прижмёт к причалу" }
       ],
-      "explain": "Pearson: сбавили ход и повернули рано - нос сдуло, и яхта встала метрах в трёх от причала; тогда обойти и зайти снова, поворачивая позже. YM и BoatUS: при ветре с причала заходить круче, дольше держать угол и повернуть в последний момент. Первым крепят носовой: нос сдувает быстрее кормы.",
+      "explain": "Pearson: сбавили ход и повернули рано - нос сдуло, и яхта встала метрах в трёх от причала; тогда обойти и зайти снова, поворачивая позже. YM и BoatUS: при ветре с причала заходить круче, дольше держать угол и повернуть в последний момент. Первым - носовой или мидельный шпринг: нос сдувает быстрее кормы.",
       "sources": [{ "type": "web", "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)", "url": "https://www.hamble.co.uk/pdfs/windoff.pdf", "accessed": "2026-09-19" }, { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" }, { "type": "web", "title": "BoatUS Foundation - Study guide: anchoring & mooring (docking, spring lines)", "url": "https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/", "accessed": "2026-09-19" }, { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)", "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf", "accessed": "2026-09-19" }],
       "verified": true
     },
@@ -1990,7 +1990,7 @@
         { "text": "Мидельный шпринг работает только на заднем ходу, а у saildrive задний ход слабый" },
         { "text": "Шпринг держит яхту ровно, только когда ветер прижимает её к причалу" }
       ],
-      "explain": "Точка поворота - чуть позади мачты (Pearson, YM), а мидельные утки Dufour - около 64% длины от носа (схема палубы, руководство с. 38-39). Cunliffe: утка должна быть на точке поворота или чуть позади, и получается не на каждой яхте. Сами утки для швартовки годятся, прочность около 6 т (с. 28). Pearson прижимается на мидельном шпринге передним ходом, углом руля держа яхту параллельно (Rainsbury). Попробовать в спокойную погоду.",
+      "explain": "Точка поворота - чуть позади мачты (Pearson, YM), а мидельные утки Dufour - около 64% длины от носа (схема палубы, руководство с. 38-39). Cunliffe: утка должна быть на точке поворота или чуть позади, и получается не на каждой яхте. Сами утки для швартовки годятся, прочность около 6 т (с. 28). Pearson и Rainsbury прижимаются на мидельном шпринге передним ходом, углом руля держа яхту параллельно. Попробовать в спокойную погоду.",
       "sources": [{ "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" }, { "type": "web", "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)", "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf", "accessed": "2026-09-19" }, { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" }, { "type": "web", "title": "Yachting Monthly - Springing on and off (T. Cunliffe, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/springing-on-and-off-29899", "accessed": "2026-09-19" }, { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)", "url": "https://www.hamble.co.uk/pdfs/windoff.pdf", "accessed": "2026-09-19" }, { "type": "web", "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)", "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572", "accessed": "2026-09-19" }],
       "verified": true
     },
