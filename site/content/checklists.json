@@ -153,7 +153,6 @@
             { "id": "bilge", "text": "Льяла сухие, без запаха топлива" },
             { "id": "bilge-pumps", "text": "Ручная и электрическая помпы работают", "note": "Где ручка ручной помпы и выключатель электрической." },
             { "id": "keel-bolts", "text": "Осмотреть кильболты", "note": "Волосяные трещины вокруг болтов - след серьёзного удара о грунт, который ещё не отремонтирован. Нашли - в акт." },
-            { "id": "stern-gland", "text": "Сальник вала или уплотнение колонки не течёт" },
             { "id": "steering", "text": "Рулевое устройство: проверить, люфта быть не должно" },
             { "id": "outer-hull", "text": "Осмотреть палубу, корпус снаружи и перо руля (задняя кромка и низ), повреждения - в акт", "note": "Следы на пере руля выдают касание грунта." },
             { "id": "hatches", "text": "Люки и иллюминаторы закрываются" },
@@ -183,7 +182,15 @@
             { "id": "spares", "text": "Запасные крыльчатка, ремень, масляный и воздушный фильтры, масло" },
             { "id": "engine-alarms", "text": "Сигнализация и аварийная остановка двигателя" },
             { "id": "gears", "text": "Передний и задний ход включаются" },
-            { "id": "prop-shaft", "text": "Вал винта свободен, рядом ничего не лежит" }
+            { "id": "saildrive-seal", "text": "Уплотнение saildrive не течёт", "note": "Вала у этой яхты нет: привод saildrive (руководство Dufour 430 GL, с. 82-83). Руководство велит периодически проверять уплотнения saildrive на герметичность (с. 19)." }
+          ]
+        },
+        {
+          "title": "Управление на двигателе",
+          "items": [
+            { "id": "helm-throttle", "text": "У какого штурвала рычаг газа и приборы двигателя", "note": "По схеме в руководстве они у одного штурвала, но у какого - не понять. С другого штурвала обзор другой: заранее решить, с какого швартоваться." },
+            { "id": "prop-walk-side", "text": "Проверить, куда на заднем ходу уводит корму, и выбрать сторону в приложении", "note": "У причала на швартовах малый задний: струя у правого борта - корму уводит влево, у левого - вправо. Сторону выбрать в Манёвры → любой манёвр швартовки или в Настройках. Спросить, какой стоит винт: складной обычно даёт меньше заброса." },
+            { "id": "bow-thruster", "text": "Подруливающее: есть ли, где включается, толкает ли нос в обе стороны", "note": "На Dufour 430 GL это опция. Иногда кнопку включения держат несколько секунд. Проверять короткими включениями - при долгой работе оно перегревается." }
           ]
         },
         {
@@ -273,7 +280,11 @@
         { "type": "web", "title": "Boataround - Tips for a smooth boat handover", "url": "https://www.boataround.com/blog/charter-check-in-tips", "accessed": "2026-09-18" },
         { "type": "web", "title": "SeaHelp - Charter yacht: tips for takeover", "url": "https://www.sea-help.eu/en/guide/charter-yacht-advice-takeover/", "accessed": "2026-09-18" },
         { "type": "web", "title": "İMEAK Deniz Ticaret Odası - Özel Teknelerin Donatımı ve Özel Tekneleri Kullanacak Kişilerin Yeterlikleri Hakkında Yönetmelik (RG 17.01.2026 № 33140)", "url": "https://www.denizticaretodasi.org.tr/tr/sirkuler/ozel-teknelerin-donatimi-ve-ozel-tekneleri-kullanacak-kisilerin-yeterlikleri-hakkinda-yonetmelik-23548", "accessed": "2026-09-18" },
-        { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" }
+        { "type": "web", "title": "12Knots - Dufour 430 Grand Large KUMMSAL", "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/", "accessed": "2026-09-18" },
+        { "type": "web", "title": "SAIL - Walking the prop (T. Pinney, 2013)", "url": "https://sailmagazine.com/cruising/walking-the-prop/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Folding and feathering propeller test (E. Barrell, 2015)", "url": "https://www.yachtingmonthly.com/gear/folding-and-feathering-propeller-test-29807", "accessed": "2026-09-19" },
+        { "type": "web", "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)", "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - How does a boat bow thruster work? (M. Attree, 2025)", "url": "https://www.pbo.co.uk/expert-advice/how-does-a-boat-bow-thruster-work-96785", "accessed": "2026-09-19" }
       ],
       "verified": true
     }
