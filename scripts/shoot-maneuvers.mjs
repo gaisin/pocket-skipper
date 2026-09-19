@@ -1,10 +1,11 @@
 // Скриншоты всех шагов манёвров для ревью схем.
 // Запуск: сначала `npm run serve`, затем `npm run shots -- [id ...] [--out папка]` (по умолчанию .local/shots).
 // Для манёвра с mirror: true снимает обе стороны заброса: <id>-left-01.png, <id>-right-01.png...
+// Порт сервера - переменная PORT (по умолчанию 4173), одна и та же для serve и shots.
 import { chromium, devices } from '@playwright/test';
 import { mkdir, readFile } from 'node:fs/promises';
 
-const BASE = 'http://127.0.0.1:4173/';
+const BASE = `http://127.0.0.1:${process.env.PORT ?? 4173}/`;
 const STORAGE_KEY = 'pocket-skipper:v1';
 
 const args = process.argv.slice(2);
