@@ -931,6 +931,159 @@
         { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
+    },
+    {
+      "id": "spring-off-bow-out",
+      "group": "alongside",
+      "mirror": true,
+      "title": "Отход носом на кормовом шпринге",
+      "summary": "Слабый прижимной ветер, сосед сзади: задний ход на шпринге отводит нос от причала.",
+      "scene": {
+        "label": "Яхта стоит [[левым|правым]] бортом у причала, сзади сосед, ветер слабо прижимает; на кормовом шпринге задним ходом нос уходит от причала, затем яхта уходит вперёд",
+        "wind": 90,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 0, "y": 0, "w": 16, "h": 200 },
+          { "type": "boat-moored", "x": 33, "y": 198 },
+          { "type": "line", "points": [[26, 79], [16, 62]], "steps": [0] },
+          { "type": "line", "points": [[21, 139], [16, 150]], "steps": [0] },
+          { "type": "line", "points": [[26, 79], [16, 62]], "dashed": true, "steps": [1] },
+          { "type": "line", "points": [[21, 139], [16, 96]], "steps": [1] },
+          { "type": "line", "points": [[19, 139], [16, 96]], "steps": [2] },
+          { "type": "line", "points": [[20, 140], [16, 96]], "steps": [3] },
+          { "type": "arrow", "x1": 31, "y1": 152, "x2": 15, "y2": 152, "kind": "walk", "steps": [2] },
+          { "type": "arrow", "x1": 96, "y1": 84, "x2": 80, "y2": 84, "kind": "drift", "steps": [2, 3] },
+          { "type": "path", "d": "M49 122 L104 61" }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Способ для слабого прижимного ветра: задним ходом струя не попадает на руль, а нос приходится выводить против ветра. Если прижимает свежий ветер - выходить кормой (см. «Отход кормой на носовом шпринге»). Завести двигатель, отключить береговое питание, рассказать план: кто на каком конце, кто с кранцем.",
+          "pose": { "x": 30, "y": 106, "rot": 0 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Кормовой шпринг - с [[левой|правой]] кормовой утки, как можно дальше в корму, на утку причала впереди миделя и обратно на борт, чтобы отдать с яхты. Носовой - тоже на слип, остальные концы убрать. На раковину - большой кранец: корма будет упираться в причал.",
+          "pose": { "x": 30, "y": 106, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Малый назад, отдать носовой. Яхта садится на шпринг, корма упирается в кранец, нос отходит. Руль к причалу помогает, а заброс тянет корму [[влево|вправо]] - прижимает её к кранцу. Обороты добавлять понемногу.",
+          "pose": { "x": 39.4, "y": 111.5, "rot": 20 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Вывести нос далеко - примерно на 45° к причалу: пока яхта наберёт ход вперёд, ветер будет сносить её обратно.",
+          "pose": { "x": 48.9, "y": 121.7, "rot": 42 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "Шпринг на борту!",
+          "text": "Нейтраль. Отдать шпринг и быстро выбрать на борт - в воде он может попасть на винт. Громко сказать рулевому, когда шпринг на борту.",
+          "pose": { "x": 48.9, "y": 121.7, "rot": 42 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Передний ход и сразу добавить оборотов: ветер сносит обратно. Руль прямо, пока корма не отойдёт от причала - широкая корма заносится. Человек с кранцем - у подветренного борта.",
+          "pose": { "x": 77, "y": 90.5, "rot": 42 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)", "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Springing on and off (T. Cunliffe, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/springing-on-and-off-29899", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)", "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" },
+        { "type": "web", "title": "NauticEd - Using spring lines for docking (G. Headifen, 2023)", "url": "https://sailing-blog.nauticed.org/using-spring-lines-for-docking/", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 2, "section": 2, "page": 18 },
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)", "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "spring-off-stern-out",
+      "group": "alongside",
+      "mirror": true,
+      "title": "Отход кормой на носовом шпринге",
+      "summary": "Прижимной ветер, сосед спереди: передним ходом на шпринге отвести корму, выйти задним.",
+      "scene": {
+        "label": "Яхта стоит [[правым|левым]] бортом у причала, впереди сосед, ветер прижимает; на носовом шпринге передним ходом корма уходит от причала, затем яхта отходит задним ходом",
+        "wind": 270,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 244, "y": 0, "w": 16, "h": 200 },
+          { "type": "boat-moored", "x": 227, "y": 36 },
+          { "type": "line", "points": [[234, 91], [244, 76]], "steps": [0] },
+          { "type": "line", "points": [[239, 151], [244, 166]], "steps": [0] },
+          { "type": "line", "points": [[234, 91], [244, 136]], "steps": [1] },
+          { "type": "line", "points": [[239, 151], [244, 166]], "dashed": true, "steps": [1] },
+          { "type": "line", "points": [[241, 90], [244, 136]], "steps": [2] },
+          { "type": "line", "points": [[239, 89], [244, 136]], "steps": [3] },
+          { "type": "arrow", "x1": 172, "y1": 142, "x2": 188, "y2": 142, "kind": "drift", "steps": [2, 3] },
+          { "type": "arrow", "x1": 166, "y1": 171, "x2": 150, "y2": 171, "kind": "walk", "steps": [5] },
+          { "type": "path", "d": "M230 118 L219 106 L165 166" }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "При прижимном ветре это основной способ: корма у яхты сама стремится к ветру, а передний ход на шпринге сильный - струя бьёт в руль. Завести двигатель, отключить береговое питание, рассказать план: кто на каком конце, кто с кранцем.",
+          "pose": { "x": 230, "y": 118, "rot": 0 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Носовой шпринг - с [[правой|левой]] носовой утки на утку причала далеко позади, за миделем, и обратно на борт, чтобы отдать с яхты. Кормовой - тоже на слип, остальные концы убрать. Большой кранец - у форштевня: нос будет упираться в причал. Посмотреть, не заденет ли якорь тумбу берегового питания.",
+          "pose": { "x": 230, "y": 118, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Малый вперёд, отдать кормовой, руль к причалу: струя от винта на руле отбрасывает корму от причала, нос упирается в кранец. Углом руля и оборотами регулировать, как быстро уходит корма.",
+          "pose": { "x": 228.5, "y": 114, "rot": 20 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Отвести корму далеко - дальше, чем кажется нужным: на заднем ходу ветер будет прижимать яхту обратно к причалу.",
+          "pose": { "x": 218.6, "y": 106.4, "rot": 42 }
+        },
+        {
+          "who": "Носовой",
+          "command": "Шпринг на борту!",
+          "text": "Нейтраль. Отдать шпринг и выбрать на борт целиком, громко сказать рулевому. Только после этого - задний ход.",
+          "pose": { "x": 218.6, "y": 106.4, "rot": 42 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Задний ход решительно, руль прямо. На этом борту заброс уводит корму [[влево|вправо]] - от причала, он помогает. Если причал с другого борта, заброс тянет корму обратно к причалу - поэтому её и отводят подальше.",
+          "pose": { "x": 189.2, "y": 139.1, "rot": 42 }
+        }
+      ],
+      "sources": [
+        { "type": "iyt", "module": 2, "section": 7, "page": 54 },
+        { "type": "iyt", "module": 2, "section": 2, "page": 18 },
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "web", "title": "Yachting Monthly - Springing on and off (T. Cunliffe, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/springing-on-and-off-29899", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)", "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" },
+        { "type": "web", "title": "NauticEd - Using spring lines for docking (G. Headifen, 2023)", "url": "https://sailing-blog.nauticed.org/using-spring-lines-for-docking/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)", "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Cruising World - Prop walk: how to manage your boat's pivot when leaving the dock (W. Sofrin, 2023)", "url": "https://www.cruisingworld.com/how-to/manage-your-boat-pivot-leaving-dock/", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "web", "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)", "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf", "accessed": "2026-09-19" }
+      ],
+      "verified": true
     }
   ]
 }
