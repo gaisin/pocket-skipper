@@ -8,12 +8,172 @@
   ],
   "maneuvers": [
     {
+      "id": "prop-walk-test",
+      "group": "intro",
+      "mirror": true,
+      "title": "Проверка заброса кормы и инерции",
+      "summary": "Куда уводит корму, как яхта тормозит и слушается руля - проверить до первой швартовки.",
+      "scene": {
+        "label": "Яхта у причала [[левым|правым]] бортом, потом на чистой воде: задний ход, торможение, циркуляция, подруливающее; ветер снизу",
+        "wind": 180,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 0, "y": 100, "w": 12, "h": 100 },
+          { "type": "label", "x": 4, "y": 94, "text": "ПРИЧАЛ" },
+          { "type": "line", "points": [[24, 121], [12, 110]], "steps": [0, 1] },
+          { "type": "line", "points": [[17, 184], [12, 194]], "steps": [0, 1] },
+          { "type": "label", "x": 40, "y": 192, "text": "СТРУЯ", "steps": [1] },
+          { "type": "arrow", "x1": 132, "y1": 142, "x2": 110, "y2": 137, "kind": "walk", "steps": [2] },
+          { "type": "arrow", "x1": 205, "y1": 120, "x2": 205, "y2": 94, "kind": "drift", "steps": [6] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "До первой швартовки узнать свою яхту. У Dufour 430 GL привод saildrive: ось винта у него горизонтальна, и заброс кормы бывает очень слабым. В руководстве упомянут складной винт - спросить на базе, какой стоит: в испытании складные винты тормозили на заднем ходу чуть хуже штатного фиксированного и давали меньше заброса. Посмотреть, у какого штурвала ручка газа, и помнить, что с другого штурвала обзор другой.",
+          "pose": { "x": 26, "y": 150, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "У причала, пока яхта надёжно закреплена, дать задний ход на малых оборотах (около четверти газа) и посмотреть за корму. Струя вышла у [[правого|левого]] борта - на заднем ходу корму уводит [[влево|вправо]].",
+          "pose": { "x": 26, "y": 150, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "На чистой воде, подальше от других яхт, остановиться носом по ветру (ветер в корму) или в штиль, руль прямо. Дать задний ход на несколько секунд и смотреть на корму: куда она пошла, туда и заброс. Сравнить с тем, что видели у причала.",
+          "pose": { "x": 142, "y": 103, "rot": 14 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Держать задний ход дальше и заметить, через сколько метров яхта начнёт слушаться руля. Без хода назад руль не работает, а на ходу назад слабее, чем на переднем: струя от винта на перо не попадает.",
+          "pose": { "x": 140, "y": 150, "rot": 2 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Тормозной путь: идти вперёд малым ходом (1-2 узла), дать задний ход с умеренными оборотами и засечь, за сколько секунд и метров яхта встанет. Тормоза у яхты нет, только задний ход, и инерция гасится не сразу.",
+          "pose": { "x": 140, "y": 78, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Циркуляция: на малом ходу положить руль на борт в одну сторону, потом в другую, и прикинуть диаметр круга в корпусах. Потом сбавлять обороты, пока яхта ещё держит курс: это минимальный управляемый ход, на нём и заходить в марину.",
+          "pose": { "x": 158, "y": 80, "rot": 40 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Подруливающее, если есть: встать лагом к ветру и короткими включениями толкнуть нос против ветра, потом в другую сторону - так видно, на что оно способно. Включать только импульсами: при долгой работе мотор перегревается и отключается. На ходу 2 узла оно теряет около половины силы, с 5 узлов не действует. Полагаться только на него нельзя.",
+          "pose": { "x": 160, "y": 100, "rot": 90 }
+        },
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Выбрать сторону в переключателе «Корму на заднем ходу уводит» (он есть и в настройках): схемы швартовок перерисуются под эту яхту. Если заброс почти не чувствуется, приёмы, построенные на нём, работают слабо - помогать подруливающим, если оно есть.",
+          "pose": { "x": 160, "y": 100, "rot": 90 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Folding and feathering propeller test (E. Barrell, 2015)", "url": "https://www.yachtingmonthly.com/gear/folding-and-feathering-propeller-test-29807", "accessed": "2026-09-19" },
+        { "type": "web", "title": "SAIL - Walking the prop (T. Pinney, 2013)", "url": "https://sailmagazine.com/cruising/walking-the-prop/", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "web", "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Tradewinds Sailing - Skipper's Tip: Boat Handling Under Power, Part I (D. Gilzean, 2013)", "url": "https://tradewindssailing.com/wordpress/skippers-tip/skippers-tip-boat-handling-under-power-part-i/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)", "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - How does a boat bow thruster work? (M. Attree, 2025)", "url": "https://www.pbo.co.uk/expert-advice/how-does-a-boat-bow-thruster-work-96785", "accessed": "2026-09-19" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "turn-in-fairway",
+      "group": "intro",
+      "mirror": true,
+      "title": "Разворот в узком проходе",
+      "summary": "Развернуться на месте импульсами вперёд и назад - в ту сторону, куда помогает заброс.",
+      "scene": {
+        "label": "Яхта разворачивается на месте в проходе между рядами яхт [[по часовой стрелке|против часовой стрелки]]; ветер поперёк прохода [[слева|справа]]",
+        "wind": 270,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 0, "y": 50, "w": 6, "h": 150 },
+          { "type": "quay", "x": 254, "y": 50, "w": 6, "h": 150 },
+          { "type": "boat-moored", "x": 41, "y": 70, "rot": 90 },
+          { "type": "boat-moored", "x": 41, "y": 105, "rot": 90 },
+          { "type": "boat-moored", "x": 41, "y": 140, "rot": 90 },
+          { "type": "boat-moored", "x": 41, "y": 175, "rot": 90 },
+          { "type": "boat-moored", "x": 219, "y": 70, "rot": 270 },
+          { "type": "boat-moored", "x": 219, "y": 105, "rot": 270 },
+          { "type": "boat-moored", "x": 219, "y": 140, "rot": 270 },
+          { "type": "boat-moored", "x": 219, "y": 175, "rot": 270 },
+          { "type": "arrow", "x1": 91, "y1": 162, "x2": 84, "y2": 143, "kind": "walk", "steps": [2] },
+          { "type": "arrow", "x1": 141, "y1": 184, "x2": 169, "y2": 184, "kind": "drift", "steps": [3] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Проход тупиковый или узкий, нужно развернуться на месте. Разворачиваться [[вправо, по часовой стрелке|влево, против часовой стрелки]]: тогда заброс кормы на заднем ходу помогает повороту, а в другую сторону он его останавливает. Встать ближе к наветренной стороне прохода: пока яхта крутится, ветер сносит её, нос - быстрее кормы.",
+          "pose": { "x": 125, "y": 150, "rot": 0 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Руль на борт [[вправо|влево]] и не трогать его до конца разворота. Короткий импульс вперёд, на секунду-две: струя от винта бьёт в перо руля, корма уходит [[влево|вправо]], нос - [[вправо|влево]]. Импульс короткий, чтобы яхта не набрала ход.",
+          "pose": { "x": 125, "y": 146, "rot": 35 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Нейтраль на секунду, затем короткий импульс назад. Он гасит начавшийся ход вперёд, а заброс ведёт корму дальше [[влево|вправо]] - разворот продолжается. Руль оставить на борту: без хода назад он всё равно не работает.",
+          "pose": { "x": 126, "y": 147, "rot": 70 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Повторять: вперёд - нейтраль - назад - нейтраль, каждый раз с паузой в нейтрали, чтобы не бить коробку передач. Ветер сносит яхту [[вправо|влево]] - для этого и оставляли место с наветренной стороны.",
+          "pose": { "x": 130, "y": 147, "rot": 110 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Если заброс слабый - у яхт с saildrive так бывает, - импульсы назад почти не добавляют поворота. Тогда помогать подруливающим короткими включениями, а план разворота и запасной выход продумать до того, как зайти в проход.",
+          "pose": { "x": 134, "y": 147, "rot": 145 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Нос смотрит на выход: руль прямо и малым ходом вперёд. На переднем ходу руль работает сразу - струя от винта идёт на перо.",
+          "pose": { "x": 137, "y": 160, "rot": 180 }
+        }
+      ],
+      "sources": [
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "web", "title": "SAIL - Walking the prop (T. Pinney, 2013)", "url": "https://sailmagazine.com/cruising/walking-the-prop/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sail-World - Sailing boat handling: 'Back and fill' using prop-walk (J. Jamieson, 2013)", "url": "https://www.sail-world.com/-106819/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Tradewinds Sailing - Boat Handling Under Power, Part 2 (D. Gilzean, 2013)", "url": "https://tradewindssailing.com/wordpress/?p=845", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Tradewinds Sailing - Skipper's Tip: Boat Handling Under Power, Part I (D. Gilzean, 2013)", "url": "https://tradewindssailing.com/wordpress/skippers-tip/skippers-tip-boat-handling-under-power-part-i/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - How to squeeze a yacht into a tight marina berth (J. Stevens, 2024)", "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-squeeze-a-yacht-into-a-tight-marina-berth-97682", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)", "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167", "accessed": "2026-09-19" }
+      ],
+      "verified": true
+    },
+    {
       "id": "med-mooring",
       "group": "stern-to",
+      "mirror": true,
       "title": "Швартовка кормой на муринг",
       "summary": "Задним ходом в узкий промежуток между лодками, кормовые на причал, лейзи-линия на нос.",
       "scene": {
-        "label": "Яхта задним ходом входит между двумя лодками, стоящими кормой к причалу; ветер слева",
+        "label": "Яхта задним ходом входит между двумя лодками, стоящими кормой к причалу; ветер [[слева|справа]]",
         "wind": 270,
         "power": true,
         "elements": [
@@ -22,6 +182,7 @@
           { "type": "boat-moored", "x": 128, "y": 55, "rot": 180 },
           { "type": "boat-moored", "x": 200, "y": 55, "rot": 180 },
           { "type": "path", "d": "M20 150 L195 150 Q170 150 166 125 L164 30" },
+          { "type": "arrow", "x1": 155, "y1": 103, "x2": 174, "y2": 92, "kind": "walk", "steps": [1] },
           { "type": "line", "points": [[172, 16], [172, 198]], "dashed": true, "steps": [1, 2, 3] },
           { "type": "line", "points": [[156, 22], [146, 10]], "steps": [3, 4] },
           { "type": "line", "points": [[172, 16], [178, 28], [178, 78], [164, 92], [164, 198]], "steps": [4] },
@@ -34,14 +195,14 @@
         {
           "who": "Шкипер",
           "command": "",
-          "text": "Ещё на подходе: кранцы на оба борта и на корму, два кормовых конца с запасом длины (дойти до берега и вернуться), отпорный крюк под рукой. Каждому - своя роль. Заранее проверить, в какую сторону на заднем ходу уводит корму: при винте правого вращения - влево.",
+          "text": "Ещё на подходе: кранцы на оба борта и на корму, два кормовых конца с запасом длины (дойти до берега и вернуться), отпорный крюк под рукой. Каждому - своя роль. Заранее проверить на этой яхте, в какую сторону на заднем ходу уводит корму; схема - для заброса [[влево|вправо]].",
           "pose": { "x": 60, "y": 150, "rot": 90 }
         },
         {
           "who": "Рулевой",
           "command": "",
           "text": "Встать напротив места, развернуться кормой к нему и начать задний ход издалека: так будет время погасить заброс кормы и поправиться на ветер. При боковом ветре сначала держать корму чуть на ветер. Ход - самые малые обороты: руль на заднем ходу работает только при движении. Если лейзи-линий нет, якорь отдают примерно за 4 корпуса до причала и травят цепь на заднем ходу.",
-          "pose": { "x": 168, "y": 134, "rot": 158 }
+          "pose": { "x": 175, "y": 138, "rot": 150 }
         },
         {
           "who": "Рулевой",
@@ -64,7 +225,7 @@
         {
           "who": "Шкипер",
           "command": "",
-          "text": "Подать подветренный кормовой. Потом дотянуть: потравить кормовые, выбрать лейзи-линию, дать задний ход на малых оборотах и выбирать слабину кормовых, пока лейзи-линия не натянется. Слабая лейзи-линия ночью при ветре или зыби пустит корму на причал. В конце - корма в шаге от стенки, двигатель в нейтраль.",
+          "text": "Подать подветренный кормовой. Потом дотянуть: потравить кормовые, выбрать лейзи-линию, дать задний ход на малых оборотах и выбирать слабину кормовых, пока лейзи-линия не натянется. Слабая лейзи-линия ночью при ветре или зыби пустит корму на причал. В конце корма так близко к стенке, чтобы можно было сойти на берег, но не коснулась бы её при ветре с моря; двигатель в нейтраль.",
           "pose": { "x": 164, "y": 60, "rot": 180 }
         }
       ],
@@ -76,21 +237,23 @@
         { "type": "iyt", "module": 2, "section": 7, "page": 53 },
         { "type": "iyt", "module": 14, "section": 2, "page": 199 },
         { "type": "iyt", "module": 2, "section": 2, "page": 19 },
-        { "type": "web", "title": "RYA - Med Mooring: Stern-To", "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Yachting Monthly - Expert advice: mooring a boat (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-advice-mooring-a-boat-83016", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Practical Boat Owner - Prop walk: how to use it to your best advantage (2025)", "url": "https://www.pbo.co.uk/seamanship/prop-walk-how-to-use-it-to-your-best-advantage-97756", "accessed": "2026-09-17" }
+        { "type": "web", "title": "RYA - Med Mooring: Stern-To", "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Expert advice: mooring a boat (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-advice-mooring-a-boat-83016", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Prop walk: how to use it to your best advantage (2025)", "url": "https://www.pbo.co.uk/seamanship/prop-walk-how-to-use-it-to-your-best-advantage-97756", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)", "url": "https://www.mby.com/maintenance/stern-to-mooring-24890", "accessed": "2026-09-19" }
       ],
       "verified": true
     },
     {
       "id": "leave-berth",
       "group": "stern-to",
+      "mirror": true,
       "title": "Отход от причала кормой",
       "summary": "Уход со стоянки кормой к причалу: сначала лейзи-линия, потом кормовые, выход прямо малым ходом.",
       "scene": {
-        "label": "Яхта выходит носом вперёд из промежутка между лодками, стоящими кормой к причалу; ветер слева",
+        "label": "Яхта выходит носом вперёд из промежутка между лодками, стоящими кормой к причалу; ветер [[слева|справа]]",
         "wind": 270,
         "power": true,
         "elements": [
@@ -136,7 +299,7 @@
           "who": "Экипаж",
           "command": "",
           "text": "Выйдя на чистую воду, убрать все концы и кранцы и закрепить их. Скорость по-прежнему минимальная, пока марина не осталась позади.",
-          "pose": { "x": 196, "y": 172, "rot": 115 }
+          "pose": { "x": 200, "y": 170, "rot": 125 }
         }
       ],
       "videos": [
@@ -147,9 +310,9 @@
         { "type": "iyt", "module": 2, "section": 7, "page": 53 },
         { "type": "iyt", "module": 2, "section": 7, "page": 54 },
         { "type": "iyt", "module": 14, "section": 2, "page": 199 },
-        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Practical Boat Owner - Casting off with confidence (D. Wells, 2019)", "url": "https://www.pbo.co.uk/seamanship/casting-off-with-confidence-easy-ways-for-singlehanders-to-get-off-the-dock-62624", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth", "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Casting off with confidence (D. Wells, 2019)", "url": "https://www.pbo.co.uk/seamanship/casting-off-with-confidence-easy-ways-for-singlehanders-to-get-off-the-dock-62624", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth", "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/", "accessed": "2026-09-19" }
       ],
       "verified": true
     },
