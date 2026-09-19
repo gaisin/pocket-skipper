@@ -54,7 +54,7 @@ test('переключатель зеркалит схему, меняет те�
   await page.goto('./#/more/settings');
   await expect(page.locator('#propWalk')).toHaveValue('right');
   await page.goto('./#/maneuvers');
-  await expect(page.getByRole('link', { name: /Лагом правым бортом/ })).toBeVisible();
+  await expect(page.locator('a[href="#/maneuvers/mirror-demo"]')).toContainText('Лагом правым бортом');
 });
 
 test('в настройках сторону можно вернуть в «не проверено»', async ({ page }) => {
