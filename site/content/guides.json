@@ -1896,6 +1896,1330 @@
           ]
         }
       ]
+    },
+    {
+      "id": "mooring",
+      "title": "Швартовка и отход",
+      "summary": "Особенности этой яхты, выбор приёма по ветру, рулевой и экипаж, подруливающее, ошибки и второй заход",
+      "verified": true,
+      "sections": [
+        {
+          "title": "Эта яхта",
+          "tips": [
+            {
+              "text": "Привод - saildrive, а не вал. Заброс кормы на заднем ходу у таких яхт обычно слабый, бывает почти незаметен.",
+              "note": "Схема двигателя в руководстве, с. 82-83, поз. 3. YM: у яхты с saildrive заброса было очень мало - винт стоит горизонтально и близко к точке поворота. Pearson: обычно меньше, чем у яхты с валом; Pinney пишет, что его нет совсем. Проверить на своей яхте - манёвр «Проверка заброса кормы и инерции».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "SAIL - Walking the prop (T. Pinney, 2013)",
+                  "url": "https://sailmagazine.com/cruising/walking-the-prop/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Сторону заброса выбрать в приложении: Манёвры → любой манёвр швартовки, переключатель «Корму на заднем ходу уводит», или Настройки. Схемы перерисуются под эту яхту.",
+              "note": "Проверка у причала на швартовах: малый задний и смотреть за корму. Струя у правого борта - корму уводит влево, у левого - вправо.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "SAIL - Walking the prop (T. Pinney, 2013)",
+                  "url": "https://sailmagazine.com/cruising/walking-the-prop/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Если заброс почти не чувствуется, приёмы, построенные на нём, работают слабо. Тогда корму к причалу подводят рулём от причала и коротким толчком вперёд или шпрингом, а развернуться на месте помогает подруливающее.",
+              "note": "YM: на яхте с saildrive короткий задний почти не помог развернуться на месте, выручило подруливающее. Rainsbury: чего не сделает двигатель, сделает шпринг. Pearson: толчок вперёд не дольше 2 секунд на переложенный руль поворачивает яхту, почти не разгоняя.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)",
+                  "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "У saildrive винт дальше от пера руля, чем у яхты с валом: толчок вперёд на переложенный руль действует с задержкой и слабее.",
+              "note": "YM: винт дальше от руля - между действием и откликом задержка. Pearson: чем дальше винт от руля, тем позже и слабее действует струя на перо.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "В руководстве упомянут складной винт - спросить на базе, какой стоит.",
+              "note": "Руководство, с. 21. В испытании YM почти все складные и флюгерные винты давали меньше заброса, чем штатный фиксированный, а складные на заднем ходу тормозили хуже него, обычно не больше чем на 10%.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Folding and feathering propeller test (E. Barrell, 2015)",
+                  "url": "https://www.yachtingmonthly.com/gear/folding-and-feathering-propeller-test-29807",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Руль один, штурвалов два, оба связаны с рулём тросами. Есть аварийный румпель - только для малого хода.",
+              "note": "Руководство, с. 22-23; схема рулевого устройства, с. 66-67.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            },
+            {
+              "text": "Рычаг газа и приборы двигателя стоят у одного штурвала. У какого - выяснить на приёмке и заранее решить, с какого штурвала швартоваться.",
+              "note": "На схеме двигателя (руководство, с. 82-83) рычаг газа (поз. 15) и приборы (поз. 16) показаны у одного штурвала, сторону по ней не определить. Руководство предупреждает: при переходе от одного штурвала к другому меняется обзор (с. 24).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            },
+            {
+              "text": "Шесть швартовых уток: две на носу, две по миделю, две на раковинах. Носовые - для якоря и буксира, мидельные и кормовые тоже рассчитаны на швартовку; прочность около 6 т.",
+              "note": "Руководство, с. 28; схема палубы, с. 38-39, поз. 20.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            },
+            {
+              "text": "Мидельные утки стоят примерно на 64% длины от носа - заметно позади мачты, а значит, и точки поворота. Мидельный шпринг может не удержать яхту ровно: попробовать его в спокойную погоду, прежде чем на него полагаться.",
+              "note": "Положение уток - по схеме палубы, руководство с. 38-39. Точка поворота - чуть позади мачты (Pearson, YM). Cunliffe: способ работает, если утка на точке поворота или чуть позади, и получается не на каждой яхте. Запасной вариант при отжимном ветре - носовой конец и задний ход (раздел «Решения по ветру»).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Springing on and off (T. Cunliffe, 2015)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/springing-on-and-off-29899",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Подруливающее устройство на этой модели - опция. У Dufour 430 GL Kummsal базы Yacht Club Mai в Фетхие оно есть; на своей яхте проверить на приёмке.",
+              "note": "Руководство: батареи для подруливающего (с. 13), его предохранители с пометкой «опция» (с. 63).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "12Knots - Dufour 430 Grand Large KUMMSAL",
+                  "url": "https://12knots.com/en/yacht-charter/dufour-430-grand-large/kummsal-sed60306/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Длина 13,24 м, ширина 4,30 м, осадка 2,10 м. Свой якорь при швартовке кормой отдают примерно за 4 корпуса до причала - для этой яхты около 50 м.",
+              "note": "Размеры - руководство, с. 10; 4 корпуса - RYA. См. манёвр «Кормой на свой якорь».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "RYA - Med Mooring: Stern-To",
+                  "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Опущенная кормовая платформа не считается безопасной зоной - концы с неё не подавать.",
+              "note": "Руководство, с. 25.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            },
+            {
+              "text": "Пока работает электрический брашпиль, двигатель должен работать на слегка повышенных оборотах.",
+              "note": "Руководство, с. 13.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Решения по ветру",
+          "tips": [
+            {
+              "text": "Легче швартоваться против ветра и течения или при прижимном ветре. Если есть выбор, подходить так, чтобы ветер тормозил яхту.",
+              "note": "IYT: легче при встречном течении и встречном или прижимном ветре. Mendez: ветер как тормоз - пройти мимо места, развернуться и подойти с другой стороны.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 9,
+                  "section": 4,
+                  "page": 155
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Первым крепят конец того края, который ветер первым и дальше всего уведёт от места: ветер в нос вдоль причала - носовой, ветер в корму - кормовой.",
+              "note": "Pearson: решая, какой конец первый, смотреть, какой край яхты уйдёт с места первым и дальше. Mendez: обычно это наветренный край.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Лагом при прижимном ветре: подойти параллельно, остановиться напротив своего места и дать ветру прижать яхту. Первым - кормовой: нос несёт к причалу быстрее, яхта поворачивается вокруг кормового и сама его натягивает.",
+              "note": "Кранцы - по всей длине борта: если кормовой не успели подать, яхту прокатит бортом вдоль причала (Pearson). YM: касаться причала сначала раковиной. См. манёвр «Лагом при прижимном ветре».",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 54
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "BoatUS Foundation - Study guide: anchoring & mooring (docking, spring lines)",
+                  "url": "https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Лагом при отжимном ветре: заходить круче обычного, дольше держать угол и ход и повернуть в последний момент. Первым - носовой или мидельный шпринг: нос сдувает быстрее кормы.",
+              "note": "YM и BoatUS - круче и повернуть поздно. Pearson при длинном свободном причале заходит пологим курсом, но тоже не сбрасывает ход рано: иначе нос сдует, и яхта встанет метрах в трёх от причала. См. манёвр «Лагом при отжимном ветре».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "BoatUS Foundation - Study guide: anchoring & mooring (docking, spring lines)",
+                  "url": "https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Если мидельный шпринг не держит яхту у причала: подойти носом к причалу, закрепить носовой, руль на борт в сторону причала и малый назад - корму постепенно прижмёт к причалу.",
+              "note": "Так в учебнике IYT (с. 54, ситуация B): там причал с левого борта, руль лево на борт, и задний ход винта правого вращения тоже уводит корму влево, к причалу (с. 53). Если корму у вашей яхты уводит от причала, заброс будет мешать - попробовать приём в спокойную погоду.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 54
+                },
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                }
+              ]
+            },
+            {
+              "text": "Лагом при ветре в корму вдоль причала остановиться труднее. Если есть место - пройти мимо, развернуться и подойти против ветра. Если нет - медленно, первым кормовой.",
+              "note": "Safe Skipper: ветер сзади мешает остановиться, встречный помогает. Mendez: ветер в корму - первым кормовой. См. манёвр «Лагом при ветре с кормы».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth",
+                  "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Кормой к причалу: задним ходом против ветра (ветер с берега) идти легко, по ветру (ветер с моря) - труднее всего: нос сваливает. Как только яхта остановилась, нос сдувает.",
+              "note": "YM: задним против ветра - легко, поперёк - труднее, по ветру - почти невозможно. См. манёвры «Кормой при ветре с моря» и «Кормой при ветре с берега, в пустой причал».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (R. Sprot, 2022)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Кормой при боковом ветре первым подают наветренный кормовой. При отходе наветренный кормовой отдают последним.",
+              "note": "RYA и Mendez: сначала наветренный, потом подветренный. Sunsail: наветренный держать до последнего - так лучше управляется нос. RYA: в боковой ветер может понадобиться сначала идти задним против ветра, чтобы появилась управляемость.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "RYA - Med Mooring: Stern-To",
+                  "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/stern-to-mooring-24890",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Mediterranean mooring techniques (2024)",
+                  "url": "https://www.sunsail.com/au/blog/mediterranean-mooring",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Стоя кормой к причалу, при ветре с берега туже держат кормовые, при ветре с моря - носовые (лейзи-линию).",
+              "note": "Mendez. Sail Ionian: слабая лейзи-линия - если ночью раздует или придёт зыбь, корма ударится о причал.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/stern-to-mooring-24890",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sail Ionian - Lazy Line Mooring: A Masterclass",
+                  "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Отход лагом при отжимном ветре: отдать все концы, кроме кормового, дождаться, пока ветер отведёт нос, отдать кормовой и дать передний ход.",
+              "note": "IYT, с. 54. Концы заранее завести на слип и отдавать с борта, чтобы никто не остался на причале. Pearson: чтобы выйти прямо вперёд вдоль причала - сначала кормовой, носовой последним; отданный первым носовой разворачивает нос от причала.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 54
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Отход лагом при прижимном ветре: отдать всё, кроме носового шпринга, малым вперёд с рулём к причалу отвести корму и выйти задним ходом.",
+              "note": "IYT, с. 54; руль к причалу - YM. В свежий прижимной ветер так надёжнее, чем носом на кормовом шпринге (Cunliffe, Rainsbury). См. манёвры «Отход кормой на носовом шпринге» и «Отход носом на кормовом шпринге».",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 54
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Springing on and off (T. Cunliffe, 2015)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/springing-on-and-off-29899",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)",
+                  "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Ветер в нос и от причала - оставить кормовой шпринг: нос отойдёт, дать малый вперёд и отдать шпринг. Ветер или течение в корму - оставить носовой шпринг, дождаться, пока корму отожмёт, и задним.",
+              "note": "IYT, с. 53.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                }
+              ]
+            },
+            {
+              "text": "Отходя от причала при боковом ветре, не медлить: всё подготовить заранее и выходить быстро - при медленном выходе яхту может навалить на причал.",
+              "note": "IYT, с. 54.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 54
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Рулевой",
+          "tips": [
+            {
+              "text": "Ход - самый малый, на котором яхта ещё слушается руля. Если что-то пошло не так, пусть это случится медленно: на одном узле серьёзно не повредишь.",
+              "note": "IYT, с. 53 и 199; YM 2015: как можно медленнее, сохраняя управляемость; YM 2023: на одном узле вряд ли что-то сломаешь.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                },
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Тормоза нет: каждые полузла хода потом придётся гасить таким же усилием заднего хода. Тормозить заранее, а не у самой стенки.",
+              "note": "IYT: у судна нет тормоза, инерция велика, и даже задний ход гасит её не сразу. YM 2015 - про полузла.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "На заднем ходу руль работает, только пока яхта идёт назад, и слабее, чем на переднем: струя от винта на перо не попадает. Толчок вперёд на заднем ходу сбивает управляемость - включать его, только чтобы остановиться.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (R. Sprot, 2022)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Короткий толчок вперёд, не дольше пары секунд, на переложенный руль разворачивает яхту почти на месте. Между передачами - пауза в нейтрали.",
+              "note": "Pearson: не больше 2 секунд, иначе яхта пойдёт вперёд. Pinney: пауза в нейтрали бережёт коробку передач.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "SAIL - Walking the prop (T. Pinney, 2013)",
+                  "url": "https://sailmagazine.com/cruising/walking-the-prop/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Разворачиваться на месте - в ту сторону, куда помогает заброс: если корму на заднем ходу уводит влево, разворот вправо, по часовой стрелке.",
+              "note": "IYT, с. 53; Pinney. См. манёвр «Разворот в узком проходе».",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 2,
+                  "section": 7,
+                  "page": 53
+                },
+                {
+                  "type": "web",
+                  "title": "SAIL - Walking the prop (T. Pinney, 2013)",
+                  "url": "https://sailmagazine.com/cruising/walking-the-prop/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Чтобы выйти задним ходом прямо, перед включением заднего отвернуть нос примерно на 30° в ту сторону, куда уводит корму: заброс вернёт яхту на прямую.",
+              "note": "Pearson - выход задним из узкого прохода между рядами.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Куда смотреть: при подходе лагом - на нос и на носового у вант, он показывает, сколько осталось до причала. На заднем ходу - на корму и на нос: точка поворота уходит к корме, и нос заносит.",
+              "note": "Pearson: носовой у вант отсчитывает метры до причала; на заднем ходу у препятствий следить за носом. Blackwell: на заднем ходу следить, чтобы корму не занесло на препятствие.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Prop walk: how to use it to your best advantage (D. and A. Blackwell, 2025)",
+                  "url": "https://www.pbo.co.uk/seamanship/prop-walk-how-to-use-it-to-your-best-advantage-97756",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (R. Sprot, 2022)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Утки на причале впереди и позади места работают как створ: по ним видно, идёт ли яхта к месту и не теряет ли управляемость.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Рулевой с кормы лучше всех видит, как яхта движется относительно причала и соседей, визируя по мачте. Поэтому и команды отдавать концы подаёт он.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Швартоваться с того штурвала, откуда лучше виден причал. Но газ стоит у одного из них, а при переходе к другому обзор меняется - решить заранее, а не на подходе.",
+              "note": "Cruising World: с двумя штурвалами рулевой выбирает тот, откуда лучше видно подход к причалу. Руководство Dufour: обзор меняется при переходе от штурвала к штурвалу (с. 24), газ - у одного штурвала (с. 82-83).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Cruising World - The cockpit: control central (A. Simon, 2014)",
+                  "url": "https://www.cruisingworld.com/sailboats/cockpit-control-central/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                }
+              ]
+            },
+            {
+              "text": "В повороте яхту выносит наружу, как тележку на льду. Подходить к месту с той стороны, с которой инерция понесёт к причалу, а не от него.",
+              "note": "Pearson: место на внутренней стороне поворота - «закрытое», на внешней - «открытое».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Чтобы узнать яхту, остановиться на чистой воде носом к ветру и оставить в нейтрали: обычно она встаёт раковиной к ветру и дрейфует боком, нос уходит под ветер.",
+              "note": "Pearson. Проверить на этой яхте вместе с забросом - манёвр «Проверка заброса кормы и инерции».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - The big 5 of boat handling (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/seamanship.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Экипаж и команды",
+          "tips": [
+            {
+              "text": "План - до подхода: кто на носовом, кто на кормовом, кто с кранцем, какой конец первый и на какую утку причала. Задача шкипера - поставить яхту к месту, экипажа - закрепить её.",
+              "note": "Mendez; Rainsbury: береговая команда должна знать, какую утку или кнехт использовать; Sunsail: каждый заранее знает свою роль.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)",
+                  "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Mediterranean mooring techniques (2024)",
+                  "url": "https://www.sunsail.com/au/blog/mediterranean-mooring",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/stern-to-mooring-24890",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Один из экипажа - «бродячий кранец»: держит незакреплённый кранец и подставляет его туда, где яхта может коснуться причала или соседа.",
+              "note": "IYT: особенно у углов причала - порыв может бросить на угол, и повреждения бывают серьёзные.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                },
+                {
+                  "type": "web",
+                  "title": "Discover Boating (NMMA) - Boat fenders 101: tying & placement",
+                  "url": "https://www.discoverboating.com/resources/boat-fenders-and-bumpers",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Кранцы - по широкой части борта, по высоте причала, у плавучего понтона - чуть выше воды. Для швартовки кормой - на оба борта и на корму, выше, чем для понтона.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Discover Boating (NMMA) - Boat fenders 101: tying & placement",
+                  "url": "https://www.discoverboating.com/resources/boat-fenders-and-bumpers",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth",
+                  "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "RYA - Med Mooring: Stern-To",
+                  "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/stern-to-mooring-24890",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Концы готовят заранее: от утки под леером и обратно, снаружи всего, аккуратной бухтой, не в воде и не слишком длинные.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth",
+                  "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)",
+                  "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)",
+                  "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "На причал - только шагом и по слову шкипера, когда яхта почти остановилась и зазор небольшой. Не прыгать: далеко - зайти снова.",
+              "note": "Pearson: лагом обычно сходят у вант - они служат поручнем; в последний метр повернуться лицом к корме, держась за ванту, и сойти, как с трапа.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth",
+                  "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)",
+                  "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Первый конец не выбирать сразу втугую: подтянутый нос отталкивает корму от причала.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Можно не сходить, а набросить петлю на утку с борта: на яхте с высоким бортом это часто проще, и никто не останется на причале.",
+              "note": "Hare. Pearson: петлю класть не на утку, а за неё, вокруг основания; в каждой руке - шлаг-другой запаса.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting World - How to moor double-handed (P. Hare, 2019)",
+                  "url": "https://www.yachtingworld.com/5-tips/moor-double-handed-top-tips-pro-sailor-123097",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Лейзи-линию носовой берёт у кормы (её подают с причала), ведёт вдоль борта снаружи всего и сразу крепит на носу. Всё это время двигатель в нейтрали.",
+              "note": "RYA, Mendez, Sunsail (отпорный крюк наготове); Sail Ionian: лейзи-линию часто наматывает на винт.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "RYA - Med Mooring: Stern-To",
+                  "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/stern-to-mooring-24890",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Mediterranean mooring techniques (2024)",
+                  "url": "https://www.sunsail.com/au/blog/mediterranean-mooring",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sail Ionian - Lazy Line Mooring: A Masterclass",
+                  "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Руками, ногами и телом яхту не останавливать и не отталкивать - для этого кранцы. Отпорным крюком с силой тоже не толкать.",
+              "note": "YACHT: можно поскользнуться или зажать ногу между яхтой и причалом; толчок крюком может наделать больше вреда.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)",
+                  "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Discover Boating (NMMA) - Boat fenders 101: tying & placement",
+                  "url": "https://www.discoverboating.com/resources/boat-fenders-and-bumpers",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "BoatUS Foundation - Study guide: anchoring & mooring (docking, spring lines)",
+                  "url": "https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Пока человек заводит шпринг на утку, передачу не включать и резко оборотов не давать: сначала он говорит, что шпринг закреплён. Пауза в нейтрали бережёт пальцы и винт.",
+              "note": "Rainsbury. BoatUS: женщине раздавило пальцы, когда шкипер резко дал задний, пока она крепила шпринг.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - Springing off and on a pontoon (D. Rainsbury, 2024)",
+                  "url": "https://www.pbo.co.uk/seamanship/springing-off-and-on-a-pontoon-90572",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "BoatUS Foundation - Study guide: anchoring & mooring (docking, spring lines)",
+                  "url": "https://boatus.org/study-guide/navigation-maneuvering/anchoring-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Способ общения договорить заранее: знаки руками надёжнее голоса - на ветру слова теряются. Расстояние до причала показывают пальцами одной руки, вытянутой в сторону.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting World - How to moor double-handed (P. Hare, 2019)",
+                  "url": "https://www.yachtingworld.com/5-tips/moor-double-handed-top-tips-pro-sailor-123097",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - How to moor your yacht (and how not to) (H. Dekkers, 2025)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-moor-your-yacht-and-how-not-to-100714",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Команды - короткие и внятные, экипаж подтверждает, что услышал. Когда шпринг закреплён или уже на борту, об этом вслух говорят рулевому; зацепился конец - тоже сразу сказать.",
+              "note": "Dekkers. Pearson: когда хорошо спланировано, никому не нужно бегать и кричать; рулевой прибавляет ход, только услышав, что шпринг на борту.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - How to moor your yacht (and how not to) (H. Dekkers, 2025)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-moor-your-yacht-and-how-not-to-100714",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Перед отходом: двигатель завести заранее, береговое питание и шланги отключить, экипажу не высовывать руки и ноги за борт. Концы завести на слип и отдавать с борта в том порядке, который назовёт шкипер.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                },
+                {
+                  "type": "web",
+                  "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth",
+                  "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Отданный конец сразу выбрать на борт, особенно у кормы: в воде его легко намотать на винт. Свободный конец слипа - как можно короче.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Спрей-худ на время швартовки и отхода лучше сложить: легче слышать друг друга и ходить по палубе.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Подруливающее устройство",
+          "tips": [
+            {
+              "text": "Есть ли оно на вашей яхте, где включается и толкает ли нос в обе стороны - проверить на приёмке. Иногда кнопку включения надо держать несколько секунд.",
+              "note": "На Dufour 430 GL это опция (руководство, с. 13, 63).",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)",
+                  "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf",
+                  "accessed": "2026-09-17"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Включать только коротко: при долгой работе мотор перегревается, и срабатывает защита или сгорает предохранитель.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - How does a boat bow thruster work? (M. Attree, 2025)",
+                  "url": "https://www.pbo.co.uk/expert-advice/how-does-a-boat-bow-thruster-work-96785",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Сильнее всего оно без хода: на 2 узлах тяга падает примерно вдвое, с 5 узлов подруливающее не действует.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Сильный ветер оно обычно не пересилит. Это помощь, а не часть плана: манёвр должен получаться и без подруливающего.",
+              "note": "YACHT: в план манёвра не закладывать. PBO: полагаться на него не стоит.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Practical Boat Owner - How does a boat bow thruster work? (M. Attree, 2025)",
+                  "url": "https://www.pbo.co.uk/expert-advice/how-does-a-boat-bow-thruster-work-96785",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Где помогает: удержать нос при заходе кормой, развернуться в узком проходе, когда заброса мало, помочь при отходе кормой на носовом шпринге в прижимной ветер.",
+              "note": "YACHT: подход кормой, разворот в тесноте, нос на ветру при постановке на якорь. YM: на яхте с saildrive разворот на месте удался с подруливающим; при прижимном ветре - носовой шпринг, задний ход и немного подруливающего.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Силу проверить заранее: на чистой воде встать лагом к ветру и короткими включениями толкнуть нос против ветра.",
+              "note": "YACHT. См. манёвр «Проверка заброса кормы и инерции».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "YACHT - Harbour manoeuvres: relaxed mooring with the bow thruster (L. Bolle, 2024)",
+                  "url": "https://www.yacht.de/en/equipment/boat-equipment/harbour-manoeuvres-relaxed-mooring-with-the-bow-thruster/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Ошибки и второй круг",
+          "tips": [
+            {
+              "text": "До захода - план Б: что может пойти не так и как из этого выйти. Не спешить: постоять на чистой воде, посмотреть, как сносит, и договориться с экипажем.",
+              "note": "YM: запасной выход есть всегда - на худой конец лечь с кранцами на борт другой яхты или встать на чужое место. Hare: сначала осмотреться и составить понятный обоим план.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - The 10 golden rules of boat handling updated for modern times (R. Sprot, 2023)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/the-10-golden-rules-of-boat-handling-updated-for-modern-times-93167",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting World - How to moor double-handed (P. Hare, 2019)",
+                  "url": "https://www.yachtingworld.com/5-tips/moor-double-handed-top-tips-pro-sailor-123097",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Заход кормой: нос сваливает, линию не удержать - выйти передним ходом на чистую воду, восстановить управляемость и зайти снова. Второй заход - нормально.",
+              "note": "YM 2022; Sunsail: не бойтесь попробовать ещё раз, это бывает и у мастеров.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (R. Sprot, 2022)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sunsail - Mediterranean mooring techniques (2024)",
+                  "url": "https://www.sunsail.com/au/blog/mediterranean-mooring",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Отжимной ветер: повернули рано и встали в паре метров от причала - не прыгать, а обойти и зайти снова, поворачивая позже.",
+              "note": "Pearson: если есть место, повторять заход, пока носовой не окажется в пределах шага.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind off berthing (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/windoff.pdf",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Лейзи-линия или чужой конец у винта, корму несёт на нос соседа - сразу нейтраль, чтобы не намотать. Если всё же намотало - ситуация «Намотка на винт».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sail Ionian - Lazy Line Mooring: A Masterclass",
+                  "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                }
+              ]
+            },
+            {
+              "text": "Конец слипа зацепился на утке или в клюзе - сразу сказать рулевому: он гасит ход и прекращает манёвр. Натянувшийся на ходу конец может вырвать утку.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Яхту несёт на соседа или на угол причала - «бродячий кранец» в место касания. Руками, ногами и отпорным крюком не отталкиваться.",
+              "sources": [
+                {
+                  "type": "iyt",
+                  "module": 14,
+                  "section": 2,
+                  "page": 199
+                },
+                {
+                  "type": "web",
+                  "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)",
+                  "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Отход на кормовом шпринге: частая ошибка - вывести нос недостаточно. Пока яхта набирает ход, ветер сносит её обратно - нос выводят примерно на 45° к причалу.",
+              "note": "Pearson. См. манёвр «Отход носом на кормовом шпринге».",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Wind on berths (J. Pearson, 2012)",
+                  "url": "https://www.hamble.co.uk/pdfs/stuckon.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Ветер усилился на подходе или место оказалось неудобным - не продолжать по инерции: уйти на чистую воду и выбрать другой план - другое место или подход с другой стороны, против ветра.",
+              "note": "YM 2022: прекратить заход и вернуться на чистую воду. Mendez: ветер как тормоз - пройти мимо, развернуться и подойти с другой стороны.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (R. Sprot, 2022)",
+                  "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Motor Boat & Yachting - Windier conditions when berthing (J. Mendez, 2014)",
+                  "url": "https://www.mby.com/maintenance/windier-berthing-32638",
+                  "accessed": "2026-09-19"
+                },
+                {
+                  "type": "web",
+                  "title": "Yachting World - How to moor double-handed (P. Hare, 2019)",
+                  "url": "https://www.yachtingworld.com/5-tips/moor-double-handed-top-tips-pro-sailor-123097",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            },
+            {
+              "text": "Двигатель может заглохнуть и в марине: на выходе и на заходе чехол с грота снят, фал присоединён.",
+              "note": "Pearson.",
+              "sources": [
+                {
+                  "type": "web",
+                  "title": "Sailing Today / Hamble School of Yachting - Warp speed (J. Pearson, 2011)",
+                  "url": "https://www.hamble.co.uk/pdfs/WARPSPEED.pdf",
+                  "accessed": "2026-09-19"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }
