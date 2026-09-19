@@ -13,8 +13,8 @@ test.afterEach(async ({ page }) => {
 
 const { guides } = content('guides');
 
-test('в «Ещё» есть оба гайда, после чек-листов и перед справочником', async ({ page }) => {
-  expect(guides.map((g) => g.id)).toEqual(expect.arrayContaining(['fethiye', 'money']));
+test('в «Ещё» есть все гайды, после чек-листов и перед справочником', async ({ page }) => {
+  expect(guides.map((g) => g.id)).toEqual(expect.arrayContaining(['fethiye', 'money', 'mooring']));
   await page.goto('./#/more');
   // Меню строится после загрузки содержания - дождаться ссылки на справочник, иначе список может быть пустым.
   await expect(page.locator('.list a[href="#/more/reference"]')).toBeVisible();
