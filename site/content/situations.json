@@ -87,7 +87,7 @@
       "steps": [
         { "text": "Поднять тревогу, всем надеть спасательные жилеты" },
         { "text": "Включить трюмные помпы, откачивать ручной помпой и вёдрами" },
-        { "text": "Искать течь: после удара или посадки на мель - начинать с места удара; иначе проверить кингстоны, сальник вала и руля, шланги и хомуты", "note": "Поднимите пайолы и откройте рундуки. Чем больше воды внутри, тем труднее найти пробоину - не теряйте времени" },
+        { "text": "Искать течь: после удара или посадки на мель - начинать с места удара; иначе проверить кингстоны, уплотнение saildrive, сальник руля, шланги и хомуты", "note": "Поднимите пайолы и откройте рундуки. Чем больше воды внутри, тем труднее найти пробоину - не теряйте времени" },
         { "text": "Если течёт через кингстон или его шланг - закрыть кингстон" },
         { "text": "Заткнуть отверстие мягкой деревянной пробкой или клином, тряпками, подушкой; лопнувший шланг обмотать лентой или резиной и затянуть хомутами", "note": "Идеально герметично не нужно - нужно, чтобы помпы справлялись. Пробку или заплату подпереть, вода давит снаружи" },
         { "text": "Если место течи известно - по возможности перенести вес так, чтобы оно поднялось выше воды" },
@@ -100,7 +100,8 @@
         { "type": "iyt", "module": 14, "section": 2, "page": 197 },
         { "type": "web", "title": "BoatUS - Facing A Flooding Emergency (2022)", "url": "https://www.boatus.com/expert-advice/expert-advice-archive/2022/september/facing-a-flooding-emergency", "accessed": "2026-09-17" },
         { "type": "web", "title": "AMSEA - Orientation, Emergency Instructions, and Drills", "url": "https://www.amsea.org/orientation-instructions-drills", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Transport Canada - Safe Boating Guide TP 511E (2026)", "url": "https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Transport Canada - Safe Boating Guide TP 511E (2026)", "url": "https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" }
       ],
       "verified": true
     },
@@ -168,16 +169,18 @@
         { "text": "Посмотреть за корму и попробовать распутать конец отпорником с палубы" },
         { "text": "Остатки срезать острым ножом с зубцами, привязанным к отпорнику" },
         { "text": "Нырять к винту только в спокойную погоду, при заглушенном двигателе, в маске и не в одиночку", "note": "Нужен физически крепкий и умелый человек, без волн от проходящих судов" },
-        { "text": "Не запускать двигатель, пока винт не очищен полностью", "note": "Оставшийся конец может повредить дейдвудный подшипник и уплотнение вала" },
+        { "text": "Не запускать двигатель, пока винт не очищен полностью", "note": "Оставшийся конец может повредить привод" },
         { "text": "Не получается - идти под парусами или вызвать буксир; при опасности - PAN-PAN (см. УКВ-радио)" },
-        { "text": "После освобождения проверить уплотнение вала на течь", "note": "Чтобы не повторилось: после отхода сразу выбирать концы из воды" }
+        { "text": "После освобождения проверить уплотнение saildrive на течь", "note": "Если винт резко остановило концом, уплотнения saildrive могут потечь, а на борту такое повреждение обычно не видно - привод стоит показать специалисту. Чтобы не повторилось: после отхода сразу выбирать концы из воды" }
       ],
       "sources": [
         { "type": "iyt", "module": 14, "section": 2, "page": 199 },
         { "type": "web", "title": "BoatUS - Three Ways To Untangle A Boat Propeller (2018)", "url": "https://www.boatus.com/expert-advice/expert-advice-archive/2018/april/three-ways-to-untangle-a-boat-propeller", "accessed": "2026-09-17" },
         { "type": "web", "title": "BoatUS - 4 Steps to Take if Your Outboard Quits (2013)", "url": "https://www.boatus.com/expert-advice/expert-advice-archive/2013/june/4-steps-to-take-if-your-outboard-quits", "accessed": "2026-09-17" },
         { "type": "web", "title": "Yachting Monthly - How to get your boat home if you experience an engine failure", "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-get-your-boat-home-if-you-experience-an-engine-failure-97717", "accessed": "2026-09-17" },
-        { "type": "web", "title": "Transport Canada - Safe Boating Guide TP 511E (2026)", "url": "https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf", "accessed": "2026-09-17" }
+        { "type": "web", "title": "Transport Canada - Safe Boating Guide TP 511E (2026)", "url": "https://tc.canada.ca/sites/default/files/2026-07/tp-511-boating-guide-2026-EN-acc.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "YACHT - After the line gets caught in the screw: this needs to be checked (N. Krauss, A. von Lamezan, 2026)", "url": "https://www.yacht.de/en/equipment/security/after-the-line-gets-caught-in-the-screw-this-needs-to-be-checked/", "accessed": "2026-09-19" }
       ],
       "verified": true
     },
