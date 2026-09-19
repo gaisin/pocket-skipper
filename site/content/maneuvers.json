@@ -317,6 +317,407 @@
       "verified": true
     },
     {
+      "id": "stern-to-onshore",
+      "group": "stern-to",
+      "mirror": true,
+      "title": "Кормой при ветре с моря",
+      "summary": "Ветер прижимает к причалу: малые обороты, тормозить заранее, лейзи-линию выбрать быстро.",
+      "scene": {
+        "label": "Яхта задним ходом входит между двумя лодками кормой к причалу; ветер с моря, чуть [[слева|справа]]",
+        "wind": 200,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 100, "y": 0, "w": 160, "h": 16 },
+          { "type": "label", "x": 218, "y": 30, "text": "ПРИЧАЛ" },
+          { "type": "boat-moored", "x": 128, "y": 55, "rot": 180 },
+          { "type": "boat-moored", "x": 200, "y": 55, "rot": 180 },
+          { "type": "path", "d": "M20 150 L195 150 Q172 150 168 120 L164 30" },
+          { "type": "arrow", "x1": 155, "y1": 103, "x2": 174, "y2": 92, "kind": "walk", "steps": [1] },
+          { "type": "arrow", "x1": 180, "y1": 152, "x2": 188, "y2": 130, "kind": "drift", "steps": [2] },
+          { "type": "arrow", "x1": 144, "y1": 142, "x2": 152, "y2": 120, "kind": "drift", "steps": [4] },
+          { "type": "line", "points": [[172, 16], [172, 198]], "dashed": true, "steps": [1, 2, 3] },
+          { "type": "line", "points": [[156, 25], [146, 10]], "steps": [3, 4] },
+          { "type": "line", "points": [[172, 25], [182, 10]], "steps": [4] },
+          { "type": "line", "points": [[172, 16], [178, 28], [178, 78], [164, 92], [164, 198]], "steps": [4] },
+          { "type": "line", "points": [[156, 29], [146, 10]], "steps": [5] },
+          { "type": "line", "points": [[172, 29], [182, 10]], "steps": [5] },
+          { "type": "line", "points": [[164, 97], [164, 198]], "steps": [5] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Ветер с моря дует на причал и сам несёт яхту к стенке. Готовиться до захода: кранцы повыше на оба борта (соседи близко) и на корму, два кормовых конца с запасом длины, отпорный крюк у носового. Кто на кормовых, кто на лейзи-линии, кто с кранцем - решить заранее.",
+          "pose": { "x": 60, "y": 150, "rot": 90 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Пройти своё место, остановиться и начать задний ход издалека: корму уводит [[влево|вправо]], к причалу, и это помогает развернуться кормой к месту. Пока яхта без хода, нос уже сносит ветром.",
+          "pose": { "x": 175, "y": 138, "rot": 150 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Задним ходом по ветру яхта плохо держит линию: нос норовит свалиться в сторону. Держать самые малые обороты и ровный ход без лишних переключений - каждое переключение срывает поток с руля. Ветер разгоняет яхту к стенке: тормозить заранее коротким толчком вперёд, а не в последний момент. Когда корма вошла между соседями, они помогают держать линию; человек с кранцем - у подветренного борта.",
+          "pose": { "x": 164, "y": 100, "rot": 176 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Корма у стенки - кормовые на берег: первым наветренный, за ним второй. На берег сходить шагом, не прыгать; можно набросить петлю на кнехт. Руками и ногами яхту не удерживать - для этого кранцы и концы.",
+          "pose": { "x": 164, "y": 58, "rot": 180 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Пока лейзи-линию подают у кормы и ведут на нос - двигатель в нейтрали: её часто наматывает на винт. Ветер в это время прижимает корму к стенке, поэтому работать быстро: перебирать линию вдоль борта снаружи всего и сразу закрепить на носовой утке. У кормы - кранец и человек с кранцем.",
+          "pose": { "x": 164, "y": 57, "rot": 180 }
+        },
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Линия на утке и не идёт к винту - малый вперёд, чтобы отвести корму от стенки, пока носовой выбирает лейзи-линию втугую. При ветре с моря её держат туже кормовых: слабая лейзи-линия пустит корму на причал, если ночью раздует или придёт зыбь. В конце - нейтраль; корма так близко, чтобы можно было сойти на берег, но не касалась стенки.",
+          "pose": { "x": 164, "y": 62, "rot": 180 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "RYA - Med Mooring: Stern-To", "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)", "url": "https://www.mby.com/maintenance/stern-to-mooring-24890", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Mendez Marine - Stern-to berthing", "url": "https://www.mendezmarine.co.uk/stern-berthing/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Prop walk: how to use it to your best advantage (2025)", "url": "https://www.pbo.co.uk/seamanship/prop-walk-how-to-use-it-to-your-best-advantage-97756", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sunsail - Mediterranean mooring techniques (2024)", "url": "https://www.sunsail.com/au/blog/mediterranean-mooring", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - How to moor your yacht (and how not to) (H. Dekkers, 2025)", "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-moor-your-yacht-and-how-not-to-100714", "accessed": "2026-09-19" },
+        { "type": "web", "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)", "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "stern-to-offshore",
+      "group": "stern-to",
+      "mirror": true,
+      "title": "Кормой при ветре с берега, в пустой причал",
+      "summary": "Ветер сдувает от стенки: задний ход решительнее, первым - наветренный кормовой.",
+      "scene": {
+        "label": "Яхта задним ходом подходит кормой к пустому причалу; ветер с берега, чуть [[слева|справа]]",
+        "wind": 330,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 100, "y": 0, "w": 160, "h": 16 },
+          { "type": "label", "x": 218, "y": 30, "text": "ПРИЧАЛ" },
+          { "type": "path", "d": "M20 150 L195 150 Q172 150 168 120 L165 30" },
+          { "type": "arrow", "x1": 155, "y1": 103, "x2": 174, "y2": 92, "kind": "walk", "steps": [1] },
+          { "type": "arrow", "x1": 176, "y1": 100, "x2": 188, "y2": 120, "kind": "drift", "steps": [3] },
+          { "type": "line", "points": [[172, 16], [172, 198]], "dashed": true, "steps": [1, 2, 3, 4] },
+          { "type": "line", "points": [[157, 24], [146, 10]], "steps": [3, 4, 5, 6] },
+          { "type": "line", "points": [[173, 24], [184, 10]], "steps": [4, 5, 6] },
+          { "type": "line", "points": [[172, 16], [179, 28], [179, 78], [167, 92], [167, 198]], "steps": [5] },
+          { "type": "line", "points": [[164, 93], [164, 198]], "steps": [6] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Ветер с берега: задним ходом идти ему навстречу, корма смотрит на ветер, и линию держать легко. Но стоит яхте остановиться - её сдувает от стенки, а нос уводит под ветер. Причал пустой: опереться не на кого. Место уточнить у марины по радио; если спросить некого - выбрать по двум кнехтам или рымам для кормовых: разведённые в стороны, они не дают корме рыскать. Кормовые готовы на обеих раковинах, кранец на корме.",
+          "pose": { "x": 60, "y": 150, "rot": 90 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Пройти своё место, остановиться и начать задний ход: корму уводит [[влево|вправо]], к причалу, - это помогает развернуться кормой к месту. Нос тем временем сдувает под ветер.",
+          "pose": { "x": 175, "y": 138, "rot": 150 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Против ветра задний ход идёт туго, оборотов нужно больше, чем в штиль. Добавлять их плавно и держать ровными, без лишних переключений: руль работает, пока яхта идёт назад. Ветер на носу сам держит корму на ветер.",
+          "pose": { "x": 166, "y": 95, "rot": 178 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Корма у стенки - рулевой держит малый задний ход, чтобы её не сдуло, пока подают концы. Первым - наветренный кормовой: он держит корму против ветра. Сходить на берег шагом, когда корма стоит у стенки, не прыгать; не успеваешь - набросить петлю на кнехт. С опущенной кормовой платформы концы не подавать: по руководству Dufour это не безопасная зона.",
+          "pose": { "x": 165, "y": 57, "rot": 180 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Второй кормовой - на подветренный кнехт или рым. Двигатель по-прежнему на малом заднем: корма держится у стенки.",
+          "pose": { "x": 165, "y": 57, "rot": 176 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Нейтраль, пока лейзи-линию берут у стенки и ведут на нос: её легко намотать на винт. Теперь яхту против ветра держат кормовые. Линию перебирать снаружи всего и закрепить на носовой утке, пока нос не увело далеко под ветер.",
+          "pose": { "x": 165, "y": 57, "rot": 176 }
+        },
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Натянуть: задний ход на малых оборотах, понемногу добавлять и выбирать слабину кормовых, пока лейзи-линия не натянется. При ветре с берега туже держат кормовые - ветер тянет яхту от стенки. В конце - нейтраль.",
+          "pose": { "x": 164, "y": 58, "rot": 180 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "Yachting Monthly - Cruising Clinic: mooring astern in tricky berths (2022)", "url": "https://www.yachtingmonthly.com/sailing-skills/cruising-clinic-mooring-astern-in-tricky-berths-83281", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Mendez Marine - Stern-to berthing", "url": "https://www.mendezmarine.co.uk/stern-berthing/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734", "accessed": "2026-09-19" },
+        { "type": "web", "title": "RYA - Med Mooring: Stern-To", "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Safety Anchor Alarm - Med mooring: how to go stern-to without losing the bow (2026)", "url": "https://safetyanchoralarm.com/blog/med-mooring-guide", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Boat handling tips: marina exit strategies (D. Harding, 2024)", "url": "https://www.pbo.co.uk/seamanship/boat-handling-tips-marina-exit-strategies-83142", "accessed": "2026-09-19" },
+        { "type": "web", "title": "NauticEd - Mediterranean mooring with an anchor (G. Headifen, 2024)", "url": "https://sailing-blog.nauticed.org/mediterranean-mooring-with-an-anchor/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)", "url": "https://www.mby.com/maintenance/stern-to-mooring-24890", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - How to moor your yacht (and how not to) (H. Dekkers, 2025)", "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-moor-your-yacht-and-how-not-to-100714", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-19" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "stern-to-own-anchor",
+      "group": "stern-to",
+      "mirror": true,
+      "title": "Кормой на свой якорь",
+      "summary": "Где нет лейзи-линий: якорь за 4 корпуса, цепь на заднем ходу, кормовые, потом выбрать цепь.",
+      "scene": {
+        "label": "Яхта отдаёт якорь примерно в 4 корпусах от причала и задним ходом идёт к стенке, травя цепь; причал [[справа|слева]], ветер вдоль причала сверху",
+        "wind": 0,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 246, "y": 0, "w": 14, "h": 200 },
+          { "type": "label", "x": 240, "y": 196, "text": "ПРИЧАЛ", "anchor": "end" },
+          { "type": "boat-moored", "x": 211, "y": 52, "rot": 270 },
+          { "type": "boat-moored", "x": 211, "y": 148, "rot": 270 },
+          { "type": "line", "points": [[176, 52], [0, 58]] },
+          { "type": "line", "points": [[176, 148], [0, 142]] },
+          { "type": "anchor", "x": 14, "y": 92, "steps": [1, 2, 3, 4, 5] },
+          { "type": "line", "points": [[20, 92], [70, 94]], "steps": [2] },
+          { "type": "line", "points": [[20, 92], [107, 97]], "steps": [3] },
+          { "type": "line", "points": [[20, 92], [171, 100]], "steps": [4] },
+          { "type": "line", "points": [[20, 92], [168, 100]], "steps": [5] },
+          { "type": "arrow", "x1": 144, "y1": 98, "x2": 143, "y2": 120, "kind": "walk", "steps": [2] },
+          { "type": "arrow", "x1": 62, "y1": 100, "x2": 62, "y2": 124, "kind": "drift", "steps": [2] },
+          { "type": "line", "points": [[240, 91], [253, 80]], "steps": [4] },
+          { "type": "line", "points": [[240, 109], [253, 120]], "steps": [4] },
+          { "type": "line", "points": [[237, 91], [253, 80]], "steps": [5] },
+          { "type": "line", "points": [[237, 109], [253, 120]], "steps": [5] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Подготовка: цепь должна идти свободно, якорь готов к отдаче, два кормовых на раковинах, кранцы повыше на обоих бортах. Узнать, сколько цепи на борту: её должно хватить от места отдачи до стоянки у причала, и это не меньше 5 глубин. Посмотреть, куда уходят цепи соседей: свою класть прямо от своего места, перпендикулярно стенке, а не поперёк чужих. Если цепь заело - пальцами не лезть.",
+          "pose": { "x": 46, "y": 93, "rot": 270 }
+        },
+        {
+          "who": "Носовой",
+          "command": "Отдать якорь!",
+          "text": "Яхта идёт назад малым ходом по линии своего места. Якорь отдают примерно за 4 корпуса до причала - для этой яхты около 50 м. При боковом ветре - чуть с наветренной стороны от своего места: цепь потом держит нос на ветер.",
+          "pose": { "x": 52, "y": 93, "rot": 270 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Задний ход к месту; носовой травит цепь свободно и не отстаёт от хода, иначе якорь поволочёт по дну. Цепь, которую травят на заднем ходу, гасит большую часть заброса, но корму всё равно ведёт [[влево|вправо]] - подправлять рулём, пока есть ход. Нос сносит ветром, его держит цепь с наветренной стороны.",
+          "pose": { "x": 105, "y": 95, "rot": 272 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Примерно за корпус до причала придержать цепь: она натянется, якорь заберёт, петли на цепи выпрямятся. Потом снова травить до самой стенки.",
+          "pose": { "x": 142, "y": 98, "rot": 271 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Малый задний ход держит корму у стенки, пока подают кормовые: первым наветренный, потом второй. Сходить на берег шагом, не прыгать.",
+          "pose": { "x": 206, "y": 100, "rot": 270 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Двигатель - в нейтраль. Кормовые закреплены - выбрать цепь брашпилем: кормовые потравить, цепь натянуть, чтобы корма отошла от стенки и не касалась её. Пока работает электрический брашпиль, двигатель держать на слегка повышенных оборотах - так требует руководство Dufour.",
+          "pose": { "x": 203, "y": 100, "rot": 270 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "RYA - Med Mooring: Stern-To", "url": "https://www.rya.org.uk/boating-abroad/med-mooring-stern-to/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Motor Boat & Yachting - Stern-to mooring: how to (J. Mendez, 2014)", "url": "https://www.mby.com/maintenance/stern-to-mooring-24890", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Seafarer Sailing - How to do a stern-to mooring", "url": "https://seafarersailing.co.uk/how-to-do-a-stern-to-mooring/", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 14, "section": 5, "page": 218 },
+        { "type": "web", "title": "Sunsail - Mediterranean mooring techniques (2024)", "url": "https://www.sunsail.com/au/blog/mediterranean-mooring", "accessed": "2026-09-19" },
+        { "type": "web", "title": "MedSailor - Mediterranean mooring (T. Pinney)", "url": "https://www.medsailor.com/med-mooring/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sailing Issues - Mediterranean mooring (D. Willemsen, 2026)", "url": "https://sailingissues.com/yachting-guide/mediterranean-mooring.html", "accessed": "2026-09-19" },
+        { "type": "web", "title": "NauticEd - Mediterranean mooring with an anchor (G. Headifen, 2024)", "url": "https://sailing-blog.nauticed.org/mediterranean-mooring-with-an-anchor/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - How to moor your yacht (and how not to) (H. Dekkers, 2025)", "url": "https://www.yachtingmonthly.com/sailing-skills/how-to-moor-your-yacht-and-how-not-to-100714", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" }
+      ],
+      "verified": true
+    },
+    {
+      "id": "leave-stern-to-onshore",
+      "group": "stern-to",
+      "title": "Отход, когда ветер прижимает к причалу",
+      "summary": "Держать яхту передним ходом, пока тонет лейзи-линия; наветренный кормовой - последним.",
+      "scene": {
+        "label": "Яхта уходит носом вперёд из промежутка между лодками, стоящими кормой к причалу; ветер с моря, чуть слева",
+        "wind": 200,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 100, "y": 0, "w": 160, "h": 16 },
+          { "type": "label", "x": 218, "y": 30, "text": "ПРИЧАЛ" },
+          { "type": "boat-moored", "x": 128, "y": 55, "rot": 180 },
+          { "type": "boat-moored", "x": 200, "y": 55, "rot": 180 },
+          { "type": "line", "points": [[128, 90], [128, 140]], "dashed": true },
+          { "type": "line", "points": [[200, 90], [200, 140]], "dashed": true },
+          { "type": "path", "d": "M164 60 L166 128 Q168 165 215 176" },
+          { "type": "line", "points": [[164, 93], [164, 198]], "steps": [0] },
+          { "type": "line", "points": [[172, 16], [172, 150]], "dashed": true, "steps": [1, 2, 3, 4] },
+          { "type": "line", "points": [[156, 26], [146, 10]], "steps": [0, 1, 2] },
+          { "type": "line", "points": [[172, 26], [182, 10]], "steps": [0, 1, 2] },
+          { "type": "line", "points": [[156, 42], [146, 10]], "steps": [3] },
+          { "type": "arrow", "x1": 144, "y1": 150, "x2": 152, "y2": 128, "kind": "drift", "steps": [1, 2] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Ветер с моря прижимает яхту к стенке: от причала её держит лейзи-линия, а когда её отдадут - только двигатель. Остальное как для обычного отхода: двигатель работает ровно, кормовые на слипе, роли распределены. Осмотреться: ни своя, ни соседская лейзи-линия не должна обвивать яхту или тузик. Человек с кранцем - у кормы; руками и ногами не отталкиваться.",
+          "pose": { "x": 164, "y": 58, "rot": 180 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "По команде - одновременно: рулевой даёт передний ход, носовой отдаёт лейзи-линию в воду. Теперь от стенки яхту держит двигатель: оборотов столько, чтобы яхта стояла, натянув кормовые, и корма не шла к причалу.",
+          "pose": { "x": 164, "y": 60, "rot": 180 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Подождать несколько секунд, пока лейзи-линия уйдёт на дно, прежде чем идти над ней винтом. Всё это время передний ход держит яхту против ветра на натянутых кормовых.",
+          "pose": { "x": 164, "y": 62, "rot": 180 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Кормовые травить медленно, со шлагом на утке: они держат против двигателя, и яхта выходит плавно. Первым отдать подветренный, наветренный - последним: так лучше управляется нос. Освободив, сразу выбрать на борт, чтобы не намотать на винт.",
+          "pose": { "x": 164, "y": 75, "rot": 180 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Выходить прямо и без робости: на малом ходу ветер сбивает нос, а руль лучше работает, когда на перо идёт струя от винта. Человек с кранцем страхует соседей. Если корму всё же несёт на нос соседа - быстро нейтраль, чтобы не намотать его лейзи-линию. Дальше - как при обычном отходе.",
+          "pose": { "x": 166, "y": 130, "rot": 182 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "Sail Ionian - Lazy Line Mooring: A Masterclass", "url": "https://www.sailionian.com/blog/lazy-line-mooring-a-masterclass/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sunsail - Mediterranean mooring techniques (2024)", "url": "https://www.sunsail.com/au/blog/mediterranean-mooring", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yacht4Less - The ultimate Mediterranean mooring guide for yacht charters (2026)", "url": "https://yacht4less.com/sailing-holidays/mediterranean-mooring-guide", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth", "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Casting off with confidence (D. Wells, 2019)", "url": "https://www.pbo.co.uk/seamanship/casting-off-with-confidence-easy-ways-for-singlehanders-to-get-off-the-dock-62624", "accessed": "2026-09-19" },
+        { "type": "web", "title": "YACHT - Mooring a boat: how to avoid dangerous mistakes (F. Boerger, 2026)", "url": "https://www.yacht.de/en/sailing-knowledge/manoeuvre/mooring-a-boat-how-to-avoid-dangerous-mistakes-when-mooring/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Boat handling tips: marina exit strategies (D. Harding, 2024)", "url": "https://www.pbo.co.uk/seamanship/boat-handling-tips-marina-exit-strategies-83142", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Yachting Monthly - Expert tips for big boat handling (R. Sprot, 2015)", "url": "https://www.yachtingmonthly.com/sailing-skills/expert-tips-for-big-boat-handling-31734", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 2, "section": 7, "page": 53 },
+        { "type": "iyt", "module": 2, "section": 7, "page": 54 },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 }
+      ],
+      "verified": true
+    },
+    {
+      "id": "leave-own-anchor",
+      "group": "stern-to",
+      "title": "Отход со своего якоря",
+      "summary": "Цепь брашпилем, малым ходом к якорю; что делать, если якорь поднял чужую цепь.",
+      "scene": {
+        "label": "Яхта стоит кормой к причалу справа на своём якоре, отдаёт кормовые и идёт к якорю, выбирая цепь; ветер вдоль причала сверху",
+        "wind": 0,
+        "power": true,
+        "elements": [
+          { "type": "quay", "x": 246, "y": 0, "w": 14, "h": 200 },
+          { "type": "label", "x": 240, "y": 196, "text": "ПРИЧАЛ", "anchor": "end" },
+          { "type": "boat-moored", "x": 211, "y": 52, "rot": 270 },
+          { "type": "boat-moored", "x": 211, "y": 148, "rot": 270 },
+          { "type": "line", "points": [[176, 52], [0, 58]] },
+          { "type": "line", "points": [[176, 148], [0, 142]] },
+          { "type": "anchor", "x": 14, "y": 92, "steps": [0, 1, 2, 3, 4, 5] },
+          { "type": "line", "points": [[20, 92], [168, 100]], "steps": [0] },
+          { "type": "line", "points": [[20, 92], [163, 100]], "steps": [1] },
+          { "type": "line", "points": [[20, 92], [155, 98]], "steps": [2] },
+          { "type": "line", "points": [[20, 92], [75, 94]], "steps": [3] },
+          { "type": "line", "points": [[237, 91], [253, 80]], "steps": [0] },
+          { "type": "line", "points": [[237, 109], [253, 120]], "steps": [0] },
+          { "type": "line", "points": [[233, 91], [253, 80]], "steps": [1] },
+          { "type": "line", "points": [[233, 109], [253, 120]], "steps": [1] },
+          { "type": "line", "points": [[225, 90], [253, 80]], "steps": [2] },
+          { "type": "line", "points": [[0, 116], [40, 74]], "steps": [5] },
+          { "type": "label", "x": 28, "y": 128, "text": "ЧУЖАЯ ЦЕПЬ", "steps": [5] }
+        ]
+      },
+      "steps": [
+        {
+          "who": "Шкипер",
+          "command": "",
+          "text": "Завести двигатель заранее: пока работает электрический брашпиль, двигатель должен работать на слегка повышенных оборотах. Кормовые завести на слип. Посмотреть, не отдал ли кто-то якорь поперёк вашей цепи: если да - попросить переставить его до вашего отхода. Носовой у брашпиля рукой показывает рулевому, куда уходит цепь.",
+          "pose": { "x": 203, "y": 100, "rot": 270 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Выбирать цепь, пока она не возьмёт вес яхты и кормовые не ослабнут. Руки и одежду - подальше от брашпиля и цепи.",
+          "pose": { "x": 198, "y": 100, "rot": 270 }
+        },
+        {
+          "who": "Кормовой",
+          "command": "",
+          "text": "Отдать кормовые со слипа: сначала подветренный, наветренный - последним. Сразу выбрать на борт: конец в воде легко намотать на винт.",
+          "pose": { "x": 190, "y": 99, "rot": 271 }
+        },
+        {
+          "who": "Рулевой",
+          "command": "",
+          "text": "Малым ходом к якорю, пока брашпиль выбирает цепь: яхта должна идти к якорю сама, а не тянуться брашпилем. Не наезжать на свою цепь - держать нос туда, куда показывает носовой.",
+          "pose": { "x": 110, "y": 95, "rot": 272 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Когда яхта над якорем, он отрывается от грунта. Поднять его на место и закрепить стопором или ремнём, чтобы не сорвался.",
+          "pose": { "x": 50, "y": 93, "rot": 272 }
+        },
+        {
+          "who": "Носовой",
+          "command": "",
+          "text": "Якорь поднял чужую цепь - не растаскивать руками и не лезть между цепями, предупредить ту яхту. Поднимать свой якорь, пока чужая цепь не покажется над водой; отпорным крюком завести под неё петлю (беседочный узел) на конце, оба конца на борт и закрепить на утке. Опустить свой якорь ниже чужой цепи, при надобности отвести крюком и поднять на место. Потом отдать конец - чужая цепь уйдёт вниз. Она тяжёлая: подъём сильно нагружает яхту и может сорвать чужой якорь.",
+          "pose": { "x": 50, "y": 93, "rot": 272 }
+        }
+      ],
+      "sources": [
+        { "type": "web", "title": "Dufour 430 Grand Large - Owner's Manual (26.02.2019)", "url": "https://s2b4aa72b8b1c7323.jimcontent.com/download/version/1629094753/module/11669791091/name/Dufour%20430%20Grand%20Large%20Owner's%20Manual_compressed.pdf", "accessed": "2026-09-17" },
+        { "type": "web", "title": "Safe Skipper - Competent crew skills: arriving and leaving a berth", "url": "https://www.safe-skipper.com/competent-crew-skills-arriving-and-leaving-a-berth/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Practical Boat Owner - Casting off with confidence (D. Wells, 2019)", "url": "https://www.pbo.co.uk/seamanship/casting-off-with-confidence-easy-ways-for-singlehanders-to-get-off-the-dock-62624", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Kraken Yachts - Anchoring & mooring stern-to (2022)", "url": "https://krakenyachts.com/anchoring-mooring-stern-to/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Riviera - The art of anchoring (2025)", "url": "https://www.rivieraaustralia.com/enews-articles/the-art-of-anchoring/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Safety Anchor Alarm - Med mooring: how to go stern-to without losing the bow (2026)", "url": "https://safetyanchoralarm.com/blog/med-mooring-guide", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Discover Boating (NMMA) - How to Anchor a Boat", "url": "https://www.discoverboating.com/resources/how-to-anchor-a-boat", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sunsail - Mediterranean mooring techniques (2024)", "url": "https://www.sunsail.com/au/blog/mediterranean-mooring", "accessed": "2026-09-19" },
+        { "type": "iyt", "module": 14, "section": 2, "page": 199 },
+        { "type": "web", "title": "Sail Ionian - How to: clear a crossed anchor", "url": "https://www.sailionian.com/blog/how-to-clear-a-crossed-anchor/", "accessed": "2026-09-19" },
+        { "type": "web", "title": "Sailing Issues - Anchoring tips (D. Willemsen, 2026)", "url": "https://sailingissues.com/yachting-guide/anchoring-tips.html", "accessed": "2026-09-19" }
+      ],
+      "verified": true
+    },
+    {
       "id": "mob-return",
       "group": "sail",
       "title": "Возврат к человеку за бортом",
