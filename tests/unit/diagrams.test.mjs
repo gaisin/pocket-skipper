@@ -4,7 +4,7 @@ import { escapeXml } from '../../site/js/diagrams/svg.js';
 import { lightsSVG } from '../../site/js/diagrams/lights.js';
 import { markSVG, MARK_SPECS } from '../../site/js/diagrams/marks.js';
 import { encounterSVG } from '../../site/js/diagrams/encounter.js';
-import { renderScene, poseStyle } from '../../site/js/diagrams/scene.js';
+import { renderScene, poseStyle, legendArrowSVG } from '../../site/js/diagrams/scene.js';
 import { MARK_KINDS } from '../../scripts/lib/validate-content.mjs';
 
 test('escapeXml экранирует разметку', () => {
@@ -68,6 +68,12 @@ test('знаки рисуются на дневном фоне независи�
 test('стрелка силы рисуется с наконечником и классом вида', () => {
   const svg = renderScene({ label: 'x', power: true, elements: [{ type: 'arrow', x1: 100, y1: 150, x2: 80, y2: 150, kind: 'walk' }] }, { x: 130, y: 100, rot: 0 });
   assert.match(svg, /<g class="force walk"><line x1="100" y1="150" x2="80" y2="150"\/><polygon points="80,150 /);
+});
+
+test('образец стрелки для легенды использует те же классы, что стрелка в сцене', () => {
+  const walk = legendArrowSVG('walk');
+  assert.match(walk, /^<svg viewBox="0 0 32 14" aria-hidden="true"><g class="force walk">/);
+  assert.match(legendArrowSVG('drift'), /<g class="force drift">/);
 });
 
 test('подпись с anchor получает text-anchor', () => {

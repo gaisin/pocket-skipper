@@ -14,6 +14,12 @@ function arrowSVG({ x1, y1, x2, y2, kind }) {
     + `<polygon points="${x2},${y2} ${barb(0.45)} ${barb(-0.45)}"/></g>`;
 }
 
+// Образец стрелки для легенды под схемой: та же отрисовка и классы, что у стрелки в сцене,
+// поэтому цвет и пунктир берутся из тех же CSS-правил (совпадают в светлой и тёмной теме).
+export function legendArrowSVG(kind) {
+  return `<svg viewBox="0 0 32 14" aria-hidden="true">${arrowSVG({ x1: 3, y1: 7, x2: 29, y2: 7, kind })}</svg>`;
+}
+
 function elementSVG(el) {
   switch (el.type) {
     case 'quay': return `<rect class="quay" x="${el.x}" y="${el.y}" width="${el.w}" height="${el.h}"/>`;

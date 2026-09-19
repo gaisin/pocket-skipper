@@ -132,6 +132,10 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 .scene svg { display: block; width: 100%; height: auto; }
 .scene .boat, .scene .boom { transition: transform .9s ease-in-out; transform-box: view-box; transform-origin: 0 0; }
 .scene .boom { transform-box: view-box; }
+.scene-legend { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font: .78rem var(--mono); color: var(--muted); }
+.scene-legend li { display: flex; align-items: center; gap: 6px; }
+.legend-arrow { display: inline-flex; flex: none; width: 30px; }
+.legend-arrow svg { display: block; width: 100%; height: auto; }
 .step { display: grid; gap: 4px; min-height: 120px; }
 .who { font: .75rem var(--mono); color: var(--muted); }
 .cmd { font: 600 1.3rem/1.15 var(--display); text-transform: uppercase; }
@@ -172,8 +176,10 @@ ul.answers { list-style: none; margin: 0; padding: 0; }
 .form { display: grid; gap: 12px; }
 .field { display: grid; gap: 4px; font-weight: 500; }
 .field input, .field select { min-height: 44px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--line); background: var(--paper); }
-.walk { display: grid; gap: 6px; }
-.walk-switch { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; font: .8rem var(--mono); color: var(--muted); }
+.walk-control { display: grid; gap: 6px; }
+.walk-switch { display: grid; gap: 6px; font: .8rem var(--mono); color: var(--muted); }
+.walk-switch-label { display: block; }
+.walk-switch-buttons { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .walk-switch .seg[aria-pressed="true"] { background: var(--sea); color: var(--on-accent); border-color: var(--sea); }
 .walk-note { font-size: .85rem; color: var(--muted); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }

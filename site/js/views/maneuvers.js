@@ -1,8 +1,23 @@
 import { h, header, sourceFooter, notFound } from '../ui.js';
-import { renderScene, applyPose } from '../diagrams/scene.js';
+import { renderScene, applyPose, legendArrowSVG } from '../diagrams/scene.js';
 import { maneuverFor } from '../diagrams/mirror.js';
 
 const WALK_TEST_ID = 'prop-walk-test';
+
+// Подписи легенды для видов стрелок на схеме - порядок фиксированный, показываем только те виды,
+// что реально есть в манёвре; от стороны заброса (зеркалирования) виды стрелок не зависят.
+const ARROW_LEGEND = [
+  ['walk', 'заброс кормы на заднем ходу'],
+  ['drift', 'снос ветром'],
+];
+
+function sceneLegend(scene) {
+  const kinds = new Set(scene.elements.filter((el) => el.type === 'arrow').map((el) => el.kind));
+  const items = ARROW_LEGEND.filter(([kind]) => kinds.has(kind));
+  if (!items.length) return null;
+  return h('ul', { class: 'scene-legend' }, items.map(([kind, label]) =>
+    h('li', {}, h('span', { class: 'legend-arrow', html: legendArrowSVG(kind) }), label)));
+}
 
 function groupedManeuvers(data) {
   return data.groups
@@ -48,9 +63,10 @@ function propWalkControl(ctx, currentId, onChange) {
     });
   }
   sync();
-  return h('div', { class: 'walk' },
+  return h('div', { class: 'walk-control' },
     h('div', { class: 'walk-switch', role: 'group', 'aria-label': 'Куда уводит корму на заднем ходу' },
-      h('span', {}, 'Корму на заднем ходу уводит:'), buttons),
+      h('span', { class: 'walk-switch-label' }, 'Корму на заднем ходу уводит:'),
+      h('div', { class: 'walk-switch-buttons' }, buttons)),
     note);
 }
 
@@ -98,12 +114,15 @@ export function maneuverView(ctx, id) {
   const walkControl = raw.mirror
     ? propWalkControl(ctx, raw.id, (walk) => { m = maneuverFor(raw, walk); draw(); show(); })
     : null;
+  // Легенда зависит только от видов стрелок на схеме, не от стороны заброса и не от шага - считаем один раз.
+  const legend = sceneLegend(raw.scene);
 
   return h('section', { class: 'view' },
     head,
     lead,
     walkControl,
     figure,
+    legend,
     counter,
     h('div', { class: 'step', 'aria-live': 'polite' }, who, command, text),
     h('div', { class: 'ctrl' }, prev, next),

@@ -66,3 +66,32 @@ test('в настройках сторону можно вернуть в «не
   await page.goto('./#/maneuvers/mirror-demo');
   await expect(page.locator('.walk-note')).toBeVisible();
 });
+
+test('у манёвра со стрелкой заброса видна легенда, про снос речи нет', async ({ page }) => {
+  await page.goto('./#/maneuvers/mirror-demo');
+  const legend = page.locator('.scene-legend');
+  await expect(legend).toBeVisible();
+  await expect(legend).toContainText('заброс кормы на заднем ходу');
+  await expect(legend).not.toContainText('снос ветром');
+});
+
+test('у манёвра без стрелок на схеме легенды нет', async ({ page }) => {
+  await page.goto('./#/maneuvers/tack');
+  await expect(page.locator('.scene-legend')).toHaveCount(0);
+});
+
+test('кнопки «Влево» и «Вправо» стоят в одной строке на iPhone 13', async ({ page }) => {
+  await page.goto('./#/maneuvers/mirror-demo');
+  const left = page.getByRole('button', { name: 'Влево' });
+  const right = page.getByRole('button', { name: 'Вправо' });
+  const [leftBox, rightBox] = await Promise.all([left.boundingBox(), right.boundingBox()]);
+  expect(leftBox.y).toBe(rightBox.y);
+});
+
+test('контейнер переключателя стороны имеет класс walk-control, а не walk', async ({ page }) => {
+  await page.goto('./#/maneuvers/mirror-demo');
+  const control = page.locator('.walk-control');
+  await expect(control).toHaveCount(1);
+  const classes = (await control.getAttribute('class')).split(' ');
+  expect(classes).not.toContain('walk');
+});
