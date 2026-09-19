@@ -120,6 +120,46 @@ test('пары сторон - только при mirror: true и только �
   assert.match(validateContent(f).join('\n'), /m-1: mirror: true или false/);
 });
 
+// Зеркальный манёвр с шагом, где текст подставлен, и подписью на схеме.
+function mirrored(text) {
+  const c = minimal();
+  const m = c.maneuvers.maneuvers[0];
+  m.mirror = true;
+  m.steps[0].text = text;
+  return c;
+}
+
+test('зеркальный манёвр: слово о стороне вне пары [[..|..]] не проходит', () => {
+  for (const text of ['Подойти левым бортом', 'Причал справа', 'Корму уводит влево', 'Руль налево', 'Кругом против часовой стрелки', 'ЛЕВЫЙ борт']) {
+    assert.match(validateContent(mirrored(text)).join('\n'), /m-1: слово о стороне .* вне пары \[\[\.\.\|\.\.\]\]/, text);
+  }
+  const c = minimal();
+  c.maneuvers.maneuvers[0].mirror = true;
+  c.maneuvers.maneuvers[0].title = 'Лагом левым бортом';
+  c.maneuvers.maneuvers[0].scene.elements.push({ type: 'label', x: 1, y: 1, text: 'СПРАВА' });
+  c.maneuvers.maneuvers[0].steps[0].command = 'Право руля!';
+  const text = validateContent(c).join('\n');
+  assert.match(text, /«левым»/);
+  assert.match(text, /«справа»/);
+  assert.match(text, /«право»/);
+});
+
+test('зеркальный манёвр: похожие слова и слова внутри пары проходят', () => {
+  for (const text of [
+    'Правило простое', 'Управление на заднем ходу', 'Направление ветра', 'Рулевой держит курс', 'Сказать рулевому',
+    'Подправить длину шпринга', 'Исправить курс', 'Отправить носового', 'См. справку', 'Экипаж справится',
+    'Двигатель работает правильно', 'Стоянка на 12 часов', 'Корму уводит [[влево|вправо]]', 'Подойти [[левым|правым]] бортом, причал [[слева|справа]]',
+  ]) {
+    assert.deepEqual(validateContent(mirrored(text)), [], text);
+  }
+});
+
+test('незеркальный манёвр может называть стороны без пар', () => {
+  const c = minimal();
+  c.maneuvers.maneuvers[0].steps[0].text = 'Подойти левым бортом, причал справа';
+  assert.deepEqual(validateContent(c), []);
+});
+
 test('зеркальный манёвр: path только из абсолютных M L Q C Z', () => {
   const c = minimal();
   c.maneuvers.maneuvers[0].mirror = true;

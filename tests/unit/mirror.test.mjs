@@ -67,10 +67,39 @@ test('mirrorScene отражает все виды элементов и вет�
   assert.equal(mirrorScene({ ...scene, wind: 0 }).wind, 0);
   assert.equal(mirrorScene({ ...scene, wind: 45 }).wind, 315);
   assert.equal(mirrorScene({ label: 'x', elements: [] }).wind, undefined);
-  assert.deepEqual(mirrorScene(mirrorScene(scene)).elements.slice(0, 2), [
-    { type: 'quay', x: 0, y: 0, w: 20, h: 200 },
-    { type: 'boat-moored', x: 60, y: 50, rot: 10, steps: [1] },
-  ]);
+});
+
+test('двойное отражение возвращает исходную сцену', () => {
+  const scene = {
+    label: 'x', wind: 250,
+    elements: [
+      { type: 'quay', x: 0, y: 0, w: 20, h: 200 },
+      { type: 'boat-moored', x: 60.5, y: 50, rot: 10, scale: 0.8, steps: [1] },
+      { type: 'boat-moored', x: 60, y: 150, rot: 0 }, // без rot отражение ставит rot: 0 (см. тест выше)
+      { type: 'buoy', x: 30, y: 40 },
+      { type: 'anchor', x: 31, y: 41 },
+      { type: 'person', x: 32, y: 42 },
+      { type: 'label', x: 30, y: 40, text: 'ПРИЧАЛ' },
+      { type: 'label', x: 30, y: 60, text: 'А', anchor: 'end' },
+      { type: 'label', x: 30, y: 80, text: 'Б', anchor: 'start' },
+      { type: 'line', points: [[10, 20], [30.25, 40]], dashed: true },
+      { type: 'path', d: 'M20 150 L195 150 Q170 150 166 125 C10,20 30,40 50.5,60 Z' },
+      { type: 'arrow', x1: 100, y1: 150, x2: 80, y2: 150, kind: 'walk', steps: [0, 2] },
+    ],
+  };
+  const twice = mirrorScene(mirrorScene(scene));
+  assert.equal(twice.mirrored, false);
+  assert.equal(twice.wind, scene.wind);
+  // У подписи без anchor двойное отражение ставит anchor 'start' - это выравнивание SVG по умолчанию,
+  // поэтому anchor у подписей не сравниваем; всё остальное должно совпасть до единицы.
+  const withoutLabelAnchor = (els) => els.map((el) => {
+    if (el.type !== 'label') return el;
+    const { anchor, ...rest } = el;
+    return rest;
+  });
+  assert.deepEqual(withoutLabelAnchor(twice.elements), withoutLabelAnchor(scene.elements));
+  assert.equal(twice.elements[7].anchor, 'end');
+  assert.equal(twice.elements[8].anchor, 'start');
 });
 
 test('mirrorScene не знает чужих элементов', () => {
